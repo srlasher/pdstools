@@ -7,5 +7,7 @@ Tooling is both in R and Python although currently not everything is available i
 # R Reference
 
 [ADM Datamart Examples](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-reporting.html)
+
 [Working with Dataset exports](https://pegasystems.github.io/cdh-datascientist-tools/articles/adhoc-datasetanalysis.html)
+
 [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)
