@@ -22,4 +22,4 @@ Few utils plus two classes for reporting.
 
 There is an experimental tool to work with internal Cassandra.
 
-To build it, run gradle allinone in java/DDSUtil. To run, java -jar java/DDSUtil/build/libs/DDSUtil-1.0-SNAPSHOT.jar. The tool provides help.
+To build it, run `gradle allinone` in java/DDSUtil. To run, `java -jar java/DDSUtil/build/libs/DDSUtil-1.0-SNAPSHOT.jar`. The tool provides help.
