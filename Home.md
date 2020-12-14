@@ -4,6 +4,12 @@ These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provid
 
 Tooling is both in R and Python although currently not everything is available in both languages.
 
+# CDH Graph Gallery
+
+Examples of useful graphs to get insights into CDH using data from the Pega platform.
+
+
+
 # R Reference
 
 [ADM Datamart Examples](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html)
