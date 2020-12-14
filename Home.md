@@ -8,7 +8,7 @@ Tooling is both in R and Python although currently not everything is available i
 
 Examples of useful graphs to get insights into CDH using data from the Pega platform.
 
-
+[CDH Graph Gallery](CDH-Graph-Gallery)
 
 # R Reference
 
