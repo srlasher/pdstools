@@ -5,7 +5,7 @@ The charts are made using just a few lines of R or Python and use data from the 
 It is by no means exhaustive but mainly serves to give inspiration and some guidance how to use the open source GitHub repository with CDH tools.
 
 
-# Models Overview
+## Models Overview
 
 | Performance vs Success Rate by Channel and Issue | Model Performance over Time |
 | :---: | :---: |
@@ -13,21 +13,21 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 
 
-# Response Analysis
+## Response Analysis
 
 (pic)
 
-# Predictor Performance
+## Predictor Performance
 ***
 
 (pic)
 
-# Gains and Lift
+## Gains and Lift
 ***
 
 (pics)
 
-# Off-line model reports
+## Off-line model reports
 ***
 
 (pics)
