@@ -7,7 +7,7 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 # Models Overview
 ***
-![Performance vs Success Rate by Channel and Issue](/cdh-datascientist-tools/images/bubblechart_on_channel_issue.png)
+![Performance vs Success Rate by Channel and Issue](/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png)
 
 # Response Analysis
 ***
