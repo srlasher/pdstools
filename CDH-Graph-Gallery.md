@@ -15,7 +15,10 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 ## Response Analysis
 
-(pic)
+| Hierarchical breakdown of response counts | TODO more |
+| :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/IH_responses_hierarchical_breakdown.png" width="50%"> | TODO       |
+
 
 ## Predictor Performance
 ***
