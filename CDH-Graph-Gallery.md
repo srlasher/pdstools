@@ -6,11 +6,14 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 
 # Models Overview
-***
-![Performance vs Success Rate by Channel and Issue](/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png)
+
+| Performance vs Success Rate by Channel and Issue | Model Performance over Time |
+| :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="50%"> | TODO       |
+
+
 
 # Response Analysis
-***
 
 (pic)
 
