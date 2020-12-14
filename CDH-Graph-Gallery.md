@@ -7,9 +7,9 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 ## Models Overview
 
-| Performance vs Success Rate by Channel and Issue | Model Performance over Time |
+| Performance vs Success Rate by Channel and Issue | Average Model performance by Channel and Group |
 | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="50%"> | TODO       |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="50%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
 
 
 
