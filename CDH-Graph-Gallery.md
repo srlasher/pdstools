@@ -12,6 +12,12 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
 
 
+## Propositions Overview
+
+| Proposition Success Rates | TODO | TODO |
+| :---: | :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="50%"> |   |   |
+
 
 ## Response Analysis
 
@@ -21,14 +27,20 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 
 ## Predictor Performance
-***
 
-(pic)
+| Predictor performance by Type | TODO | TODO |
+| :---: | :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="50%"> |   |   |
+
 
 ## Gains and Lift
-***
 
-(pics)
+Alternative views on the classifier score distribution.
+
+| Lift | Cumulative Gains | TODO |
+| :---: | :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/lift_offline_modelreport.png" width="100%"> |  <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/cum_gains_offline_modelreport.png" width="100%"> |   |
+
 
 ## Off-line model reports
 ***
