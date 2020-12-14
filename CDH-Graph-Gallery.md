@@ -17,7 +17,7 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="50%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%"> |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%"> |
 
 
 ## Predictor Performance
