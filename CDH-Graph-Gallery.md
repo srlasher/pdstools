@@ -7,8 +7,7 @@ It is by no means exhaustive but mainly serves to give inspiration and some guid
 
 # Models Overview
 ***
-
-(pic)
+![Performance vs Success Rate by Channel and Issue](/cdh-datascientist-tools/images/bubblechart_on_channel_issue.png)
 
 # Response Analysis
 ***
