@@ -8,10 +8,61 @@ To retrieve the data, follow one of these approaches
 
 ## Approach 1: Dataset export from Pega dev studio
 
-## Approach 2: Table export from database
+From Pega Dev Studio, locate the dataset "pyModelSnapshots". This dataset represents a view on the ADM Datamart table with the model snapshots. Export all data from this dataset by clicking "Export" from the "Actions" menu.
 
-Table: ...
-chdtools can help if you provide it a connection
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_export_adm_models.png" width="50%">
+
+In the dialog that follows, press "Export". Then depending on the size of your data, this may take a while. Then before dismissing the dialog, export the data from the Pega system by clicking the download URL that will be shown when the export process has finished.
+
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_export_dialog.png" width="50%">
+
+The data will be stored in the download location of your browser in the standard Pega dataset export format: zipped, multi-line JSON. You can unzip and load this manually, but we have some utilities in cdhtools that make this easier for you.
+
+### R
+
+In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: `readDSExport`. There also is a convenience wrapper `readADMDatamartModelExport` that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
+
+By default it takes all snapshots, you can specify a flag `latestOnly` to only take the latest snapshots of each model. Alternatively you can do this in R (in `data.table` syntax: `models[, .SD[which.max(SnapshotTime)], by=ModelID]`). 
+
+```r
+models <- readADMDatamartModelExport(srcFolder = "~/Downloads")
+```
+
+### Python
+
+There is a utility function in .. to read ... .
+
+
+## Approach 2: Manual table export from database
+
+The table with the model snapshots is PR_DATA_DM_DATAMART_MDL_FACT. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the raw model data field (pymodeldata). 
+
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_db_models.png" width="50%">
+
+Then read the resulting file into R or Python and go from there. Just take care of the format of e.g. data/time fields in the export from the DB tool.
+
+## Approach 3: Table export using cdhtools
+
+The `cdhtools` library can also do the database export for you and format the data in the desired format.
+
+Given a `Connection`, the function `getModelsFromDatamart` will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
+
+```r
+library(cdhtools)
+library(data.table)
+library(RJDBC)
+
+drv <- JDBC("org.postgresql.Driver", "<LOCATION OF YOUR DRIVER")
+pg_host <- "<HOST>:5432"
+pg_db <- "<DB NAME>"
+pg_user <- "<DB USER>"
+pg_pwd <- "<DB PASSWORD>"
+
+conn <- dbConnect(drv, paste("jdbc:postgresql://", pg_host,  "/", pg_db, sep=""), pg_user, pg_pwd)
+models <- getModelsFromDatamart(conn)
+```
+
+The `getModelsFromDatamart` has options to select models for only certain applications, configurations etc.
 
 # Example analysis
 
