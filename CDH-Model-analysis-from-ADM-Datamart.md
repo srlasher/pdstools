@@ -20,7 +20,7 @@ The data will be stored in the download location of your browser in the standard
 
 ### R
 
-In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: [readDSExport](/cdh-datascientist-tools/reference/readDSExport.html). There also is a convenience wrapper [readADMDatamartModelExport](/cdh-datascientist-tools/reference/readADMDatamartModelExport.html) that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
+In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: [readDSExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readDSExport.html). There also is a convenience wrapper [readADMDatamartModelExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readADMDatamartModelExport.html) that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
 
 By default it takes all snapshots, you can specify a flag `latestOnly` to only take the latest snapshots of each model. Alternatively you can do this in R (in `data.table` syntax: `models[, .SD[which.max(SnapshotTime)], by=ModelID]`). 
 
@@ -48,7 +48,7 @@ Then read the resulting file into R or Python and go from there. Just take care 
 
 The `cdhtools` library can also do the database export for you and format the data in the desired format.
 
-Given a `Connection`, the function [getModelsFromDatamart](/cdh-datascientist-tools/reference/getModelsFromDatamart.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
+Given a `Connection`, the function [getModelsFromDatamart](https://pegasystems.github.io/cdh-datascientist-tools/reference/getModelsFromDatamart.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
 
 ```r
 library(cdhtools)
