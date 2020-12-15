@@ -5,41 +5,40 @@ The charts are made using just a few lines of R or Python and use data from the 
 It is by no means exhaustive but mainly serves to give inspiration and some guidance how to use the open source GitHub repository with CDH tools.
 
 
-## Models Overview
+## Offer Analysis
+
+How successful are the offers? How does that vary across channels, and how well can we find the preferences of individual customers?
 
 | Performance vs Success Rate by Channel and Issue | Average Model performance by Channel and Group |
 | :---: | :---: |
-| [!<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
-
-
-## Propositions Overview
-
-| Proposition Success Rates | TODO | TODO |
-| :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="50%"> |   |   |
-
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
+| **Proposition Base Success Rates** | **TODO** |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="100%"> |  |
 
 ## Response Analysis
+
+How do the accept rates look like in different channels? And how do they change over time? What are the effects in accept rates after a change to the application has been made? How does the propensity distribution look like?
 
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
 | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%"> |
 
+## Model Analysis
 
-## Predictor Performance
-
-| Predictor performance by Type | TODO | TODO |
-| :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="50%"> |   |   |
-
-
-## Gains and Lift
-
-Alternative views on the classifier score distribution.
+What is the expected uptake when I target the top decile of my customers for a certain offer? At which propensity threshold do I get 300% lift?
 
 | Lift | Cumulative Gains | TODO |
 | :---: | :---: | :---: |
 | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/lift_offline_modelreport.png" width="100%"> |  <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/cum_gains_offline_modelreport.png" width="100%"> |   |
+
+
+## Predictor Analysis
+
+Which predictors to well overall? Are there channels in which the external scores feeding into ADM models do not work well?
+
+| Predictor performance by Type | TODO | TODO |
+| :---: | :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="50%"> |   |   |
 
 
 ## Off-line model reports
