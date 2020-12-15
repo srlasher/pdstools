@@ -4,6 +4,7 @@ The charts are made using just a few lines of R or Python and use data from the 
 
 It is by no means exhaustive but mainly serves to give inspiration and some guidance how to use the open source GitHub repository with CDH tools.
 
+All of the visualisation examples in this article can be forked from this Github repo. Detailed steps and code examples can be found by clicking on the images.
 
 ## Offer Analysis
 
