@@ -12,11 +12,11 @@ From Pega Dev Studio, locate the dataset "pyModelSnapshots". This dataset repres
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_export_adm_models.png" width="50%">
 
-In the dialog that follows, press "Export". Then depending on the size of your data, this may take a while. Then before dismissing the dialog, export the data from the Pega system by clicking the download URL that will be shown when the export process has finished.
+In the dialog that follows, press "Export". Depending on the size of your data, this may take a while. Then before dismissing the dialog, export the data from the Pega system by clicking the download link that will be shown when the export process has finished.
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_export_dialog.png" width="50%">
 
-The data will be stored in the download location of your browser in the standard Pega dataset export format: zipped, multi-line JSON. You can unzip and load this manually, but we have some utilities in cdhtools that make this easier for you.
+The data will be stored in the download location of your browser in the standard Pega dataset export format: zipped, multi-line JSON. You can unzip and load this manually, but we have some utilities in `cdhtools` that make this easier for you.
 
 ### R
 
