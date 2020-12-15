@@ -20,7 +20,7 @@ The data will be stored in the download location of your browser in the standard
 
 ### R
 
-In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: `readDSExport`. There also is a convenience wrapper `readADMDatamartModelExport` that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
+In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: [readDSExport](/cdh-datascientist-tools/reference/readDSExport.html). There also is a convenience wrapper [readADMDatamartModelExport](/cdh-datascientist-tools/reference/readADMDatamartModelExport.html) that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
 
 By default it takes all snapshots, you can specify a flag `latestOnly` to only take the latest snapshots of each model. Alternatively you can do this in R (in `data.table` syntax: `models[, .SD[which.max(SnapshotTime)], by=ModelID]`). 
 
@@ -35,7 +35,7 @@ There is a utility function in .. to read ... .
 
 ## Approach 2: Manual table export from database
 
-The table with the model snapshots is PR_DATA_DM_DATAMART_MDL_FACT. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the raw model data field (pymodeldata). 
+The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the raw model data field (pymodeldata). 
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_db_models.png" width="50%">
 
@@ -45,7 +45,7 @@ Then read the resulting file into R or Python and go from there. Just take care 
 
 The `cdhtools` library can also do the database export for you and format the data in the desired format.
 
-Given a `Connection`, the function `getModelsFromDatamart` will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
+Given a `Connection`, the function [getModelsFromDatamart](/cdh-datascientist-tools/reference/getModelsFromDatamart.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
 
 ```r
 library(cdhtools)
@@ -67,6 +67,24 @@ The `getModelsFromDatamart` has options to select models for only certain applic
 # Example analysis
 
 ## R
+
+Now the data is retrieved, it becomes easy to create plots like the above one.
+
+```r
+library(cdhtools)
+library(data.table)
+library(ggplot2)
+library(scales)
+library(colorspace)
+
+ggplot(models, aes(Performance, Positives/(Responsecount), color=log(Positives), size=Responsecount)) +
+  geom_point(alpha=0.8) +
+  facet_grid(Channel~Issue) +
+  scale_size_continuous(guide=NULL) +
+  scale_color_continuous_sequential(guide=NULL) +
+  scale_y_continuous(limits = c(0, NA), labels = scales::percent) +
+  labs(title="Performance vs Success Rate",subtitle = "By Channel and Issue", y="Success Rate")
+```
 
 ## Python
 
