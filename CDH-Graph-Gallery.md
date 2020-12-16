@@ -14,7 +14,7 @@ How successful are the offers? How does that vary across channels, and how well 
 | :---: | :---: |
 | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
 | **Proposition Base Success Rates** | **TODO** |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="100%"> |  |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_animation.gif" width="100%"> |
 
 ## Response Analysis
 
