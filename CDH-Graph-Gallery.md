@@ -39,7 +39,7 @@ Which predictors to well overall? Are there channels in which the external score
 
 | Predictor performance by Type | TODO | TODO |
 | :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="50%"> |   |   |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%"> |   |   |
 
 
 ## Off-line model reports
