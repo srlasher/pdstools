@@ -12,9 +12,9 @@ How successful are the offers? How does that vary across channels, and how well 
 
 | Performance vs Success Rate by Channel and Issue | Average Model performance by Channel and Group |
 | :---: | :---: |
-| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%"> |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/bubblechart_on_channel_issue.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/average_model_performance_by_channel_group.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) |
 | **Proposition Base Success Rates** | **Animation of Model Evolution** |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_animation.gif" width="100%"> |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_proposition_success_rates.png" width="100%">](CDH-Model-analysis-from-ADM-Datamart) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_animation.gif" width="100%">](CDH-Model-analysis-from-ADM-Datamart) |
 
 ## Response Analysis
 
@@ -22,7 +22,7 @@ How do the accept rates look like in different channels? And how do they change 
 
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%"> |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%">](CDH-Interaction-analysis-from-IH) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%">](CDH-Interaction-analysis-from-IH) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%">](CDH-Interaction-analysis-from-IH) |
 
 ## Model Analysis
 
@@ -39,7 +39,7 @@ Which predictors to well overall? Are there channels in which the external score
 
 | Predictor performance by Type | TODO | TODO |
 | :---: | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%"> |   |   |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%">](CDH-Predictor-analysis-from-ADM-Datamart) |   |   |
 
 
 ## Off-line model reports
