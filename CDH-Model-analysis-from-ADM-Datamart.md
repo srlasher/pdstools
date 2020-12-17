@@ -80,7 +80,7 @@ library(ggplot2)
 library(scales)
 library(colorspace)
 
-ggplot(models, aes(Performance, Positives/(Responsecount), color=log(Positives), size=Responsecount)) +
+ggplot(models, aes(Performance, Positives/ResponseCount, color=log(Positives), size=ResponseCount)) +
   geom_point(alpha=0.8) +
   facet_grid(Channel~Issue) +
   scale_size_continuous(guide=NULL) +
