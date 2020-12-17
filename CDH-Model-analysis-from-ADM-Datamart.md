@@ -95,7 +95,7 @@ ggplot(models, aes(Performance, Positives/ResponseCount, color=log(Positives), s
 
 All the model analysis plots shown in the [gallery](CDH-Graph-Gallery) can be created using the sample codes from the provided notebooks.
 
-Many of the plots can be re-created using the data provided with **cdhtools**. Using the R package this data is available when the library is loaded (`library(cdhtools)`). The raw data files (dataset exports and .csv files) are also available in the /extra folder of the repository.
+Many of the plots can be re-created using the data provided with **cdhtools**. Using the R package this data is available when the library is loaded (`library(cdhtools)`). The raw data files (dataset exports and .csv files) are also available in the /extra folder of the repository. Some plots required such amounts of data that we did not want to include it in the repository. You can still run the code examples and get similar looking plots.
 
 TODO: link to R and Python notebooks
 
