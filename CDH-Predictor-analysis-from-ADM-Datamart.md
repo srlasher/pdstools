@@ -15,3 +15,26 @@ Then again one or more examples of the code to create a plot
 
 For more examples refer to R and Python notebooks (for R cdhtools these will probably be vignettes as well)
 
+# Bringing it all together
+
+All the predictor analysis plots shown in the [gallery](CDH-Graph-Gallery) can be created using the sample codes from the provided notebooks.
+
+Many of the plots can be re-created using the data provided with **cdhtools**. Using the R package this data is available when the `cdhtools` library is loaded. The raw data files (dataset exports and .csv files) are also available in the /extra folder of the repository. Some plots required such amounts of data that we did not want to include it in the repository. You can still run the code examples and get similar looking plots.
+
+## Python
+
+See the example notebook https://github.com/pegasystems/cdh-datascientist-tools/blob/master/python/Example_ADM_Analysis.ipynb
+
+## R
+
+See the example notebook https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/vignettes/adm-datamart.Rmd
+
+or when you have `cdhtools` installed, check the vignette `adm-datamart`: 
+
+```r
+library(cdhtools)
+
+vignette("adm-datamart")
+```
+
+
