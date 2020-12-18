@@ -2,6 +2,10 @@
 
 This page will become a detailed example of how to use IH data
 
+| Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
+| :---: | :---: | :---: |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%">](/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%">](/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%">](/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png) |
+
 Explain IH data model high level (star schema)
 
 Retrieving the data
