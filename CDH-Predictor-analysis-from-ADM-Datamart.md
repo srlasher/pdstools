@@ -2,6 +2,10 @@
 
 This page will become a detailed example of how to use ADM predictor level datamart data.
 
+| Predictor performance by Type | TODO | TODO |
+| :---: | :---: | :---: |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%">](/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png) |   |   |
+
 Explain the table is at bin level but often we're interested in just the predictor level data, not the individual bins.
 
 Retrieving the data
