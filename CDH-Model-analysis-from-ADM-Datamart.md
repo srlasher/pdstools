@@ -107,7 +107,7 @@ See the example notebook [Example_ADM_Analysis.ipynb](https://github.com/pegasys
 
 ## R
 
-See the example notebook [adm-datamart.Rmd](/cdh-datascientist-tools/articles/adm-datamart.html)
+See the example notebook [adm-datamart.Rmd](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html)
 
 or when you have `cdhtools` installed, check the vignette `adm-datamart`: 
 
