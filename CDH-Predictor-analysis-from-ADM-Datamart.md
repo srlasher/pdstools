@@ -27,11 +27,11 @@ Many of the plots can be re-created using the data provided with **cdhtools**. U
 
 ## Python
 
-See the example notebook https://github.com/pegasystems/cdh-datascientist-tools/blob/master/python/Example_ADM_Analysis.ipynb
+See the example notebook [Example_ADM_Analysis.ipynb](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/python/Example_ADM_Analysis.ipynb)
 
 ## R
 
-See the example notebook https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/vignettes/adm-datamart.Rmd
+See the example notebook [adm-datamart.Rmd](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html)
 
 or when you have `cdhtools` installed, check the vignette `adm-datamart`: 
 
