@@ -2,7 +2,7 @@
 
 These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide data scientists some tooling to analyze the data produced by a running Pega Decisioning system. It includes tools to easily read Dataset exports, convert Adaptive Models to scorecards, off-line browsable reports on the adaptive models and more. 
 
-Tooling is both in R and Python although currently not everything is available in both languages.
+Tooling is both in R and Python although currently not everything is available in both languages. Installation instructions on the repository [home page](https://github.com/pegasystems/cdh-datascientist-tools)
 
 # CDH Graph Gallery
 
