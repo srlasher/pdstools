@@ -52,7 +52,7 @@ Then read the resulting file into R or Python and go from there. Just take care 
 
 The `cdhtools` library can also do the database export for you and format the data in the desired format.
 
-Given a `Connection`, the function [getModelsFromDatamart](https://pegasystems.github.io/cdh-datascientist-tools/reference/getModelsFromDatamart.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
+Given a `Connection`, the function [readADMDatamartModelTable](https://pegasystems.github.io/cdh-datascientist-tools/reference/readADMDatamartModelTable.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
 
 ```r
 library(cdhtools)
