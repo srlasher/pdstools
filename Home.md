@@ -10,9 +10,9 @@ Examples of useful graphs to get insights into CDH using data from the Pega plat
 
 [CDH Graph Gallery](CDH-Graph-Gallery)
 
-## Getting Started with the R library
+# Getting Started with the R library
 
-The **cdhtools** package can be installed straight from GitHub and provides a number of utility functions and demo scripts.
+The `cdhtools` package can be installed straight from GitHub and provides a number of utility functions and demo scripts.
 
 First, make sure you have [RStudio](https://rstudio.com/products/rstudio/) installed. To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do. Also, if you want to access some of the example files you will need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools).
 
@@ -29,7 +29,7 @@ library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-If all is well, this will then install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
+If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
 
 ```r
 library(cdhtools)
@@ -42,7 +42,7 @@ vignette(topic="adm-datamart")
 Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 
-### Content
+### Contents
 
 The R package currently contains 
 
@@ -99,7 +99,7 @@ df1 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots", srcFo
 df2 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots_20180316T134315_GMT.zip", srcFolder="inst/extdata", tmpFolder="tmp3")
 ```
 
-### To analyze ADM datamart in python:
+### To analyze ADM datamart in Python:
 
 Two classes need to be instantiated. One for the model report and one for the predictor report. 
 Once df1 and df2 as described above are imported, use the following example to instantiate your classes:
