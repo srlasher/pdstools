@@ -65,15 +65,7 @@ You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web p
 
 The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/cdh-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
-## R Reference
-
-[ADM Datamart Examples](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html)
-
-[Working with Dataset exports](https://pegasystems.github.io/cdh-datascientist-tools/articles/adhoc-datasetanalysis.html)
-
-[Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)
-
-Notebooks for Model and Predictor reports in the "extra" folder that extend product capabilities.
+A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html).
 
 
 ## Getting Started with the Python notebooks
