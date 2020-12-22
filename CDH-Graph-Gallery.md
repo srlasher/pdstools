@@ -24,9 +24,9 @@ How do the accept rates look like in different channels? And how do they change 
 
 At a very high level, you can look at the overall performance, across all models, all issues and all channels. This very simple graph may already tell you if everything is working as expected, and if new channels or issues are added, see those effects in this timeline.
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_model_performance.png" width="100%">
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/overall_model_performance.png" width="50%">
 
-What is the expected uptake when I target the top decile of my customers for a certain offer? At which propensity threshold do I get 300% lift?
+At a more detailed level, you can zoom in into individual models and ask questions like: what is the expected uptake when I target the top decile of my customers for a certain offer? At which propensity threshold do I get 300% lift? Plots like the ones below (which are also part of the off-line model reports) can help answer those questions:
 
 | Lift | Cumulative Gains |
 | :---: | :---: | 
