@@ -42,7 +42,7 @@ vignette(topic="adm-datamart")
 Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 
-### Contents
+## Contents
 
 The R package currently contains 
 
@@ -50,6 +50,7 @@ The R package currently contains
 - Standard notebooks to generate off-line viewable, stand-alone model reports and a model overview. These reports are similar to the reports in the product but can be generated and browsed off-line, but they also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and some more. They are parameterized and can easily be applied to any export of the ADM datamart.
 - An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
 
+## Reference
 
 The available vignettes are (`vignette(package="cdhtools")`):
 
@@ -68,7 +69,7 @@ The other option is to download the source (clone from [the GitHub repository](h
 A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html).
 
 
-## Getting Started with the Python notebooks
+# Getting Started with the Python notebooks
 
 The Python part of the tools currently contain a subset of the functionality provided by the R version:
 
@@ -91,7 +92,7 @@ df1 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots", srcFo
 df2 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots_20180316T134315_GMT.zip", srcFolder="inst/extdata", tmpFolder="tmp3")
 ```
 
-### To analyze ADM datamart in Python:
+## To analyze ADM datamart in Python:
 
 Two classes need to be instantiated. One for the model report and one for the predictor report. 
 Once df1 and df2 as described above are imported, use the following example to instantiate your classes:
@@ -121,7 +122,7 @@ Refer to `Example_ADM_Analysis.ipynb` file for a thorough example on how to use 
 Use `IHanalysis.py` to get insight into Interaction History (IH) data. This python file contains various methods each one providing certain visibility into the data. Simply import the IH data as a pandas dataframe into the jupyter file, then use various methods. An example is provided: `Example_IH_Analysis.ipynb`
 
 
-## Getting Started with the Java utils
+# Getting Started with the Java utils
 
 Included is an experimental tool to work with internal Cassandra.
 
