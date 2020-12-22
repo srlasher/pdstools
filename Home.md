@@ -14,67 +14,56 @@ Examples of useful graphs to get insights into CDH using data from the Pega plat
 
 The **cdhtools** package can be installed straight from GitHub and provides a number of utility functions and demo scripts.
 
-First, make sure you have [RStudio](https://rstudio.com/products/rstudio/) installed. To run the R examples you do not need to clone the repository, but for the Python examples you do. Also, if you want to access some of the example files you will need to clone the repository.
+First, make sure you have [RStudio](https://rstudio.com/products/rstudio/) installed. To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do. Also, if you want to access some of the example files you will need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools).
 
-To install the package use the **devtools** package. If you don't have that installed yet, do that first:
+To install the package use the `devtools` package. If you don't have that installed yet, do that first:
 
 ```r
 install.packages("devtools")
 ```
 
-Then load the **devtools** library and install the **cdhtools** package. Note the `build_vignettes` flag.
+Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
 
 ```r
 library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-If all is well, this will then install an R package called **cdhtools** that you can then use just like any other R package. You can quickly check this by running the following R commands:
+If all is well, this will then install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
 
 ```r
-library(ggplot2)
-library(scales)
-library(tidyverse)
-library(data.table)
+library(cdhtools)
 
-ggplot(admdatamart_models %>%
-         mutate(Performance = 100*Performance,
-                AcceptRate = Positives/ResponseCount),
-       aes(Performance, AcceptRate, colour=Name, shape=ConfigurationName, size=log(ResponseCount)))+
-  geom_vline(xintercept=c(52,90), linetype="dashed")+
-  geom_point(alpha=0.7) +
-  guides(colour=guide_legend(title="Proposition"),
-         shape=guide_legend(title="Model"),
-         size=FALSE)+
-  scale_x_continuous(limits = c(50, 70), name = "Proposition Performance") +
-  scale_y_continuous(limits = c(0, 1), name = "Success Rate", labels = scales::percent) +
-  theme(panel.background = element_rect(fill='lightgreen'))
+?cdhtools
+browseVignettes("cdhtools")
+vignette(topic="adm-datamart")
 ```
 
-This loads a sample dataset from the packages that represents the state of a couple of ADM models taken from the ADM Data Mart and plots success rate vs performance. Similar to the standard report in Prediction Studio, but across multiple model rules. This example is from one of the vignettes that is shipped with the package, `adm-datamart`. You should get an output like this:
+Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
-![Example ADM Model Plot](images/example-model-plot.png)
 
 ### Content
 
 The R package currently contains 
 
 - Some utilities to make it easier to work with Pega, like reading the dataset exports into `data.table` structures. The `readDSExport` function is the main work horse here, this reads downloaded Pega dataset exports. Specialized versions of this read data from ADM or IH exports.
-- A utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
 - Standard notebooks to generate off-line viewable, stand-alone model reports and a model overview. These reports are similar to the reports in the product but can be generated and browsed off-line, but they also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and some more. They are parameterized and can easily be applied to any export of the ADM datamart.
+- An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
+
 
 The available vignettes are (`vignette(package="cdhtools")`):
 
 Vignette | Description | Read with
 ------------ | ------------- | -------------
 adhoc-datasetanalysis | Using Dataset Exports | `vignette("adhoc-datasetanalysis")`
+adm-datamart | Reporting on the ADM Datamart | `vignette("adm-datamart")`
 adm-explained | Detailed explanation with formulas and code of the ADM Model Reports | `vignette("adm-explained")`
 ih-reporting | Reporting on Interaction History | `vignette("ih-reporting")`
-adm-datamart | Reporting on the ADM Datamart | `vignette("adm-datamart")`
+
 
 You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web page) or `vignette(package="cdhtools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
 
-The other option is to download the source (clone from the GitHub repository) and use the functions and demo scripts directly. Just clone the repository and explore the package contents. The R code, tests, vignettes etc are in the **r** subdirectory.
+The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/cdh-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
 ## R Reference
 
