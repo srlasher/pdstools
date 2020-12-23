@@ -12,12 +12,12 @@ Examples of useful graphs to get insights into CDH using data from the Pega plat
 
 # Getting Started with the R library
 
-The `cdhtools` package can be installed straight from GitHub and provides a number of utility functions and demo scripts.
+The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio.
 
 Installation steps:
 
 1. Install R
-    If you do not have R installed on your system yet, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
+    If you do not have R installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
 
 2. Install R Studio
     Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure.
