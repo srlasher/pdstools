@@ -14,22 +14,28 @@ Examples of useful graphs to get insights into CDH using data from the Pega plat
 
 The `cdhtools` package can be installed straight from GitHub and provides a number of utility functions and demo scripts.
 
-First, make sure you have [RStudio](https://rstudio.com/products/rstudio/) installed. To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do. Also, if you want to access some of the example files you will need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools).
+Installation steps:
 
-To install the package use the `devtools` package. If you don't have that installed yet, do that first:
+1. Install R
+    If you do not have R installed on your system yet, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
+
+2. Install R Studio
+    Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure.
+
+3. To install the package use the `devtools` package. If you don't have that installed yet, do that first:
 
 ```r
 install.packages("devtools")
 ```
 
-Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
+    Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
 
 ```r
 library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
+4. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
 
 ```r
 library(cdhtools)
@@ -39,7 +45,9 @@ browseVignettes("cdhtools")
 vignette(topic="adm-datamart")
 ```
 
-Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+    Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+
+To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do. Also, if you want to access some of the example files you will need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools).
 
 
 ## Contents
