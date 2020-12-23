@@ -28,14 +28,14 @@ Installation steps:
 install.packages("devtools")
 ```
 
-    Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
+4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
 
 ```r
 library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-4. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands:
+5. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 ```r
 library(cdhtools)
@@ -45,7 +45,6 @@ browseVignettes("cdhtools")
 vignette(topic="adm-datamart")
 ```
 
-    Which should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do. Also, if you want to access some of the example files you will need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools).
 
