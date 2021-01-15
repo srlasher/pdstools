@@ -22,16 +22,16 @@ Below we go through these steps in detail. Let's assume we're interested in the 
 
 ## Export the datamart data from Pega
 
-1. From Dev Studio, export the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
-2. From Dev Studio, export the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
+1a. From Dev Studio, export the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
+1b. From Dev Studio, export the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
 
 ## Create CSV files for the models of interest
 
-3. Fire up your R Studio and create a script to load these files, filter out only the models of interest and write back as CSV files
+2. Fire up your R Studio and create a script to load these files, filter out only the models of interest and write back as CSV files
 
 ## Create the HTML or PDF model reports
 
-4. Using an editor of your choice, create a shell script that invokes R with the appropriate notebooks. First, we run a model overview report that also spits out a list of model ID's. Then we loop over these model ID's and create a model report for each of them.
+3. Using an editor of your choice, create a shell script that invokes R with the appropriate notebooks. First, we run a model overview report that also spits out a list of model ID's. Then we loop over these model ID's and create a model report for each of them.
 
 
 
