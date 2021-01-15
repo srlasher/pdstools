@@ -25,6 +25,13 @@ Below we go through these steps in detail. Let's assume we're interested in the 
 * From Dev Studio, export the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
 * From Dev Studio, export the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
 
+The model data is usually not gigantic, but the predictor snapshots table can be sizeable. So if a simple dataset export is not feasible you have two other options:
+
+Option 1: > Read the data from the database tables directly, using a db tool of your choice. You may be able to do some filtering there so you only take the data that you need. When exporting directly to a CSV this way, be aware of possible issues with comma's or semicolons as they may interfere with such characters in the names of the actions (propositions). Best is to use a CSV format that also quotes the elements. Be also aware of date formatting. The notebook will apply some commonly used date formats.
+
+Option 2: > Use a data flow to do the filtering. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
+
+
 ## Create CSV files for the models of interest
 
 * Fire up your R Studio and create a script to load these files, filter out only the models of interest and write back as CSV files
