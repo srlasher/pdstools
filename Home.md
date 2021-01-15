@@ -1,8 +1,16 @@
 # Welcome to the Customer Decision Hub Data Scientist Tools Wiki!
 
-These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide data scientists some tooling to analyze the data produced by a running Pega Decisioning system. It includes tools to easily read Dataset exports, pull data from ADM or IH, create off-line browsable Adaptive Model reports and more. 
+These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide data scientists some tooling to analyze the data produced by a Pega Decisioning system.
 
-Tooling is both in R and Python although currently not everything is available in both languages. 
+Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
+
+* Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data
+* Templates and examples of plots/graphs for analysis of CDH
+* Create off-line browsable Adaptive model reports
+* [experimental] Export Adaptive models to PMML
+* [experimental] Restore Adaptive models from historical data (when "full auditability" is switched on)
+* Export data from Cassandra based Datasets directly
+
 
 # CDH Graph Gallery
 
