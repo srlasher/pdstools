@@ -22,8 +22,8 @@ Below we go through these steps in detail. Let's assume we're interested in the 
 
 ## Export the datamart data from Pega
 
-1a. From Dev Studio, export the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
-1b. From Dev Studio, export the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
+1. a. From Dev Studio, export the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
+1. b. From Dev Studio, export the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
 
 ## Create CSV files for the models of interest
 
