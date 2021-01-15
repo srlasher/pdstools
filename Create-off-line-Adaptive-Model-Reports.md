@@ -2,7 +2,7 @@ The tools include R notebooks to produce off-line viewable, stand-alone model re
 
 You will need R installed to use them, but don't need R skills.
 
-Running the Example
+Before you run it on your own data, check that all is working by running the example:
 
 1. Install R and R Studio as per the "Getting started" in the main page
 2. Check out the CDH Tools repository from git
