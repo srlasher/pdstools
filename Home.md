@@ -7,7 +7,7 @@ Tooling is both in R and Python although currently not everything is available i
 * Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data
 * Templates and examples of plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
 * Create off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline models](Create-offline-Adaptive-Model-Reports).
-* [experimental] Export Adaptive models to PMML. [Step-by-step tutorial to create PMM Scorecards from ADM](Create-PMML-from-ADM-Models)
+* [experimental] Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * [experimental] Restore Adaptive models from historical data (when "full auditability" is switched on)
 * Small Java utility to export data from Cassandra based Datasets directly
 
