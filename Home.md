@@ -24,7 +24,7 @@ Installation steps:
 2. Install R Studio
     Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure.
 
-3. To install the package use the `devtools` package. If you don't have that installed yet, do that first:
+3. To install `cdhtools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
 
 ```r
 install.packages("devtools")
