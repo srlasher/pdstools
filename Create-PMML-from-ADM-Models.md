@@ -39,9 +39,20 @@ predz <- readADMDatamartPredictorExport("~/Downloads", latestOnly = F, noBinning
 adm2pmml(dmModels = modelz, dmPredictors = predz, tmpDir = "~/tmp", verbose = T)
 ```
 
+This will now create a file "OmniAdaptiveModel.pmml" in the current folder. It will show the name of this file and the ID's of all models that it covers.
+
 Then in Pega, in Prediction Studio you can create a new Predictive Model using this PMML file:
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pmml_model_import.png" width="50%">
+
+Pega Prediction Studio will see this PMML as an "ensemble" model because it does not contain just a single scorecard, but a lot of them, one for every context key combination.
+
+The inputs will need to be mapped:
+1. For context keys (.pyName, .pyGroup etc.) you need to create a Parameter and reference 
+2. Regular customer fields should be mapped to the corresponding fields in the Pega class
+3. IH predictors will need to be mapped to parameters and provided at runtime via an IH summary shape
+
+
 
 
 
