@@ -1,4 +1,4 @@
-We have experimental support to create PMML Scorecards from ADM models.
+The R package contains experimental support to create PMML Scorecards from ADM models. ADM models can be "frozen" into PMML Scorecards and when executed, these produce not only the same propensities, but also so called "reason codes" that explain the individual decisions.
 
 Every ADM rule (configuration) translates into one PMML file. So all individual models for every context key (every issue/group/action etc) are combined into a single PMML Scorecard model. The results from running the PMML Scorecard are identical to running the ADM models.
 
