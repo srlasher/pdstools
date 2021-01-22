@@ -39,7 +39,9 @@ predz <- readADMDatamartPredictorExport("~/Downloads", latestOnly = F, noBinning
 adm2pmml(dmModels = modelz, dmPredictors = predz, tmpDir = "~/tmp", verbose = T)
 ```
 
-This will now create a file "OmniAdaptiveModel.pmml" in the current folder. It will show the name of this file and the ID's of all models that it covers.
+This will now create a file "OmniAdaptiveModel.pmml" in the current folder. It will show the name of this file and the ID's of all models that it covers. If you open the generated file you should find a "TreeModel" for each of the context key combinations. The ID of the ADM model can be found back in the `id` element.
+
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/generated_pmml_snippet.png" width="50%">
 
 Then in Pega, in Prediction Studio you can create a new Predictive Model using this PMML file:
 
