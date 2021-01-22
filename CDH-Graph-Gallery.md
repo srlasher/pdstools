@@ -42,9 +42,3 @@ Which predictors to well overall? Are there channels in which the external score
 | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%">](CDH-Predictor-analysis-from-ADM-Datamart) |   |   |
 
 
-## Off-line model reports
-***
-
-(pics)
-
-
