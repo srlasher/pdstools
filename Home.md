@@ -67,7 +67,7 @@ Vignette | Description | Read with
 ------------ | ------------- | -------------
 adhoc-datasetanalysis | Using Dataset Exports | `vignette("adhoc-datasetanalysis")`
 adm-datamart | Reporting on the ADM Datamart | `vignette("adm-datamart")`
-adm-explained | Detailed explanation with formulas and code of the ADM Model Reports | `vignette("adm-explained")`
+adm-explained | Step by step explanation of how ADM calculates propensities | `vignette("adm-explained")`
 ih-reporting | Reporting on Interaction History | `vignette("ih-reporting")`
 
 
