@@ -22,7 +22,7 @@ In this example (based on CDH Sample) we will create a PMML Scorecard for the "O
 
 Then in Pega, in Prediction Studio you can create a new Predictive Model using this PMML file:
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pmml_model_import.png" width="100%">
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pmml_model_import.png" width="25%">
 
 
 
