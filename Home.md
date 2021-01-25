@@ -4,7 +4,7 @@ These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provid
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
-* Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data
+* Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data. [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
 * Templates and examples of plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
 * Create off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline models](Create-offline-Adaptive-Model-Reports).
 * [experimental] Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
