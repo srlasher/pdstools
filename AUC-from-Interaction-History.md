@@ -14,11 +14,11 @@ Then we read an export of IH data. Here we assume the data has been downloaded f
 After the ingestion of the data, we apply some name standardisation and turn the outcome time into a proper time format.
 
 ```r
-ih <- readDSExport("Data-pxStrategyResult_pxInteractionHistory", "~/Downloads")
+# ih <- readDSExport("Data-pxStrategyResult_pxInteractionHistory", "~/Downloads")
+ih <- readDSExport("Data-pxStrategyResult_pxInteractionHistory.zip", "../data")
+
 applyUniformPegaFieldCasing(ih)
-if (is.factor(ih$OutcomeTime) || is.character(ih$OutcomeTime)) {
-  ih[, OutcomeTime := fromPRPCDateTime(OutcomeTime)]
-}
+ih[, OutcomeTime := fromPRPCDateTime(OutcomeTime)
 ```
 
 Now that we have the data in the right format, we choose an aggregation period. Here, we settled on "days". Then we apply standard `data.table` summarisation to calculate the AUC per day and per Issue/Group/Name combination. The work-horse function here is `auc_from_probs` from `cdhtools` that calculates AUC given a series of outcomes and propensities. Of course, other libraries (eg `pROC`) could be used to accomplish the same.
@@ -51,11 +51,11 @@ Creating a plot from this is then trivial
 
 ```r
 ggplot(performance, aes(date, auc, color=Name)) +
-  geom_line(size=1) + geom_point() + theme_minimal() +
+  geom_smooth(size=1,se=F) + geom_point() + theme_minimal() +
   scale_y_continuous(limits=c(0.5,NA))
 ```
 
-Which gives us an overview of how the AUC for these 4 Sales actions changes from Jan 22 to Jan 27.
+Which gives us an overview of how the AUC for Sales actions changes from Jan 21 to Jan 29.
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/auc_from_ih.png" width="50%">
 
