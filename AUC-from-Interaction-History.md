@@ -57,6 +57,9 @@ ggplot(performance, aes(date, auc, color=Name)) +
 
 Which gives us an overview of how the AUC for these 4 Sales actions changes from Jan 22 to Jan 27.
 
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/auc_from_ih.png" width="50%">
+
+The source code for this example can be found in the `examples` folder of the repository.
 
 
  
