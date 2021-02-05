@@ -86,19 +86,25 @@ The Python part of the tools currently contain a subset of the functionality pro
 - Two classes in `model_report.py` to generate reports from the ADM datamart. 
 - A number of methods within `IHanalysis.py` file to get insight into interaction history data
 
-The Python code does not build a package/library so to use it clone the github repository. To import the module type
+The Python code does not build a package/library so to use it clone the github repository. 
+
+## Imports
+
+Launch Jupyter and create a Python 3 script in the "python" folder of the checked out repository. Start
+with the import of the utilities. We also use NumPy so import both:
 
 ```python
 import cdh_utils as cu
+import numpy as np
 ```
 
-Then, run the different functions in this module.
+## Read sample data
 
-For example, for the readDSExport function:
+Then, read two of the sample data files shipped with the repository. The "readDSExport" function will be used a lot.
 
 ```python
-df1 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots", srcFolder="inst/extdata", tmpFolder="tmp")
-df2 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots_20180316T134315_GMT.zip", srcFolder="inst/extdata", tmpFolder="tmp3")
+df1 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots", srcFolder="../r/inst/extdata", tmpFolder="tmp")
+df2 = cu.readDSExport("Data-Decision-ADM-PredictorBinningSnapshot_AllPredictorSnapshots", srcFolder="../r/inst/extdata", tmpFolder="tmp3")
 ```
 
 ## To analyze ADM datamart in Python:
@@ -120,13 +126,27 @@ Preds = ADMReport(Models.modelID, Models.modelName, Models.positives, Models.res
                   np.array(df2['pyType']), np.array(df2['pySnapshotTime']), 
                   np.array(df2['pyBinPositives']), np.array(df2['pyBinResponseCount']))
 ```
-       
-Call the methods within these classes to generate various graphs. It is possible to use "query" parameter in most of the methods to filter various values for better/detailed visualizations.
+
+## Plots
+      
+Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in most of the methods to filter various values for better/detailed visualizations.
+
+To create a simple Bubble Chart (similar to the one in product):
+
+```python
+Models.show_bubble_chart()
+```
+
+Or to create an overview of the predictor performance across all models:
+
+```python
+Preds.show_predictor_performance_boxplot()
+```
 
 Refer to `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
 
-### To analyze IH data
+## To analyze IH data
 
 Use `IHanalysis.py` to get insight into Interaction History (IH) data. This python file contains various methods each one providing certain visibility into the data. Simply import the IH data as a pandas dataframe into the jupyter file, then use various methods. An example is provided: `Example_IH_Analysis.ipynb`
 
