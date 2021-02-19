@@ -37,8 +37,7 @@ At a more detailed level, you can zoom in into individual models and ask questio
 
 Which predictors to well overall? Are there channels in which the external scores feeding into ADM models do not work well?
 
-| Predictor performance by Type | TODO | TODO |
-| :---: | :---: | :---: |
-| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%">](CDH-Predictor-analysis-from-ADM-Datamart) |   |   |
-
+| Predictor performance by Type |
+| :---: |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/aggregate_predictor_performance.png" width="100%">](CDH-Predictor-analysis-from-ADM-Datamart) |
 
