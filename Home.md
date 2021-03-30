@@ -61,6 +61,8 @@ plotADMPerformanceSuccessRateBubbleChart(admdatamart_models)
 plotADMPerformanceSuccessRateBoxPlot(admdatamart_models)
 ```
 
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="100%">
+
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do, as well as for some of the example files.
 
 
