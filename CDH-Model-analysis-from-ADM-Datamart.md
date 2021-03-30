@@ -69,7 +69,7 @@ The `getModelsFromDatamart` has options to select models for only certain applic
 
 ## R
 
-Now the data is retrieved, it becomes easy to create plots like the above one.
+Now the data is retrieved, it is easy to create plots. The library provides several plots (see plotADM* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of [plots.R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/R/plots.R) for inspiration).
 
 ```r
 library(cdhtools)
