@@ -57,11 +57,21 @@ library(data.table)
 data("admdatamart_models")
 
 plotADMPerformanceSuccessRateBubbleChart(admdatamart_models)
+```
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
 
-plotADMPerformanceSuccessRateBoxPlot(admdatamart_models)
+You can add standard `ggplot` decoration to the returned plots, and most of the plot functions also have parameters to select the fields to aggregate or facet by, see help.
+
+To get a global overview of the predictor performance in all the models:
+
+```r
+data("admdatamart_binning")
+
+plotADMPredictorPerformance(admdatamart_binning)
 ```
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="100%">
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
+
 
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do, as well as for some of the example files.
 
@@ -152,11 +162,16 @@ To create a simple Bubble Chart (similar to the one in product):
 Models.show_bubble_chart()
 ```
 
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot1.png" width="50%">
+
 Or to create an overview of the predictor performance across all models:
 
 ```python
 Preds.show_predictor_performance_boxplot()
 ```
+
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
+
 
 Refer to `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
