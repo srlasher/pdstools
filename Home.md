@@ -5,8 +5,8 @@ These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provid
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
 * Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data. [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
-* Templates and examples of plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
-* Create off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline models](Create-offline-Adaptive-Model-Reports).
+* Collection of standard plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
+* Off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline models](Create-offline-Adaptive-Model-Reports).
 * [experimental] Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * [experimental] Restore Adaptive models from historical data (when "full auditability" is switched on)
 * Small Java utility to export data from Cassandra based Datasets directly
@@ -37,7 +37,7 @@ library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-5. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+5. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 ```r
 library(cdhtools)
@@ -47,6 +47,19 @@ browseVignettes("cdhtools")
 vignette(topic="adm-datamart")
 ```
 
+6. It ships with some data as well. Create your first plots with just a few lines:
+
+```r
+library(cdhtools)
+library(ggplot2)
+library(data.table)
+
+data("admdatamart_models")
+
+plotADMPerformanceSuccessRateBubbleChart(admdatamart_models)
+
+plotADMPerformanceSuccessRateBoxPlot(admdatamart_models)
+```
 
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do, as well as for some of the example files.
 
