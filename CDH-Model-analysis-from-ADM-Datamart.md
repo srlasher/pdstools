@@ -75,17 +75,12 @@ Now the data is retrieved, it becomes easy to create plots like the above one.
 library(cdhtools)
 library(data.table)
 library(ggplot2)
-library(scales)
 library(colorspace)
 
-ggplot(models, aes(Performance, Positives/ResponseCount, color=log(Positives), size=ResponseCount)) +
-  geom_point(alpha=0.8) +
-  facet_grid(Channel~Issue) +
-  scale_size_continuous(guide=NULL) +
-  scale_color_continuous_sequential(guide=NULL) +
-  scale_y_continuous(limits = c(0, NA), labels = scales::percent) +
-  labs(title="Performance vs Success Rate",subtitle = "By Channel and Issue", y="Success Rate")
+plotADMPerformanceSuccessRateBubbleChart(models, facets = c("Channel","Issue")) +
+   scale_color_discrete_divergingx()
 ```
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/datamartplot1.png" width="50%">
 
 ## Python
 
