@@ -7,8 +7,8 @@ Tooling is both in R and Python although currently not everything is available i
 * Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data. [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
 * Collection of standard plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
 * Off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline models](Create-offline-Adaptive-Model-Reports).
-* [experimental] Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
-* [experimental] Restore Adaptive models from historical data (when "full auditability" is switched on)
+* Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
+* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/articles/snapshots-to-scorecards.html)
 * Small Java utility to export data from Cassandra based Datasets directly
 
 
@@ -94,7 +94,7 @@ adhoc-datasetanalysis | Using Dataset Exports | `vignette("adhoc-datasetanalysis
 adm-datamart | Reporting on the ADM Datamart | `vignette("adm-datamart")`
 adm-explained | Step by step explanation of how ADM calculates propensities | `vignette("adm-explained")`
 ih-reporting | Reporting on Interaction History | `vignette("ih-reporting")`
-
+snapshots-to-scorecards | Example code to turn a model snapshot into a scorecard | `vignette("snapshots-to-scorecards")`
 
 You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web page) or `vignette(package="cdhtools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
 
