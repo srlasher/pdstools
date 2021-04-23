@@ -22,7 +22,7 @@ Installation steps:
     If you do not have R installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
 
 2. Install R Studio
-    Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure.
+    Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We don't recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
 
 3. To install `cdhtools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
 
