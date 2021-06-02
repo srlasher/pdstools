@@ -16,9 +16,11 @@ How successful are the offers? How does that vary across channels, and how well 
 
 How do the accept rates look like in different channels? And how do they change over time? What are the effects in accept rates after a change to the application has been made? How does the propensity distribution look like?
 
+[R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/python/Example_Historical_Dataset_Analysis.ipynb)
+
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
-| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%">](CDH-Interaction-analysis-from-IH) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%">](CDH-Interaction-analysis-from-IH) | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%">](CDH-Interaction-analysis-from-IH) |
+| [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%">] | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%">] | [<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%">] |
 
 ## Model Analysis
 
