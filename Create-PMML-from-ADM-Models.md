@@ -4,7 +4,7 @@ Every ADM rule (configuration) translates into one PMML file. So all individual 
 
 Use cases:
 * Scorecards can be explained more easily
-* ADM Models can be frozen into PMML
+* Migration of the model learnings between incompatible frameworks - e.g. from a custom framework with a different class structure into NBA-Designer: the ADM models from the old framework can be "frozen" into PMML, then the PMML models can be executed in the new framework while the new ADM models are learning
 * The ADM Models can be executed and results analyzed outside of Pega
 
 The PMML Scorecard can be generated from the ADM datamart or from the internal "Factory" tables. Using the ADM datamart is easiest but does not guarantee 100% identical results because the labels for symbolic predictors will be truncated if there are many. Using the internal tables does not suffer from that problem but is a little more difficult to set up.
