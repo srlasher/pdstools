@@ -8,7 +8,7 @@ Before you run it on your own data, check that all is working by running the exa
 
 1. Install R and R Studio as per the "Getting started" in the main page
 2. Check out the CDH Tools repository from git
-3. Open the example notebook "extra/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample model report should open in a browser window.
+3. Open the example notebook "offlinereports/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample model report should open in a browser window.
 
 # Creating model reports for your own data
 
