@@ -15,7 +15,7 @@ Before you run it on your own data, check that all is working by running the exa
 There are three parts to this:
 
 1. From Pega, export the ADM datamart data
-2. Then, using R or Python, load this data and subset to the models/channels/groups you're interested in. You can skip this step but exporting ALL models in the system is usually not what you want, as there may be 1000's of them.
+2. Then, using R or Python, load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
 3. Then finally, run a (batch) job to create the reports. This would typically be from a shell script, although you can of course do both this and the previous step from a single notebook if the proper kernels are in place.
 
 Below we go through these steps in detail. Let's assume we're interested in the **OmniAdaptiveModel** reports for the **CreditCards** group in all **Outbound** channels (this example is based on CDH Sample).
