@@ -182,11 +182,3 @@ Refer to `Example_ADM_Analysis.ipynb` file for a thorough example on how to use 
 ## To analyze IH data
 
 Use `IHanalysis.py` to get insight into Interaction History (IH) data. This python file contains various methods each one providing certain visibility into the data. Simply import the IH data as a pandas dataframe into the jupyter file, then use various methods. An example is provided: `Example_IH_Analysis.ipynb`
-
-
-# Getting Started with the Java utils
-
-Included is an experimental tool to work with internal Cassandra.
-
-To build it, run `gradle allinone` in java/DDSUtil. To run, `java -jar java/DDSUtil/build/libs/DDSUtil-1.0-SNAPSHOT.jar`. The tool provides help.
-
