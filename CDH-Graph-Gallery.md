@@ -23,6 +23,8 @@ How do the accept rates look like in different channels? And how do they change 
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
 | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_responses_hierarchical_breakdown.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_weekly_accept_rate_with_outliers.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/IH_share_delta.png" width="100%"> |
+| **Test-Control analysis** | **Z Scores of test vs control** | |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/test-control-analysis.png" width="100%"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/test-control-zscores.png" width="100%"> | |
 
 ## Model Analysis
 
