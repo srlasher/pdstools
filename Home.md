@@ -33,14 +33,14 @@ Installation steps:
 install.packages("devtools")
 ```
 
-4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag.
+4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages.
 
 ```r
 library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-5. When prompted for updates, we recommend installing only binary CRAN packages. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+5. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 ```r
 library(cdhtools)
