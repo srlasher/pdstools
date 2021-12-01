@@ -12,7 +12,6 @@ Tooling is both in R and Python although currently not everything is available i
 * More examples in the R vignettes (https://pegasystems.github.io/cdh-datascientist-tools/articles/index.html) and as Python Jupyter notebooks (https://github.com/pegasystems/cdh-datascientist-tools/tree/master/python).
 * Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/articles/snapshots-to-scorecards.html)
-* Small Java utility to export data from Cassandra based Datasets directly
 
 
 # Getting Started with the R library
