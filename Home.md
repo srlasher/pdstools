@@ -110,58 +110,74 @@ A reference to the functions available in the R package is also available here: 
 The Python part of the tools currently contain a subset of the functionality provided by the R version:
 
 - A port of the `cdh_utils` module with utilities to e.g. easily read a Pega dataset export.
-- Two classes in `model_report.py` to generate reports from the ADM datamart. 
+- A `ADMDatamart` class in the `ADMDatamart.py` file for preprocessing of datamart dumps
+- A `ADMVisualisations` class in the `plots.py` file for visualisation of datamart dumps
 - A number of methods within `IHanalysis.py` file to get insight into interaction history data
 
 The Python code does not build a package/library so to use it clone the github repository. 
 
-## Imports
+## Dependencies
+- Pandas
+- Numpy
+- Matplotlib
+- Seaborn
+
+### Optional dependencies
+- Pyarrow for faster data loading
+- Plotly for some interactive charts
+
+## Compatibility
+The current version of the Python files is tested on Python version 3.8, but all scripts should work from version 3.6 on.
 
 Launch Jupyter and create a Python 3 script in the "python" folder of the checked out repository. Start
-with the import of the utilities. We also use NumPy so import both:
+with the import of the utilities.
+ 
+## Quickstart
+
+To read a single file, use readDSExport from cdh_utils:
 
 ```python
-import cdh_utils as cu
-import numpy as np
+from cdh_utils import readDSExport
+data = readDSExport(path = "/data", file = "datafile.zip")
 ```
 
-## Read sample data
+## Read ADM data
 
-Then, read two of the sample data files shipped with the repository. The "readDSExport" function will be used a lot.
+There are two default datamart dump files included with the repository, which you can import with the ADMDatamart class, simply by initialising it with the folder of the datamart dump as the argument.
 
 ```python
-df1 = cu.readDSExport("Data-Decision-ADM-ModelSnapshot_AllModelSnapshots", srcFolder="../r/inst/extdata", tmpFolder="tmp")
-df2 = cu.readDSExport("Data-Decision-ADM-PredictorBinningSnapshot_AllPredictorSnapshots", srcFolder="../r/inst/extdata", tmpFolder="tmp3")
+CDHSample = ADMDatamart("../../data")
 ```
 
-## To analyze ADM datamart in Python:
+The default datamart dump contains data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly.
 
-Two classes need to be instantiated. One for the model report and one for the predictor report. 
-Once df1 and df2 as described above are imported, use the following example to instantiate your classes:
+## Accessing the raw data 
 
-```python
-from model_report import ADMReport, ModelReport
-
-Models = ModelReport(np.array(df1['pyModelID']), np.array(df1['pyName']), 
-                     np.array(df1['pyPositives']), np.array(df1['pyResponseCount']), 
-                     np.array(df1['pyPerformance']), np.array(df1['pySnapshotTime']))
-                     
-Preds = ADMReport(Models.modelID, Models.modelName, Models.positives, Models.responses, Models.modelAUC, 
-                  Models.modelSnapshot, np.array(df2['pyModelID']), np.array(df2['pyPredictorName']), 
-                  np.array(df2['pyPerformance']), np.array(df2['pyBinSymbol']), 
-                  np.array(df2['pyBinIndex']), np.array(df2['pyEntryType']), 
-                  np.array(df2['pyType']), np.array(df2['pySnapshotTime']), 
-                  np.array(df2['pyBinPositives']), np.array(df2['pyBinResponseCount']))
-```
+To access the raw data as imported by the ADMDatamart class as dataframes, simply call the .modelData or .predictorData properties of the initiated classes. If both model data as well as predictor data is supplied, a merge is done in the background automatically, which can also be accessed by calling .combinedData directly.
 
 ## Plots
-      
-Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in most of the methods to filter various values for better/detailed visualizations.
+
+There are a number of plotting functions included out of the box, an overview of which can be found below: 
+
+| Visualisation                            | Needs model data | Needs multiple snapshots | Needs predictor data |
+|------------------------------------------|------------------|--------------------------|----------------------|
+| plotPerformanceSuccessRateBubbleChart    | True             | False                    | False                |
+| plotPerformanceAndSuccessRateOverTime    | True             | True                     | False                |
+| plotResponseCountMatrix                  | True             | True                     | False                |
+| plotSuccessRateOverTime                  | True             | True                     | False                |
+| plotPropositionSuccesRates               | True             | False                    | False                |
+| plotScoreDistribution                    | True             | False                    | True                 |
+| plotPredictorBinning                     | True             | False                    | True                 |
+| plotPredictorPerformance                 | True             | False                    | True                 |
+| plotPredictorPerformanceHeatmap          | True             | False                    | True                 |
+| plotImpactInfluence                      | True             | False                    | True                 |
+
+Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in all of the methods to filter various values for better/detailed visualizations.
 
 To create a simple Bubble Chart (similar to the one in product):
 
 ```python
-Models.show_bubble_chart()
+CDHSample.plotPerformanceSuccesRateBubbleChart()
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot1.png" width="50%">
@@ -169,7 +185,7 @@ Models.show_bubble_chart()
 Or to create an overview of the predictor performance across all models:
 
 ```python
-Preds.show_predictor_performance_boxplot()
+CDHSample.plotPredictorPerformance()
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
