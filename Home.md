@@ -130,12 +130,11 @@ The Python code does not build a package/library so to use it clone the github r
 ## Compatibility
 The current version of the Python files is tested on Python version 3.8, but all scripts should work from version 3.6 on.
 
-Launch Jupyter and create a Python 3 script in the "python" folder of the checked out repository. Start
-with the import of the utilities.
  
 ## Quickstart
 
-To read a single file, use readDSExport from cdh_utils:
+Launch Jupyter and create a Python 3 script in the "python" folder of the checked out repository. Start
+with the import of the utilities. To read a single file, use readDSExport from cdh_utils:
 
 ```python
 from cdh_utils import readDSExport
