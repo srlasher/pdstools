@@ -92,7 +92,7 @@ Many of the plots can be re-created using the data provided with **cdhtools**. U
 
 ## Python
 
-See the example notebook [Example_ADM_Analysis.ipynb](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/python/Example_ADM_Analysis.ipynb)
+See the example notebook [Example_ADM_Analysis.ipynb](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb)
 
 ## R
 
