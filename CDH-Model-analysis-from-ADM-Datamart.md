@@ -31,7 +31,9 @@ models <- readADMDatamartModelExport(srcFolder = "~/Downloads")
 For Python use the files from the GitHub repository directly. There is a utility function `readDSExport` in `cdh_utils.py` in the python folder.
 
 ```python
-models = readDSExport("Data-Decision-ADM-ModelSnapshot_pyModelSnapshots", "~/Downloads")
+from ADMDatamart import ADMDatamart
+ADMDatamart = ADMDatamart("/data")
+
 ```
 
 ## Approach 2: Manual table export from database
