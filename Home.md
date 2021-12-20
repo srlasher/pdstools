@@ -65,12 +65,12 @@ plotPerformanceSuccessRateBubbleChart(adm_datamart)
 
 You can add standard `ggplot` decoration to the returned plots, and most of the plot functions also have parameters to select the fields to aggregate or facet by, see help.
 
-To get a global overview of the predictor performance in all the models:
+To get an overview of the 20 most important predictors in all the models:
 
 ```r
 data("adm_datamart")
 
-plotPredictorImportance(adm_datamart)
+plotPredictorImportance(adm_datamart, limit = 20)
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
