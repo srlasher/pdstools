@@ -83,8 +83,9 @@ To run the R examples you do not need to clone [the repository](https://github.c
 
 The R package currently contains 
 
-- Some utilities to make it easier to work with Pega, like reading the dataset exports into `data.table` structures. The `readDSExport` function is the main work horse here, this reads downloaded Pega dataset exports. Specialized versions of this read data from ADM or IH exports.
-- Standard notebooks to generate off-line viewable, stand-alone model reports and a model overview. These reports are similar to the reports in the product but can be generated and browsed off-line, but they also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and some more. They are parameterized and can easily be applied to any export of the ADM datamart.
+- Utilities to read data into `data.table` structures. The `ADMDatamart` function is the main work horse here, this reads downloaded Pega dataset exports as well as many other formats.
+- Standard functions to easily create plots from Pega data, primarily from the ADM datamart. These plot functions can be further customized.
+- Standard notebooks to generate off-line viewable reports that can be saved as stand-alone HTML or PDF files. There is one that strings together many of the plot functions to generate one big "datamart scan" including a lot of useful analyses. Another one creates a stand-alone model report similar to the view in Pega Prediction Studio, with all the predictor binning, the model classifier etc. These notebooks can easily be applied on any ADM datamart export.
 - An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
 
 ## Reference
