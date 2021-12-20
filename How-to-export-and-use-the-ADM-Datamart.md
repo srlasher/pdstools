@@ -85,31 +85,3 @@ plotPerformanceSuccessRateBubbleChart(dm, facets = c("Channel","Issue")) +
    scale_color_discrete_divergingx()
 ```
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/datamartplot1.png" width="50%">
-
-# Bringing it all together
-
-All the model analysis plots shown in the [gallery](CDH-Graph-Gallery) can be created using the sample code from the provided notebooks.
-
-## R
-
-Many of the plots can be re-created using the data provided with **cdhtools**. Using the R package this data is available when the `cdhtools` library is loaded. The raw data files (dataset exports and .csv files) are also available in the /extra folder of the repository. Some plots required such amounts of data that we did not want to include it in the repository. You can still run the code examples and get similar looking plots.
-
-## Python
-
-See the example notebook [Example_ADM_Analysis.ipynb](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb)
-
-## R
-
-See the example notebook [adm-datamart.Rmd](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html)
-
-or when you have `cdhtools` installed, check the vignette `adm-datamart`: 
-
-```r
-library(cdhtools)
-
-vignette("adm-datamart")
-```
-
-
-
-
