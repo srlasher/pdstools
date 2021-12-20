@@ -6,7 +6,7 @@ To retrieve the data, follow one of these approaches
 
 ## Approach 1: Dataset export from Pega dev studio
 
-From Pega Dev Studio, locate the dataset "pyModelSnapshots". This dataset represents a view on the ADM Datamart table with the model snapshots. Export all data from this dataset by clicking "Export" from the "Actions" menu.
+From Pega Dev Studio, locate the dataset "pyModelSnapshots" in the Data-Decision-ADM-ModelSnapshot class. This dataset represents a view on the ADM Datamart table with the model snapshots. Export all data from this dataset by clicking "Export" from the "Actions" menu.
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_export_adm_models.png" width="50%">
 
@@ -18,12 +18,14 @@ The data will be stored in the download location of your browser in the standard
 
 ### R
 
-In the `cdhtools` library, there is a generic method to read dataset exports into a `data.table`: [readDSExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readDSExport.html). There also is a convenience wrapper [readADMDatamartModelExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readADMDatamartModelExport.html) that is aware of the standard name of the export file (e.g. _Data-Decision-ADM-ModelSnapshot_pyModelSnapshots_20201215T093542_GMT.zip_), leaves out Pega internal fields and that maps date/time fields to appropriate R types. Both these functions by default ignore the date/time part of the file and take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, the script will always take the latest export.
+In the `cdhtools` library, use the [ADMDatamart](https://pegasystems.github.io/cdh-datascientist-tools/reference/ADMDatamart.html) function to load the ADM Datamart data. This function reads data, drops Pega-internal fields, standardizes the field names and performs other cleanup activities. In addition to dataset exports it can also read CSV, parquet and many other formats.
 
-By default it takes all snapshots, you can specify a flag `latestOnly` to only take the latest snapshots of each model. Alternatively you can do this in R (in `data.table` syntax: `models[, .SD[which.max(SnapshotTime)], by=ModelID]`). 
+There also is a generic method to read any dataset (and which will not perform any of these cleanup activities): [readDSExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readDSExport.html).
+
+In both functions you can omit the timestamp of the Pega file and it will always take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, so it always takes the latest export.
 
 ```r
-models <- readADMDatamartModelExport(srcFolder = "~/Downloads")
+dm <- ADMDatamart(folder = "~/Downloads")
 ```
 
 ### Python
@@ -32,46 +34,27 @@ For Python use the files from the GitHub repository directly. There is a utility
 
 ```python
 from ADMDatamart import ADMDatamart
-ADMDatamart = ADMDatamart("/data")
-
+dm = ADMDatamart("/data")
 ```
 
 ## Approach 2: Manual table export from database
 
-The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the raw model data field (pymodeldata). 
+The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the (large) raw model data field (pymodeldata). 
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pega_db_models.png" width="50%">
 
-Then read the resulting file into R or Python and go from there. Just take care of the format of e.g. data/time fields in the export from the DB tool.
+When exporting as a CSV be careful:
+* Include a header with the names
+* Make sure the column separator does not interfere with characters in the fields - a comma is not safe, the pipe character | is often a better choice
+* If possible use double quotes around symbolic values
 
-## Approach 3: Table export using cdhtools
-
-The `cdhtools` library can also do the database export for you and format the data in the desired format.
-
-Given a `Connection`, the function [readADMDatamartModelTable](https://pegasystems.github.io/cdh-datascientist-tools/reference/readADMDatamartModelTable.html) will fetch the data for you and return a `data.table` in the same way the dataset read function is doing.
-
-```r
-library(cdhtools)
-library(data.table)
-library(RJDBC)
-
-drv <- JDBC("org.postgresql.Driver", "<LOCATION OF YOUR DRIVER")
-pg_host <- "<HOST>:5432"
-pg_db <- "<DB NAME>"
-pg_user <- "<DB USER>"
-pg_pwd <- "<DB PASSWORD>"
-
-conn <- dbConnect(drv, paste("jdbc:postgresql://", pg_host,  "/", pg_db, sep=""), pg_user, pg_pwd)
-models <- getModelsFromDatamart(conn)
-```
-
-The `getModelsFromDatamart` has options to select models for only certain applications, configurations etc.
+Then read the resulting file into R or Python and go from there. Date/time fields (only pySnapshotTime) really matters often needs attention when reading the CSV. The R ADMDatamart function has options for preprocessing in which this can be specified.
 
 # Example analysis
 
 ## R
 
-Now the data is retrieved, it is easy to create plots. The library provides several plots (see plotADM* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of [plots.R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/R/plots.R) for inspiration).
+Now the data is retrieved, it is easy to create plots. The library provides several plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of [plots.R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/R/plots.R) for inspiration).
 
 ```r
 library(cdhtools)
@@ -79,16 +62,16 @@ library(data.table)
 library(ggplot2)
 library(colorspace)
 
-plotADMPerformanceSuccessRateBubbleChart(models, facets = c("Channel","Issue")) +
+plotPerformanceSuccessRateBubbleChart(dm, facets = c("Channel","Issue")) +
    scale_color_discrete_divergingx()
 ```
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/datamartplot1.png" width="50%">
 
-## Python
-
 # Bringing it all together
 
-All the model analysis plots shown in the [gallery](CDH-Graph-Gallery) can be created using the sample codes from the provided notebooks.
+All the model analysis plots shown in the [gallery](CDH-Graph-Gallery) can be created using the sample code from the provided notebooks.
+
+## R
 
 Many of the plots can be re-created using the data provided with **cdhtools**. Using the R package this data is available when the `cdhtools` library is loaded. The raw data files (dataset exports and .csv files) are also available in the /extra folder of the repository. Some plots required such amounts of data that we did not want to include it in the repository. You can still run the code examples and get similar looking plots.
 
