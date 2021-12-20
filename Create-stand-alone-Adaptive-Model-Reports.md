@@ -2,19 +2,19 @@ The tools include R notebooks to produce off-line viewable, stand-alone model re
 
 You will need R installed to use them, but don't need R skills.
 
-# Overview and sanity check
+# Sanity check
 
 Before you run it on your own data, check that all is working by running the example:
 
 1. Install R and R Studio as per the "Getting started" in the main page
-2. Check out the CDH Tools repository from git
-3. Open the example notebook "offlinereports/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample model report should open in a browser window.
+2. Either check out the CDH Tools repository from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd) or the [Model Overview notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
+3. Open the notebook "examples/datamart/modelreport.Rmd" or "examples/datamart/healthcheck.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
 
-# Creating model reports for your own data
+# Creating stand-alone model reports on your own data
 
 There are three parts to this:
 
-1. From Pega, export the ADM datamart data
+1. From Pega, [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart).
 2. Then, using R or Python, load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
 3. Then finally, run a (batch) job to create the reports. This would typically be from a shell script, although you can of course do both this and the previous step from a single notebook if the proper kernels are in place.
 
@@ -22,14 +22,13 @@ Below we go through these steps in detail. Let's assume we're interested in the 
 
 ## Export the datamart data from Pega
 
-* From Dev Studio, export and download the dataset **pyModelData** with applies-to **Data-Decision-ADM-ModelSnapshot**
-* From Dev Studio, export and download the dataset **pyADMPredictorSnapshots** with applies-to **Data-Decision-ADM-PredictorBinningSnapshot**
+See [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart)
 
-The model data is usually not gigantic, but the predictor snapshots table can be sizeable. So if a simple dataset export is not feasible you have two other options:
+The model data is usually not gigantic, but the predictor snapshots table can be sizeable. So if a dataset export is not feasible you have two other options:
 
-Option 1: Read the data from the database tables directly, using a db tool of your choice. You may be able to do some filtering there so you only take the data that you need. When exporting directly to a CSV this way, be aware of possible issues with comma's or semicolons as they may interfere with such characters in the names of the actions (propositions). Best is to use a CSV format that also quotes the elements. Be also aware of date formatting. The notebook will apply some commonly used date formats.
+Option 1: Read the data from the database tables directly, using a DB tool of your choice. See notes in above article for some caveats.
 
-Option 2: Use a data flow to do the filtering. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
+Option 2: Use a data flow to do filtering before sending the data to a dataset. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
 
 
 ## Create CSV files for the models of interest
@@ -43,36 +42,28 @@ Option 2: Use a data flow to do the filtering. Source it with the OOTB datasets 
 library(cdhtools)
 library(data.table)
 
-# Read the latest ADM Model export file from the Downloads folder
-modelz <- readADMDatamartModelExport("~/Downloads")
-
-# Subset to only the models of interest. Note that the field names have
-# been stripped from the "py"/"px" prefixes.
-modelz <- modelz[ ConfigurationName == "OmniAdaptiveModel" & Group == "CreditCards" & Direction == "Outbound"]
-
-# Read the latest ADM Predictor export file from the Downloads folder
-predz <- readADMDatamartPredictorExport("~/Downloads")
+# Read the latest ADM export files from the Downloads folder
+# and filter to only the models we're interested in.
+dm <- ADMDatamart("~/Downloads", filterModelData = function(mdls) { 
+   return(mdls[ConfigurationName == "OmniAdaptiveModel" & Group == "CreditCards" & Direction == "Outbound"]) 
+} )
 
 # Write back a CSV with only the model data of interest
-write.csv(modelz, "models.csv", row.names = F)
+write.csv(dm$modeldata, "models.csv", row.names = F)
 
 # Write back a CSV with only the predictor data for the models of interest
-write.csv(predz[ModelID %in% modelz$ModelID], "predictors.csv", row.names = F)
+write.csv(dm$predictordata, "predictors.csv", row.names = F)
 ```
 
 
 ## Create the HTML or PDF model reports
 
-It is possible to create the reports interactively. Select "Knit with parameters" and fill in the required info. But more common is to run this in a batch.
+It is possible to create the reports interactively. Select "Knit with parameters" and fill in the paths to the files. More common is to run this in a batch.
 
 * Using an editor of your choice, create a shell script that invokes R with the appropriate notebooks. First, we run a model overview report that also spits out a list of model ID's. Then we loop over these model ID's and create a model report for each of them.
 
 ```bash
 #!/bin/bash
-
-# Location of the GIT checkout of the CDH tools
-
-cdhtools="~/Documents/pega/cdh-datascientist-tools"
 
 # Location of the input data
 
@@ -83,10 +74,11 @@ predictordata="`pwd`/predictors.csv"
 
 nameprefix="CDHSample"
 
-# Location of the notebooks (unless copied/modified these defaults should be fine)
+# Location of the notebooks
 
-modeloverviewnotebook="$cdhtools/extra/adaptivemodeloverview.Rmd"
-modelreportnotebook="$cdhtools/extra/modelreport.Rmd"
+cdhtools="~/Documents/pega/cdh-datascientist-tools"
+modeloverviewnotebook="$cdhtools/examples/datamart/healthcheck.Rmd"
+modelreportnotebook="$cdhtools/examples/datamart/modelreport.Rmd"
 
 # Generated file with the model ID's. You don't provide this file, this is generated
 # by the model overview notebook.
