@@ -6,6 +6,7 @@ Tooling is both in R and Python although currently not everything is available i
 
 * Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data. [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
 * Collection of standard plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
+* Standard ADM Datamart "Health Check". A standard notebook that can be applied on the ADM datamart to get insights into the models and predictors.
 * Off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
 * Example of analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
 * Example of analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
