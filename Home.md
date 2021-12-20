@@ -59,7 +59,7 @@ library(data.table)
 
 data("adm_datamart")
 
-plotADMPerformanceSuccessRateBubbleChart(adm_datamart)
+plotPerformanceSuccessRateBubbleChart(adm_datamart)
 ```
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
 
@@ -70,7 +70,7 @@ To get a global overview of the predictor performance in all the models:
 ```r
 data("adm_datamart")
 
-plotADMPredictorPerformance(adm_datamart)
+plotPredictorImportance(adm_datamart)
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
