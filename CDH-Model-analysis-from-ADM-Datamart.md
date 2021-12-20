@@ -16,6 +16,15 @@ In the dialog that follows, press "Export". Depending on the size of your data, 
 
 The data will be stored in the download location of your browser in the standard Pega dataset export format: zipped, multi-line JSON. You can unzip and load this manually, but we have some utilities in `cdhtools` that make this easier for you.
 
+Repeat the steps for the predictor data, which is stored in a separate table. You typically want both tables, although this is not mandatory. Many of the standard plot functions will require both to be present.
+
+|Data|Class|Dataset|Table|
+|---|---|---|---|
+|Model Snapshots|Data-Decision-ADM-ModelSnapshot|pyModelSnapshots|PR_DATA_DM_ADMMART_MDL_FACT|
+|Predictor Snapshots|Data-Decision-ADM-PredictorBinningSnapshot|pyADMPredictorSnapshots|PR_DATA_DM_ADMMART_PRED|
+
+See (https://docs.pega.com/decision-management-reference-materials/database-tables-monitoring-models) for more information.
+
 ### R
 
 In the `cdhtools` library, use the [ADMDatamart](https://pegasystems.github.io/cdh-datascientist-tools/reference/ADMDatamart.html) function to load the ADM Datamart data. This function reads data, drops Pega-internal fields, standardizes the field names and performs other cleanup activities. In addition to dataset exports it can also read CSV, parquet and many other formats.
@@ -49,6 +58,16 @@ When exporting as a CSV be careful:
 * If possible use double quotes around symbolic values
 
 Then read the resulting file into R or Python and go from there. Date/time fields (only pySnapshotTime) really matters often needs attention when reading the CSV. The R ADMDatamart function has options for preprocessing in which this can be specified.
+
+### R
+
+```r
+dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
+```
+
+### Python
+
+(TODO)
 
 # Example analysis
 
