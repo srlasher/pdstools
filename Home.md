@@ -57,9 +57,9 @@ library(cdhtools)
 library(ggplot2)
 library(data.table)
 
-data("admdatamart_models")
+data("adm_datamart")
 
-plotADMPerformanceSuccessRateBubbleChart(admdatamart_models)
+plotADMPerformanceSuccessRateBubbleChart(adm_datamart)
 ```
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
 
@@ -68,9 +68,9 @@ You can add standard `ggplot` decoration to the returned plots, and most of the 
 To get a global overview of the predictor performance in all the models:
 
 ```r
-data("admdatamart_binning")
+data("adm_datamart")
 
-plotADMPredictorPerformance(admdatamart_binning)
+plotADMPredictorPerformance(adm_datamart)
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
