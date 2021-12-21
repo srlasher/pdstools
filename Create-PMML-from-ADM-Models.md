@@ -15,6 +15,17 @@ These are the steps
 
 Then pick up the generated PMML files and put them into a Pega model or prediction.
 
+To run this on the sample data shipped with CDH Tools:
+
+```r
+library(cdhtools)
+library(data.table)
+library(XML)
+data(adm_datamart)
+
+adm2pmml(adm_datamart, verbose=T)
+```
+
 # Detailed Scenario
 
 In this example (based on CDH Sample) we will create a PMML Scorecard for the "OmniAdaptiveModel" rule.
@@ -31,8 +42,7 @@ dm <- ADMDatamart("~/Downloads",
                   filterModelData = function(mdls){
                      mdls[ConfigurationName == "OmniAdaptiveModel" & 
                           Group == "CreditCards" & 
-                          Direction == "Outbound"]},
-                  filterPredictorData = filterLatestSnapshotOnly)
+                          Direction == "Outbound"]})
 
 # Generate the PMML file(s)
 adm2pmml(dm)
