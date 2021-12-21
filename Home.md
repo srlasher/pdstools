@@ -69,8 +69,6 @@ You can add standard `ggplot` decoration to the returned plots, and most of the 
 To get an overview of the 20 most important predictors in all the models:
 
 ```r
-data("adm_datamart")
-
 plotPredictorImportance(adm_datamart, limit = 20)
 ```
 
