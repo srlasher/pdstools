@@ -1,6 +1,6 @@
-The tools include an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. They also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
+CDH Tools includes an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. They also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
 
-You will need R installed to use them, but don't need R skills.
+The notebook is in R and will require R to be installed, but is just a tool and does not require any R skills to be used.
 
 # Sanity check
 
