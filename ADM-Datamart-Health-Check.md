@@ -4,7 +4,7 @@ This notebook delivers some quick insights and typically leads to some follow up
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_health_check_toc.png" width="60%" height="60%">
 
-Although the notebook is in R and will require R to be installed, it does not require any R skills. It is just a tool and does not require any programming skills in R to be used.
+Although the notebook is in R and will require R to be installed, it is just a tool and does not require any R skills.
 
 # Sanity check
 
