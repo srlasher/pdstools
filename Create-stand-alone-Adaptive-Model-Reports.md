@@ -116,7 +116,9 @@ done <$modellist
 
 This will now generate a bunch of reports, each as a single, stand-alone HTML file. As you may have noticed, some portions of the report are interactive and support interactive zooming, selection etc.
 
-The reports by default only include details of the active predictors. This can be changed easily. When making changes to the notebooks, easiest is to run them first from R Studio directly, changing the default parameter values at the top of the script where the source data is specified, then run them in batch if everything is as you want it to be. We're interested in feedback and pull requests!
+The reports by default only include details of the active predictors. This can be changed easily. When making changes to the notebooks, easiest is to run them first from R Studio directly, changing the default parameter values at the top of the script where the source data is specified, then run them in batch if everything is as you want it to be.
+
+If you have modifications or additions to the script that could be useful to others - please share! We're interested in feedback and pull requests!
 
 
 
