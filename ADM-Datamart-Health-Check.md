@@ -2,7 +2,7 @@ Many of the plot functions from the CDH Tools library are bundled in a single R 
 
 This notebook delivers some quick insights and typically leads to some follow up questions with the business owners.
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_health_check_toc.png" width="100%">
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_health_check_toc.png" width="60%", height="60%">
 
 Although the notebook is in R and will require R to be installed, it does not require any R skills. It is just a tool and does not require any programming skills in R to be used.
 
