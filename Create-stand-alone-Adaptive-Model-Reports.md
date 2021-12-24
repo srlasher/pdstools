@@ -1,4 +1,4 @@
-The tools include R notebooks to produce off-line viewable, stand-alone model reports and a model overview. These reports are similar to the reports in the product but can be generated and browsed off-line. They also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
+The tools include an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. They also add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
 
 You will need R installed to use them, but don't need R skills.
 
@@ -7,15 +7,15 @@ You will need R installed to use them, but don't need R skills.
 Before you run it on your own data, check that all is working by running the example:
 
 1. Install R and R Studio as per the "Getting started" in the main page
-2. Either check out the CDH Tools repository from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd) or the [Model Overview notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
-3. Open the notebook "examples/datamart/modelreport.Rmd" or "examples/datamart/healthcheck.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
+2. Either check out the CDH Tools repository from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd).
+3. Open the notebook "examples/datamart/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
 
 # Creating stand-alone model reports on your own data
 
 There are three parts to this:
 
 1. From Pega, [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart).
-2. Then, using R or Python, load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
+2. Then, using R (or Python), load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
 3. Then finally, run a (batch) job to create the reports. This would typically be from a shell script, although you can of course do both this and the previous step from a single notebook if the proper kernels are in place.
 
 Below we go through these steps in detail. Let's assume we're interested in the **OmniAdaptiveModel** reports for the **CreditCards** group in all **Outbound** channels (this example is based on CDH Sample).
