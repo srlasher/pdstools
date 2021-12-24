@@ -1,6 +1,6 @@
 Many of the plot functions from the CDH Tools library are bundled in a single R notebook that performs a standard analysis of the models, propositions and predictors from the ADM datamart.
 
-This notebook delivers some quick insights and typically leads to some follow up questions with the business owners.
+This notebook delivers some quick insights and typically leads to some follow up questions with the business owners. The table of contents of an example analysis is shown below:
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/adm_health_check_toc.png" width="60%" height="60%">
 
