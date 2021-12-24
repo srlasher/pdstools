@@ -11,7 +11,7 @@ Although the notebook is in R and will require R to be installed, it is just a t
 Before you run it on your own data, check that all is working by running the example:
 
 1. Install R and R Studio as per the "Getting started" in the main page
-2. Either check out the CDH Tools repository from git, or (if you are not comfortable with git), just download the [Model Overview notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
+2. Either check out ("clone") the [CDH Tools repository](https://github.com/pegasystems/cdh-datascientist-tools) from git, or (if you are not comfortable with git), just download the [Model Overview notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
 3. Open the notebook "examples/datamart/healthcheck.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
 
 # Running it on your own data
