@@ -11,10 +11,9 @@ Tooling is both in R and Python although currently not everything is available i
 * Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
 * Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
 * Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.ipynb)
-* More examples in the R vignettes (https://pegasystems.github.io/cdh-datascientist-tools/articles/index.html) and as Python Jupyter notebooks (https://github.com/pegasystems/cdh-datascientist-tools/tree/master/examples).
 * Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/articles/snapshots-to-scorecards.html)
-
+* More examples in the [R vignettes](https://pegasystems.github.io/cdh-datascientist-tools/articles/index.html) and as [Python Jupyter notebooks](https://github.com/pegasystems/cdh-datascientist-tools/tree/master/examples).
 
 # Getting Started with the R library
 
