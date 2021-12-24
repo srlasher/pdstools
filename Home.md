@@ -1,18 +1,18 @@
 # Welcome to the Customer Decision Hub Data Scientist Tools Wiki!
 
-These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide data scientists some tooling to analyze the data produced by a Pega Decisioning system.
+These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide Data Scientists tools to analyze analytical data from a Pega Decisioning system.
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
-* Easily read in data from Pega Dataset exports, both generically and specifically for the datamart data. [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
-* Collection of standard plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
-* Standard ADM Datamart "Health Check". A standard notebook that can be applied on the ADM datamart to get insights into the models and predictors.
-* Off-line browsable Adaptive model reports. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
-* Example of analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
-* Example of analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
-* Example of a Value Finder analysis: [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.ipynb)
+* Functions to read in data from the ADM Datamart, from Pega datasets and to easily create plots. [R Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
+* Collection of sample plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
+* An [all-in-one "Health Check" notebook](ADM-Datamart-Health-Check) that can be applied to the ADM Datamart to get insights into the models and predictors.
+* Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
+* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
+* Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd)|[Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.ipynb)
 * More examples in the R vignettes (https://pegasystems.github.io/cdh-datascientist-tools/articles/index.html) and as Python Jupyter notebooks (https://github.com/pegasystems/cdh-datascientist-tools/tree/master/examples).
-* Export Adaptive models to PMML. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
+* Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/articles/snapshots-to-scorecards.html)
 
 
