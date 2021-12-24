@@ -16,7 +16,7 @@ There are three parts to this:
 
 1. From Pega, [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart).
 2. Then, using R (or Python), load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
-3. Then finally, run a (batch) job to create the reports. This would typically be from a shell script, although you can of course do both this and the previous step from a single notebook if the proper kernels are in place.
+3. Run the notebook. You could do this interactively, using the option to "Knit with Parameters" from R Studio. But if you plan to create more than a few reports, you probably want to un a batch job to create the reports.
 
 Below we go through these steps in detail. Let's assume we're interested in the **OmniAdaptiveModel** reports for the **CreditCards** group in all **Outbound** channels (this example is based on CDH Sample).
 
@@ -26,12 +26,12 @@ See [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart)
 
 The model data is usually not gigantic, but the predictor snapshots table can be sizeable. So if a dataset export is not feasible you have two other options:
 
-Option 1: Read the data from the database tables directly, using a DB tool of your choice. See notes in above article for some caveats.
+**Option 1**: Read the data from the database tables directly, using a DB tool of your choice. See notes in above article for some caveats.
 
-Option 2: Use a data flow to do filtering before sending the data to a dataset. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
+**Option 2**: Use a data flow to do filtering before sending the data to a dataset. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
 
 
-## Create CSV files for the models of interest
+## Create files for the models of interest
 
 * Fire up your R Studio and create a script to load these files, filter out only the models of interest and write back as CSV files
 
@@ -58,7 +58,15 @@ write.csv(dm$predictordata, "predictors.csv", row.names = F)
 
 ## Create the HTML or PDF model reports
 
-It is possible to create the reports interactively. Select "Knit with parameters" and fill in the paths to the files. More common is to run this in a batch.
+It is possible to create the reports interactively. Open the Select "Knit with parameters" and fill in the paths to the ADM datamart download and the ID of the model you want to report on. The ID can be found from the Prediction Studio UI (in recent versions), or by loading the model data in R or Python and inspecting it there. 
+
+| Knit option in R Studio | Knit dialog for the Health Check notebook |
+| :---: | :---: |
+| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-with-params.png"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-dialog.png"> |
+
+
+
+More common is to run this in a batch.
 
 * Using an editor of your choice, create a shell script that invokes R with the appropriate notebooks. First, we run a model overview report that also spits out a list of model ID's. Then we loop over these model ID's and create a model report for each of them.
 
