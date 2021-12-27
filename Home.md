@@ -33,7 +33,7 @@ Installation steps:
 install.packages("devtools")
 ```
 
-4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages.
+4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages. Note that we have seen failures when installing over VPN, so you may have to (temporarily) go off VPN to install the package from GitHub.
 
 ```r
 library(devtools)
