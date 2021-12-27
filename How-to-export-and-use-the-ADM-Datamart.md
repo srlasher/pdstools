@@ -4,7 +4,7 @@ Analyze the performance of your models, over time, across channels, issues and g
 
 To retrieve the data, follow one of these approaches
 
-## Approach 1: Dataset export from Pega dev studio
+## Option 1: Dataset export from Pega dev studio
 
 From Pega Dev Studio, locate the dataset "pyModelSnapshots" in the Data-Decision-ADM-ModelSnapshot class. This dataset represents a view on the ADM Datamart table with the model snapshots. Export all data from this dataset by clicking "Export" from the "Actions" menu.
 
@@ -46,7 +46,29 @@ from ADMDatamart import ADMDatamart
 dm = ADMDatamart("/data")
 ```
 
-## Approach 2: Manual table export from database
+## Option 2: Export only selected models from Pega
+
+This is like the first option, however now instead of including the full model / predictor tables you only select the models and predictors that you are interested in.
+
+1. Create a dataflow on **Data-Decision-ADM-ModelSnapshot**
+2. Source the dataflow with the **pyModelSnapshots** dataset
+3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
+4. Create a Cassandra dataset as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
+
+That's it for the model data. Run this dataflow and export the destination dataset, then follow the steps from option 1 to load them in your R or Python environment.
+
+For the predictor data you can follow the exact same pattern. However that would require you to know the ModelID's, so it is preferable to piggy-back on the model data you exported and let the system figure out which ModelID's to use.
+
+1. Go back to your model data flow and make the destination abstract
+2. Source the predictor flow with the **pyADMPredictorSnapshots** dataset
+3. Instead of a filter like we did for the model data, use a Compose shape, and compose with the dataflow you created in the first steps
+4. Add a dummy property to hold the model data (single page property of class **Data-Decision-ADM-ModelSnapshot**)
+5. Condition is **pyModelID** is the same on both
+6. Destination is a custom Cassandra dataset like before
+
+
+
+## Option 3: Manual table export from database
 
 The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the (large) raw model data field (pymodeldata). 
 
