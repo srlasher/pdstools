@@ -78,8 +78,9 @@ When exporting as a CSV be careful:
 * Include a header with the names
 * Make sure the column separator does not interfere with characters in the fields - a comma is not safe, the pipe character | is often a better choice
 * If possible use double quotes around symbolic values
+* If possible use an unambigous standard format for the date/time fields (pySnapshotTime)
 
-Then read the resulting file into R or Python and go from there. Date/time fields (only pySnapshotTime) really matters often needs attention when reading the CSV. The R ADMDatamart function has options for preprocessing in which this can be specified.
+Then read the resulting file into R or Python and go from there. Reading CSV's with embedded comma's can be challenging. The R ADMDatamart function has options for preprocessing where clean-up actions can be specified. If that does not provide enough flexibility read the data first, then pass it in as data objects into the ADMDatamart class/function.
 
 ### R
 
