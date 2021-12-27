@@ -55,6 +55,8 @@ This is like the first option, however now instead of including the full model /
 3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
 4. Create a Cassandra dataset as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
 
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/DataFlowExportSelectedModels.png" width="100%">
+
 That's it for the model data. Run this dataflow and export the destination dataset, then follow the steps from option 1 to load them in your R or Python environment.
 
 For the predictor data you can follow the exact same pattern. However that would require you to know the ModelID's, so it is preferable to piggy-back on the model data you exported and let the system figure out which ModelID's to use.
@@ -65,6 +67,8 @@ For the predictor data you can follow the exact same pattern. However that would
 4. Add a dummy property to hold the model data (single page property of class **Data-Decision-ADM-ModelSnapshot**)
 5. Condition is **pyModelID** is the same on both
 6. Destination is a custom Cassandra dataset like before
+
+<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/DataFlowExportSelectedPredictors.png" width="100%">
 
 
 
