@@ -61,11 +61,11 @@ That's it for the model data. Run this dataflow and export the destination datas
 
 For the predictor data you can follow the exact same pattern. However that would require you to know the ModelID's, so it is preferable to piggy-back on the model data you exported and let the system figure out which ModelID's to use.
 
-1. Go back to your model data flow and make the destination abstract
+1. Create a dataflow on **Data-Decision-ADM-PredictorBinningSnapshot**
 2. Source the predictor flow with the **pyADMPredictorSnapshots** dataset
-3. Instead of a filter like we did for the model data, use a Compose shape, and compose with the dataflow you created in the first steps
-4. Add a dummy property to hold the model data (single page property of class **Data-Decision-ADM-ModelSnapshot**)
-5. Condition is **pyModelID** is the same on both
+3. Instead of a filter like in the previous one, first add a Compose shape
+4. Go back to your model data flow and make the destination abstract. Then use this in the Compose. The condition is equal **pyModelID**, use a new property to hold the model data (single page property of class **Data-Decision-ADM-ModelSnapshot**).
+5. Add a filter to filter out any predictor data that does not match
 6. Destination is a custom Cassandra dataset like before
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/DataFlowExportSelectedPredictors.png" width="100%">
