@@ -124,12 +124,13 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 Now the data is retrieved, it is easy to create plots. The library provides several plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of [plots.R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/R/plots.R) for inspiration).
 
 ```r
-library(cdhtools)
-library(data.table)
-library(ggplot2)
-library(colorspace)
-
-plotPerformanceSuccessRateBubbleChart(dm, facets = c("Channel","Issue")) +
-   scale_color_discrete_divergingx()
+plotPerformanceSuccessRateBubbleChart(dm)
 ```
+
+## Python
+
+```python
+dm.plotPerformanceSuccesRateBubbleChart()
+```
+
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/datamartplot1.png" width="50%">
