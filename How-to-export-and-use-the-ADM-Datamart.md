@@ -117,11 +117,11 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 ```
 
-# Example analysis
+# Example analyses
+
+Now the data is retrieved, it is easy to create plots and perform all sorts of analyses. The library provides several standard plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of the plot functions in the repository).
 
 ## R
-
-Now the data is retrieved, it is easy to create plots. The library provides several plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of [plots.R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/r/R/plots.R) for inspiration).
 
 ```r
 plotPerformanceSuccessRateBubbleChart(dm)
