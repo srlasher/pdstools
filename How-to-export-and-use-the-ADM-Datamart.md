@@ -34,16 +34,17 @@ There also is a generic method to read any dataset (and which will not perform a
 In both functions you can omit the timestamp of the Pega file and it will always take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, so it always takes the latest export.
 
 ```r
+library(cdhtools)
 dm <- ADMDatamart(folder = "~/Downloads")
 ```
 
 ### Python
 
-For Python use the files from the GitHub repository directly. There is a utility function `readDSExport` in `cdh_utils.py` in the python folder.
+For Python use the files from the GitHub repository directly. Use the `ADMDatamart` class to read the data. For advanced use there is a utility function `readDSExport` in `cdh_utils.py`.
 
 ```python
 from ADMDatamart import ADMDatamart
-dm = ADMDatamart("/data")
+dm = ADMDatamart("~/Downloads")
 ```
 
 ## Option 2: Export only selected models from Pega
@@ -70,7 +71,25 @@ For the predictor data you can follow the exact same pattern. However that would
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/DataFlowExportSelectedPredictors.png" width="100%">
 
+Run this dataflow and export the destination dataset, then follow the steps from option 1 to load them in your R or Python environment.
 
+### R
+
+```r
+library(cdhtools)
+dm <- ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
+                  "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
+                  folder = "~/Downloads")
+```
+
+### Python
+
+```python
+from ADMDatamart import ADMDatamart
+dm = ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
+                 "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
+                 folder = "~/Downloads")```
+```
 
 ## Option 3: Manual table export from database
 
@@ -94,7 +113,9 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 
 ### Python
 
-(TODO)
+```python
+dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
+```
 
 # Example analysis
 
