@@ -88,7 +88,7 @@ dm <- ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots",
 from ADMDatamart import ADMDatamart
 dm = ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
                  "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
-                 folder = "~/Downloads")```
+                 folder = "~/Downloads")
 ```
 
 ## Option 3: Manual table export from database
