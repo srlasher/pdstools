@@ -117,7 +117,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
 ```
 
-# Example analyses
+# Visualisation of the Datamart
 
 Now the data is retrieved, it is easy to create plots and perform all sorts of analyses. The library provides several standard plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of the plot functions in the repository).
 
