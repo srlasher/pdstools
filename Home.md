@@ -121,6 +121,7 @@ The Python code does not build a package/library so to use it clone the github r
 - Numpy
 - Matplotlib
 - Seaborn
+- SKLearn
 
 ### Optional dependencies
 - Pyarrow for faster data loading
