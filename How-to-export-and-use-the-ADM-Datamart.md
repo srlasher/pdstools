@@ -109,6 +109,25 @@ Then read the resulting file into R or Python and go from there. Reading CSV's w
 
 ```r
 dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
+
+# Using pre-processing to change quotes can be done using the "cleanup" hooks
+# in this case, the pyname field in the CSV ended up having two double quotes like this:
+#    {""pyName"":""RideTheWave"",""pyTreatment"":""T63562""}
+# so we use the cleanup hook to first change this to:
+#    {"pyName":"RideTheWave","pyTreatment":"T63562"}
+dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
+                  cleanupHookModelData = function(mdls) { 
+                     mdls[, pyname := gsub(pattern = '""', replacement = '"', pyname, ignore.case = T)]
+                     return(mdls) } )
+
+# Another example, where the CSV generator used single quotes where double quotes were expected:
+#    {'pyName':'RideTheWave','pyTreatment':'T63562'}
+# so we use the cleanup hook to change to double quotes:
+#    {"pyName":"RideTheWave","pyTreatment":"T63562"}
+dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
+                  cleanupHookModelData = function(mdls) { 
+                     mdls[, pyname := gsub(pattern = '""', replacement = '"', pyname, ignore.case = T)]
+                     return(mdls) } )
 ```
 
 ### Python
