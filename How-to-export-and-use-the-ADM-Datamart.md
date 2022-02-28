@@ -133,7 +133,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
 ### Python
 
 ```python
-dm <- ADMDatamart("models.csv", "preds.csv", folder="adm")
+dm = ADMDatamart("models.csv", "preds.csv", folder="adm")
 ```
 
 # Visualisation of the Datamart
