@@ -144,6 +144,7 @@ Note: if you run this within a Jupyter cell be sure to add an exclamation point 
 The library is shipped with a default dataset from the CDH Sample application. You can import it using the following lines after installing:
 
 ```python
+from cdhtools import datasets
 CDHSample = datasets.CDHSample()
 ```
 
