@@ -128,28 +128,36 @@ The Python code does not build a package/library so to use it clone the github r
 - Plotly for some interactive charts
 
 ## Compatibility
-The current version of the Python files is tested on Python version 3.8, but all scripts should work from version 3.6 on.
+The current version of the Python files is tested on Python version 3.10.2, but all scripts should work from version 3.6 on.
 
  
-## Quickstart
+## Installation
 
-Launch Jupyter and create a Python 3 script in the "python" folder of the checked out repository. Start
-with the import of the utilities. To read a single file, use readDSExport from cdh_utils:
+With version 2.0.0, you can install CDH tools directly from within your environment with pip by running the following code:
+```python
+pip3 install git+https://github.com/pegasystems/cdh-datascientist-tools.git
+```
+Note: if you run this within a Jupyter cell be sure to add an exclamation point in front of the command.
+
+## Read CDH Sample data
+
+The library is shipped with a default dataset from the CDH Sample application. You can import it using the following lines after installing:
 
 ```python
-from cdh_utils import readDSExport
-data = readDSExport(path = "/data", file = "datafile.zip")
+CDHSample = datasets.CDHSample()
 ```
 
-## Read ADM data
+In the background, this imports the CDH Sample dataset from the GitHub repo directly and initializes them in an ADMDatamart class. 
 
-There are two default datamart dump files included with the repository, which you can import with the ADMDatamart class, simply by initialising it with the folder of the datamart dump as the argument.
+## Reading your own data
+Of course, it is also possible to read your own data. Simply find the location of the data and supply it as the 'data' argument in the ADMDatamart class as below:
 
 ```python
-CDHSample = ADMDatamart("../../data")
+from cdhtools import ADMDatamart
+datamart = ADMDatamart(data='your-data-location')
 ```
 
-The default datamart dump contains data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly.
+Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly.
 
 ## Accessing the raw data 
 
@@ -172,7 +180,7 @@ There are a number of plotting functions included out of the box, an overview of
 | plotPredictorPerformanceHeatmap          | True             | False                    | True                 |
 | plotImpactInfluence                      | True             | False                    | True                 |
 
-Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in all of the methods to filter various values for better/detailed visualizations.
+Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in all of the methods to filter various values for better/detailed visualizations. By default, the plots are generated in Plotly - if you want to plot them using matplotlib, you can supply the 'plotting_engine = "mpl"' argument to any visualisation. Alternatively you may supply 'return_df = True' to any plotting function to retrieve the subsetted data that is used by the plots, so you can create the plots yourself.
 
 To create a simple Bubble Chart (similar to the one in product):
 
