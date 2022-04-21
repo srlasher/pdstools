@@ -186,7 +186,7 @@ Now you can call the methods within these classes to generate various graphs. It
 To create a simple Bubble Chart (similar to the one in product):
 
 ```python
-CDHSample.plotPerformanceSuccesRateBubbleChart()
+CDHSample.plotPerformanceSuccessRateBubbleChart()
 ```
 
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot1.png" width="50%">
