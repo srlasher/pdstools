@@ -151,7 +151,7 @@ CDHSample = datasets.CDHSample()
 In the background, this imports the CDH Sample dataset from the GitHub repo directly and initializes them in an ADMDatamart class. 
 
 ## Reading your own data
-Of course, it is also possible to read your own data. Simply find the location of the data and supply it as the 'data' argument in the ADMDatamart class as below:
+Of course, it is also possible to read your own data. Simply find the location of the data and supply it as the 'path' argument in the ADMDatamart class as below:
 
 ```python
 from cdhtools import ADMDatamart
