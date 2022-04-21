@@ -158,7 +158,16 @@ from cdhtools import ADMDatamart
 datamart = ADMDatamart(path='your-data-location')
 ```
 
-Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly.
+Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly. 
+
+Note: if the model data and predictor data files have been renamed, they might not be detected automatically. In that case, you would need to supply their names to the class as such:
+
+```python
+datamart = ADMDatamart("path/datamart",
+   model_filename = 'models.csv',
+   predictor_filename = 'binning.csv')
+```
+This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
 
 ## Accessing the raw data 
 
