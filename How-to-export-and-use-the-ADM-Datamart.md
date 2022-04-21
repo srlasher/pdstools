@@ -43,7 +43,7 @@ dm <- ADMDatamart(folder = "~/Downloads")
 For Python use the files from the GitHub repository directly. Use the `ADMDatamart` class to read the data. For advanced use there is a utility function `readDSExport` in `cdh_utils.py`.
 
 ```python
-from ADMDatamart import ADMDatamart
+from cdhtools import ADMDatamart
 dm = ADMDatamart("~/Downloads")
 ```
 
@@ -85,10 +85,10 @@ dm <- ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots",
 ### Python
 
 ```python
-from ADMDatamart import ADMDatamart
+from cdhtools import ADMDatamart
 dm = ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
                  "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
-                 folder = "~/Downloads")
+                 path = "~/Downloads")
 ```
 
 ## Option 3: Manual table export from database
@@ -133,7 +133,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
 ### Python
 
 ```python
-dm = ADMDatamart("models.csv", "preds.csv", folder="adm")
+dm = ADMDatamart("models.csv", "preds.csv", path="adm")
 ```
 
 # Visualisation of the Datamart
