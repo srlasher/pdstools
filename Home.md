@@ -155,7 +155,7 @@ Of course, it is also possible to read your own data. Simply find the location o
 
 ```python
 from cdhtools import ADMDatamart
-datamart = ADMDatamart(data='your-data-location')
+datamart = ADMDatamart(path='your-data-location')
 ```
 
 Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly.
