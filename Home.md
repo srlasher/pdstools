@@ -105,7 +105,7 @@ The other option is to download the source (clone from [the GitHub repository](h
 A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html).
 
 
-# Getting started with the Python tools
+# Getting Started with the Python tools
 
 CDH Tools is intended to be used with **Python 3.6 and up**. Installation is done through the following command:
 
@@ -141,7 +141,7 @@ The ADMDatamart class is the main class which orchestrates reading, preprocessin
 
 ```python
 simple_data = ADMDatamart("~/Downloads/CDHSample")
-Custom_file_names = ADMDatamart("~/Downloads/CDHSample",
+custom_file_names = ADMDatamart("~/Downloads/CDHSample",
     model_filename = 'models.csv',
     predictor_filename = 'binning.csv')
 ```
