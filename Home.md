@@ -74,7 +74,7 @@ plotPredictorImportance(adm_datamart, limit = 20)
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
 
 
-To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for the Python examples you do, as well as for some of the example files.
+To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for some of the example files you do.
 
 
 ## Contents
@@ -105,43 +105,50 @@ The other option is to download the source (clone from [the GitHub repository](h
 A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html).
 
 
-# Getting Started with the Python notebooks
+# Getting started with the Python tools
 
-The Python part of the tools currently contain a subset of the functionality provided by the R version:
+CDH Tools is intended to be used with **Python 3.6 and up**. Installation is done through the following command:
 
-- A port of the `cdh_utils` module with utilities to e.g. easily read a Pega dataset export.
-- A `ADMDatamart` class in the `ADMDatamart.py` file for preprocessing of datamart dumps
-- A `ADMVisualisations` class in the `plots.py` file for visualisation of datamart dumps
-- A number of methods within `IHanalysis.py` file to get insight into interaction history data
-
-The Python code does not build a package/library so to use it clone the github repository. 
-
-## Dependencies
-- Pandas
-- Numpy
-- Matplotlib
-- Seaborn
-- SKLearn
-
-### Optional dependencies
-- Pyarrow for faster data loading
-- Plotly for some interactive charts
-
-## Compatibility
-The current version of the Python files is tested on Python version 3.10.2, but all scripts should work from version 3.6 on.
-
- 
-## Installation
-
-With version 2.0.0, you can install CDH tools directly from within your environment with pip by running the following code:
 ```python
 pip3 install git+https://github.com/pegasystems/cdh-datascientist-tools.git
 ```
-Note: if you run this within a Jupyter cell be sure to add an exclamation point in front of the command.
+Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
+
+Alternatively, you could clone the repository through GitHub.
+
+### Dependencies
+- Pandas for the data structure
+- Plotly >= 5.5.0 for the interactive visualisations
+- Seaborn for the static visualisations
+- Requests for importing data through a direct link
+- Jupyterlab for jupyter notebook support
+- Ipywidgets for interactive notebook widgets
+
+### Optional dependencies
+- Pyarrow for faster data loading
+- Sklearn for AUC calculation in cdh_utils
+
+### Compatibility
+The current version of the Python files is tested on Python versions 3.6, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
+
+## Using the Python tools
+After installation, you can import the ADMDatamart class from the cdhtools package as such:
+```python
+from cdhtools import ADMDatamart
+```
+The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/cdh-datascientist-tools/wiki/How-to-export-and-use-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
+
+
+```python
+simple_data = ADMDatamart("~/Downloads/CDHSample")
+Custom_file_names = ADMDatamart("~/Downloads/CDHSample",
+    model_filename = 'models.csv',
+    predictor_filename = 'binning.csv')
+```
 
 ## Read CDH Sample data
 
-The library is shipped with a default dataset from the CDH Sample application. You can import it using the following lines after installing:
+The library is shipped with a default dataset from the CDH Sample application. You can import it using the following lines:
 
 ```python
 from cdhtools import datasets
@@ -150,47 +157,19 @@ CDHSample = datasets.CDHSample()
 
 In the background, this imports the CDH Sample dataset from the GitHub repo directly and initializes them in an ADMDatamart class. 
 
-## Reading your own data
-Of course, it is also possible to read your own data. Simply find the location of the data and supply it as the 'path' argument in the ADMDatamart class as below:
-
-```python
-from cdhtools import ADMDatamart
-datamart = ADMDatamart(path='your-data-location')
-```
+## The data
 
 Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly. 
 
-Note: if the model data and predictor data files have been renamed, they might not be detected automatically. In that case, you would need to supply their names to the class as such:
-
-```python
-datamart = ADMDatamart("path/datamart",
-   model_filename = 'models.csv',
-   predictor_filename = 'binning.csv')
-```
-This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
-
-## Accessing the raw data 
-
 To access the raw data as imported by the ADMDatamart class as dataframes, simply call the .modelData or .predictorData properties of the initiated classes. If both model data as well as predictor data is supplied, a merge is done in the background automatically, which can also be accessed by calling .combinedData directly.
+
+There are two main ways to subset the data: by calling the `last()` function or by supplying the `query` argument to any plotting function. The `last()` function subsets the data to only retain the last known snapshot for each model. The `query` argument applies the powerful [pandas querying functionality](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.query.html) to the data before plotting. See the Example ADM Analysis for further instructions. 
 
 ## Plots
 
-There are a number of plotting functions included out of the box, an overview of which can be found below: 
+There are a number of plotting functions included out of the box, an up-to-date overview of these plots can be found in the Graph Gallery.
 
-| Visualisation                            | Needs model data | Needs multiple snapshots | Needs predictor data |
-|------------------------------------------|------------------|--------------------------|----------------------|
-| plotPerformanceSuccessRateBubbleChart    | True             | False                    | False                |
-| plotPerformanceAndSuccessRateOverTime    | True             | True                     | False                |
-| plotResponseCountMatrix                  | True             | True                     | False                |
-| plotSuccessRateOverTime                  | True             | True                     | False                |
-| plotPropositionSuccesRates               | True             | False                    | False                |
-| plotScoreDistribution                    | True             | False                    | True                 |
-| plotPredictorBinning                     | True             | False                    | True                 |
-| plotPredictorPerformance                 | True             | False                    | True                 |
-| plotPredictorPerformanceHeatmap          | True             | False                    | True                 |
-| plotImpactInfluence                      | True             | False                    | True                 |
-
-Now you can call the methods within these classes to generate various graphs. It is possible to use "query" parameter in all of the methods to filter various values for better/detailed visualizations. By default, the plots are generated in Plotly - if you want to plot them using matplotlib, you can supply the 'plotting_engine = "mpl"' argument to any visualisation. Alternatively you may supply 'return_df = True' to any plotting function to retrieve the subsetted data that is used by the plots, so you can create the plots yourself.
+It is possible to use "query" parameter in all of the methods to filter various values for better/detailed visualizations. By default, the plots are generated in Plotly - if you want to plot them using matplotlib, you can supply the 'plotting_engine = "mpl"' argument to any visualisation. Alternatively you may supply 'return_df = True' to any plotting function to retrieve the subsetted data that is used by the plots, so you can create the plots yourself.
 
 To create a simple Bubble Chart (similar to the one in product):
 
@@ -209,7 +188,7 @@ CDHSample.plotPredictorPerformance()
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
 
 
-Refer to `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
+Refer to the `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
 
 ## To analyze IH data
