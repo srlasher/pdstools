@@ -62,7 +62,7 @@ write.csv(dm$predictordata, "predictors.csv", row.names = F)
 
 It is possible to create the reports interactively. Select "Knit with parameters" and fill in the paths to the ADM datamart download and the ID of the model you want to report on. The ID can be found from the Prediction Studio UI (in recent versions), or by loading the model data in R or Python and inspecting it there. The title and description are used in the generated file for informational purposes only.
 
-| Knit option in R Studio | Knit dialog for the Health Check notebook |
+| Knit option in R Studio | Knit dialog for the stand alone Adaptive Model Report notebook |
 | :---: | :---: |
 | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-with-params.png"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-dialog.png"> |
 
