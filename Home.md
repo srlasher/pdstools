@@ -4,16 +4,16 @@ These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provid
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
-* Functions to read in data from the ADM Datamart, from Pega datasets and to easily create plots. [R Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html) 
+* Functions to read in data from the ADM Datamart, from Pega datasets and to easily create plots. [R Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html) 
 * Collection of sample plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
 * An [all-in-one "Health Check" notebook](ADM-Datamart-Health-Check) that can be applied to the ADM Datamart to get insights into the models and predictors.
 * Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
-* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/Example_ADM_Analysis.ipynb). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
-* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
-* Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.ipynb)
+* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
+* Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/articles/vf_analysis.html)
 * Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
-* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/articles/snapshots-to-scorecards.html)
-* More examples in the [R vignettes](https://pegasystems.github.io/cdh-datascientist-tools/articles/index.html) and as [Python Jupyter notebooks](https://github.com/pegasystems/cdh-datascientist-tools/tree/master/examples).
+* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/snapshots-to-scorecards.html)
+* More examples in the [R vignettes](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/index.html) and the [Python documentation](https://pegasystems.github.io/cdh-datascientist-tools/Python/examples.html).
 
 # Getting Started with the R library
 
@@ -102,7 +102,7 @@ You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web p
 
 The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/cdh-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
-A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html).
+A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html).
 
 
 # Getting Started with the Python tools
@@ -190,7 +190,11 @@ CDHSample.plotPredictorPerformance()
 
 Refer to the `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
-
 ## To analyze IH data
 
 Use `IHanalysis.py` to get insight into Interaction History (IH) data. This python file contains various methods each one providing certain visibility into the data. Simply import the IH data as a pandas dataframe into the jupyter file, then use various methods. An example is provided: `Example_IH_Analysis.ipynb`
+
+## Reference and documentation
+A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html).
+
+
