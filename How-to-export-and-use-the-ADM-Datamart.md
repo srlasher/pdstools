@@ -27,9 +27,9 @@ See (https://docs.pega.com/decision-management-reference-materials/database-tabl
 
 ### R
 
-In the `cdhtools` library, use the [ADMDatamart](https://pegasystems.github.io/cdh-datascientist-tools/reference/ADMDatamart.html) function to load the ADM Datamart data. This function reads data, drops Pega-internal fields, standardizes the field names and performs other cleanup activities. In addition to dataset exports it can also read CSV, parquet and many other formats.
+In the `cdhtools` library, use the [ADMDatamart](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/ADMDatamart.html) function to load the ADM Datamart data. This function reads data, drops Pega-internal fields, standardizes the field names and performs other cleanup activities. In addition to dataset exports it can also read CSV, parquet and many other formats.
 
-There also is a generic method to read any dataset (and which will not perform any of these cleanup activities): [readDSExport](https://pegasystems.github.io/cdh-datascientist-tools/reference/readDSExport.html).
+There also is a generic method to read any dataset (and which will not perform any of these cleanup activities): [readDSExport](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/readDSExport.html).
 
 In both functions you can omit the timestamp of the Pega file and it will always take the latest version of the file in the specified location. This is very convenient when you do multiple exports from Pega, so it always takes the latest export.
 
@@ -138,7 +138,7 @@ dm = ADMDatamart(model_filename = "models.csv", predictor_filename = "preds.csv"
 
 # Visualisation of the Datamart
 
-Now the data is retrieved, it is easy to create plots and perform all sorts of analyses. The library provides several standard plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/reference/index.html)), although it is easy enough to construct your own (see source of the plot functions in the repository).
+Now the data is retrieved, it is easy to create plots and perform all sorts of analyses. The library provides several standard plots (see plot* functions in the [help](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html)), although it is easy enough to construct your own (see source of the plot functions in the repository).
 
 ## R
 
