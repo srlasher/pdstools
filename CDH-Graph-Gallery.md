@@ -6,7 +6,7 @@ Detailed steps and code examples can be found by clicking on the images.
 
 How successful are the offers? How does that vary across channels, and how well can we find the preferences of individual customers?
 
-[R](https://pegasystems.github.io/cdh-datascientist-tools/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb)
+[R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/adm-datamart.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb)
 
 | Performance vs Success Rate by Channel and Issue | Average Model performance by Channel and Group |
 | :---: | :---: |
@@ -18,7 +18,7 @@ How successful are the offers? How does that vary across channels, and how well 
 
 How do the accept rates look like in different channels? And how do they change over time? What are the effects in accept rates after a change to the application has been made? How does the propensity distribution look like?
 
-[R](https://pegasystems.github.io/cdh-datascientist-tools/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/hds/Example_Historical_Dataset_Analysis.ipynb)
+[R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/hds/Example_Historical_Dataset_Analysis.ipynb)
 
 | Hierarchical breakdown of response counts | Weekly accept rates with outliers | Delta in accept rates |
 | :---: | :---: | :---: |
