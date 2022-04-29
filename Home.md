@@ -4,7 +4,7 @@ These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provid
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
-* Functions to read in data from the ADM Datamart, from Pega datasets and to easily create plots. [R Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html) 
+* Functions in [R](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html) and [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
 * Collection of sample plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery).
 * An [all-in-one "Health Check" notebook](ADM-Datamart-Health-Check) that can be applied to the ADM Datamart to get insights into the models and predictors.
 * Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
