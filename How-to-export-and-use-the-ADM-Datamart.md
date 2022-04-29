@@ -40,7 +40,7 @@ dm <- ADMDatamart(folder = "~/Downloads")
 
 ### Python
 
-For Python use the files from the GitHub repository directly. Use the `ADMDatamart` class to read the data. For advanced use there is a utility function `readDSExport` in `cdh_utils.py`.
+For Python use the files from the GitHub repository directly. Use the `ADMDatamart` class to read the data. The first argument to the `ADMDatamart` class is the directory for the files, if their names have not been changed (i.e. correspond to the default filenames), it should be read automatically.
 
 ```python
 from cdhtools import ADMDatamart
@@ -86,8 +86,8 @@ dm <- ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots",
 
 ```python
 from cdhtools import ADMDatamart
-dm = ADMDatamart("Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
-                 "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
+dm = ADMDatamart(model_filename = "Data-Decision-ADM-ModelSnapshot_MyModelSnapshots", 
+                 predictor_filename = "Data-Decision-ADM-PredictorBinningSnapshot_MyPredictorSnapshots",
                  path = "~/Downloads")
 ```
 
@@ -133,7 +133,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
 ### Python
 
 ```python
-dm = ADMDatamart("models.csv", "preds.csv", path="adm")
+dm = ADMDatamart(model_filename = "models.csv", predictor_filename = "preds.csv", path="adm")
 ```
 
 # Visualisation of the Datamart
