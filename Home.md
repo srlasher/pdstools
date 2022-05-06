@@ -86,23 +86,11 @@ The R package currently contains
 - Standard notebooks to generate off-line viewable reports that can be saved as stand-alone HTML or PDF files. There is one that strings together many of the plot functions to generate one big "datamart scan" including a lot of useful analyses. Another one creates a stand-alone model report similar to the view in Pega Prediction Studio, with all the predictor binning, the model classifier etc. These notebooks can easily be applied on any ADM datamart export.
 - An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
 
-## Reference
-
-The available vignettes are (`vignette(package="cdhtools")`):
-
-Vignette | Description | Read with
------------- | ------------- | -------------
-adhoc-datasetanalysis | Using Dataset Exports | `vignette("adhoc-datasetanalysis")`
-adm-datamart | Reporting on the ADM Datamart | `vignette("adm-datamart")`
-adm-explained | Step by step explanation of how ADM calculates propensities | `vignette("adm-explained")`
-ih-reporting | Reporting on Interaction History | `vignette("ih-reporting")`
-snapshots-to-scorecards | Example code to turn a model snapshot into a scorecard | `vignette("snapshots-to-scorecards")`
-
 You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web page) or `vignette(package="cdhtools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
 
 The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/cdh-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
-A reference to the functions available in the R package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html).
+A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html).
 
 
 # Getting Started with the Python tools
