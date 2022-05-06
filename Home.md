@@ -96,7 +96,7 @@ A reference to the available functions is also published on GitHub: [Function Re
 
 ## Contributing
 
-See [Contributing](Contributing)
+See [Contributing](Contributing#contributing-to-r)
 
 
 # Getting Started with the Python tools
@@ -190,6 +190,6 @@ A reference to the functions available in the Python package is also available h
 
 ## Contributing
 
-See [Contributing](Contributing)
+See [Contributing](Contributing#contributing-to-python)
 
 
