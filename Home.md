@@ -17,9 +17,9 @@ Tooling is both in R and Python although currently not everything is available i
 
 # Getting Started with the R library
 
-The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio.
+## Installation
 
-Installation steps:
+The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio.
 
 1. Install R
     If you do not have R installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
@@ -40,7 +40,9 @@ library(devtools)
 install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
-5. If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+## Using the R package
+
+If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 ```r
 library(cdhtools)
@@ -50,7 +52,7 @@ browseVignettes("cdhtools")
 vignette(topic="adm-datamart")
 ```
 
-6. It ships with some data as well. Create your first plots with just a few lines:
+The package ships with some data. Create your first plots with just a few lines:
 
 ```r
 library(cdhtools)
@@ -77,7 +79,7 @@ plotPredictorImportance(adm_datamart, limit = 20)
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for some of the example files you do.
 
 
-## Contents
+## Package Overview
 
 The R package currently contains 
 
@@ -92,10 +94,16 @@ The other option is to download the source (clone from [the GitHub repository](h
 
 A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html).
 
+## Contributing
+
+See [Contributing](Contributing)
+
 
 # Getting Started with the Python tools
 
-CDH Tools is intended to be used with **Python 3.6 and up**. Installation is done through the following command:
+CDH Tools is intended to be used with **Python 3.6 and up**.
+
+## Installation
 
 ```python
 pip3 install git+https://github.com/pegasystems/cdh-datascientist-tools.git
@@ -120,7 +128,8 @@ Alternatively, you could clone the repository through GitHub.
 The current version of the Python files is tested on Python versions 3.6, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
 
 ## Using the Python tools
-After installation, you can import the ADMDatamart class from the cdhtools package as such:
+
+After installation, you can import the **ADMDatamart** class from the cdhtools package as such:
 ```python
 from cdhtools import ADMDatamart
 ```
@@ -134,9 +143,9 @@ custom_file_names = ADMDatamart("~/Downloads/CDHSample",
     predictor_filename = 'binning.csv')
 ```
 
-## Read CDH Sample data
+### Read CDH Sample data
 
-The library is shipped with a default dataset from the CDH Sample application. You can import it using the following lines:
+The library ships with data from the CDH Sample application. You can import it using the following lines:
 
 ```python
 from cdhtools import datasets
@@ -145,7 +154,7 @@ CDHSample = datasets.CDHSample()
 
 In the background, this imports the CDH Sample dataset from the GitHub repo directly and initializes them in an ADMDatamart class. 
 
-## The data
+### The data
 
 Default datamart dumps contain data about the models and about the predictor binning. These are automatically detected and imported by the ADMDatamart class, so once the class is initialised you can start working directly. 
 
@@ -153,7 +162,7 @@ To access the raw data as imported by the ADMDatamart class as dataframes, simpl
 
 There are two main ways to subset the data: by calling the `last()` function or by supplying the `query` argument to any plotting function. The `last()` function subsets the data to only retain the last known snapshot for each model. The `query` argument applies the powerful [pandas querying functionality](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.query.html) to the data before plotting. See the Example ADM Analysis for further instructions. 
 
-## Plots
+### Plots
 
 There are a number of plotting functions included out of the box, an up-to-date overview of these plots can be found in the Graph Gallery.
 
@@ -176,8 +185,11 @@ CDHSample.plotPredictorPerformance()
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
 
 
-
 ## Reference and documentation
 A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html).
+
+## Contributing
+
+See [Contributing](Contributing)
 
 
