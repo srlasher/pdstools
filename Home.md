@@ -188,7 +188,6 @@ CDHSample.plotPredictorPerformance()
 <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
 
 
-Refer to the `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
 ## Reference and documentation
 A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html).
