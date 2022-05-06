@@ -190,10 +190,6 @@ CDHSample.plotPredictorPerformance()
 
 Refer to the `Example_ADM_Analysis.ipynb` file for a thorough example on how to use these two classes.
 
-## To analyze IH data
-
-Use `IHanalysis.py` to get insight into Interaction History (IH) data. This python file contains various methods each one providing certain visibility into the data. Simply import the IH data as a pandas dataframe into the jupyter file, then use various methods. An example is provided: `Example_IH_Analysis.ipynb`
-
 ## Reference and documentation
 A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html).
 
