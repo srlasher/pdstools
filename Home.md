@@ -1,4 +1,4 @@
-# Welcome to the Customer Decision Hub Data Scientist Tools Wiki!
+# Welcome to the Data Scientist Tools Wiki!
 
 These open source tools provides Data Scientists tools to analyze the performance of applications based on Pega AI, machine learning and decisioning applications, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
