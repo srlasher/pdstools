@@ -1,6 +1,6 @@
 # Welcome to the Data Scientist Tools Wiki!
 
-These open source tools provides Data Scientists tools to analyze the performance of applications based on Pega AI, machine learning and decisioning applications, such as implementations of Pega Customer Decision Hub or Pega Process AI.
+These open source tools provides Data Scientists tools to analyze the analytical performance of applications based on Pega AI, machine learning and decisioning, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
