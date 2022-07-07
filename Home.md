@@ -1,6 +1,6 @@
 # Welcome to the Customer Decision Hub Data Scientist Tools Wiki!
 
-These open sourced accompanying tools to Pega CDH (Customer Decision Hub) provide Data Scientists tools to analyze analytical data from a Pega Decisioning system.
+These open source tools provides Data Scientists tools to analyze the performance of applications based on Pega AI, machine learning and decisioning applications, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
