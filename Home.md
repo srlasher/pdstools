@@ -13,7 +13,10 @@ Tooling is both in R and Python although currently not everything is available i
 * Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/articles/vf_analysis.html)
 * Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
 * Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/snapshots-to-scorecards.html)
-* More examples in the [R vignettes](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/index.html) and the [Python documentation](https://pegasystems.github.io/cdh-datascientist-tools/Python/examples.html).
+
+# Documentation and API reference
+Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/cdh-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/cdh-datascientist-tools/R/index.html) code. 
+
 
 # Getting Started with the R library
 
