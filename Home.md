@@ -1,4 +1,4 @@
-# Welcome to the CDH Tools Wiki!
+# Welcome to the Data Scientist Tools Wiki!
 
 These open source tools provides Data Scientists tools to analyze the analytical performance of applications based on Pega AI, machine learning and decisioning, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
