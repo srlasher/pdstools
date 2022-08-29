@@ -104,7 +104,7 @@ See [Contributing](Contributing#contributing-to-r)
 
 # Getting Started with the Python tools
 
-CDH Tools is intended to be used with **Python 3.6 and up**.
+CDH Tools is intended to be used with **Python 3.7 and up**.
 
 ## Installation
 
@@ -128,7 +128,7 @@ Alternatively, you could clone the repository through GitHub.
 - Sklearn for AUC calculation in cdh_utils
 
 ### Compatibility
-The current version of the Python files is tested on Python versions 3.6, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
+The current version of the Python files is tested on Python versions 3.7, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
 
 ## Using the Python tools
 
