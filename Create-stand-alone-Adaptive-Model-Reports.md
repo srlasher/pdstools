@@ -1,4 +1,4 @@
-CDH Tools includes an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. This can be very useful for auditing and regularity requirements.
+Pega Data Scientist Tools includes an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. This can be very useful for auditing and regularity requirements.
 
 The reports add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
 
@@ -8,8 +8,8 @@ The notebook is in R and will require R to be installed, but is just a tool and 
 
 Before you run it on your own data, check that all is working by running the example:
 
-1. Install R and R Studio and the cdhtools package as per the ["Getting started" in the main page](https://github.com/pegasystems/cdh-datascientist-tools/wiki#getting-started-with-the-r-library)
-2. Either check out ("clone") the [CDH Tools repository](https://github.com/pegasystems/cdh-datascientist-tools) from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd).
+1. Install R and R Studio and the pdstools package as per the ["Getting started" in the main page](https://github.com/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-r-library)
+2. Either check out ("clone") the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd).
 3. Open the notebook "examples/datamart/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
 
 # Creating stand-alone model reports on your own data
@@ -41,7 +41,7 @@ The model data is usually not gigantic, but the predictor snapshots table can be
 # Example preprocessing to create off-line model reports for
 # CDH Sample, for CreditCards offers in Outbound channels
 
-library(cdhtools)
+library(pdstools)
 library(data.table)
 
 # Read the latest ADM export files from the Downloads folder
@@ -64,7 +64,7 @@ It is possible to create the reports interactively. Select "Knit with parameters
 
 | Knit option in R Studio | Knit dialog for the stand alone Adaptive Model Report notebook |
 | :---: | :---: |
-| <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-with-params.png"> | <img src="/pegasystems/cdh-datascientist-tools/blob/master/images/R-studio-modelreport-knit-dialog.png"> |
+| <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-modelreport-knit-with-params.png"> | <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-modelreport-knit-dialog.png"> |
 
 
 
@@ -86,9 +86,9 @@ nameprefix="CDHSample"
 
 # Location of the notebooks
 
-cdhtools="~/Documents/pega/cdh-datascientist-tools"
-modeloverviewnotebook="$cdhtools/examples/datamart/healthcheck.Rmd"
-modelreportnotebook="$cdhtools/examples/datamart/modelreport.Rmd"
+pdstools="~/Documents/pega/pega-datascientist-tools"
+modeloverviewnotebook="$pdstools/examples/datamart/healthcheck.Rmd"
+modelreportnotebook="$pdstools/examples/datamart/modelreport.Rmd"
 
 # Generated file with the model ID's. You don't provide this file, this is generated
 # by the model overview notebook.
