@@ -11,14 +11,14 @@ Use cases:
 These are the steps
 
 1. From Pega, export the ADM datamart tables (explained [here](How-to-export-and-use-the-ADM-Datamart) in detail)
-2. From an R script, call the `adm2pmml` function from `cdhtools`
+2. From an R script, call the `adm2pmml` function from `pdstools`
 
 Then pick up the generated PMML files and put them into a Pega model or prediction.
 
-To run this on the sample data shipped with CDH Tools:
+To run this on the sample data shipped with Pega Data Scientist Tools:
 
 ```r
-library(cdhtools)
+library(pdstools)
 library(data.table)
 library(XML)
 data(adm_datamart)
@@ -31,7 +31,7 @@ adm2pmml(adm_datamart, verbose=T)
 In this example (based on CDH Sample) we will create a PMML Scorecard for the "OmniAdaptiveModel" rule.
 
 ```r
-library(cdhtools)
+library(pdstools)
 library(data.table)
 library(XML)
 
@@ -52,11 +52,11 @@ This will now create a file "OmniAdaptiveModel.pmml" in the current folder.
 
 If you open the generated file you should find a "TreeModel" for each of the context key combinations. The ID of the ADM model can be found back in the `id` element.
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/generated_pmml_snippet.png" width="100%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/generated_pmml_snippet.png" width="100%">
 
 Then in Pega, in Prediction Studio you can create a new Predictive Model using this PMML file:
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/pmml_model_import.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/pmml_model_import.png" width="50%">
 
 Pega Prediction Studio will see this PMML as an "ensemble" model because it does not contain just a single scorecard, but a lot of them, one for every context key combination.
 
