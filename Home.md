@@ -180,7 +180,7 @@ CDHSample.plotPerformanceSuccessRateBubbleChart()
 Or to create an overview of the predictor performance across all models:
 
 ```python
-CDHSample.plotPredictorPerformance()
+CDHSample.plotPredictorPerformance(top_n=20)
 ```
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
