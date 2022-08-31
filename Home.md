@@ -22,19 +22,19 @@ Apart from containing the examples mentioned above and more, the [documentation]
 
 ## Installation
 
-The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio:
+The `pdstools` package can be installed straight from GitHub. First you will need R and R Studio:
 
 1. If you do not have **R** installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
 
 2. Install **R Studio** from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We do not recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
 
-3. To install `cdhtools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
+3. To install `pdstools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
 
 ```r
 install.packages("devtools")
 ```
 
-4. Then load the `devtools` library and install the `cdhtools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages. Note that we have seen failures when installing over VPN, so you may have to (temporarily) go off VPN to install the package from GitHub.
+4. Then load the `devtools` library and install the `pdstools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages. Note that we have seen failures when installing over VPN, so you may have to (temporarily) go off VPN to install the package from GitHub.
 
 ```r
 library(devtools)
@@ -48,7 +48,7 @@ If all is well, this will install an R package called `pdstools` that you can th
 ```r
 library(pdstools)
 
-?cdhtools
+?pdstools
 browseVignettes("pdstools")
 vignette(topic="adm-datamart")
 ```
@@ -89,7 +89,7 @@ The R package currently contains
 - Standard notebooks to generate off-line viewable reports that can be saved as stand-alone HTML or PDF files. There is one that strings together many of the plot functions to generate one big "datamart scan" including a lot of useful analyses. Another one creates a stand-alone model report similar to the view in Pega Prediction Studio, with all the predictor binning, the model classifier etc. These notebooks can easily be applied on any ADM datamart export.
 - An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
 
-You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web page) or `vignette(package="cdhtools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
+You can get the list of vignettes with `browseVignettes("pdstools")` (as a web page) or `vignette(package="pdstools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
 
 The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/pega-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
@@ -102,7 +102,7 @@ See [Contributing](Contributing#contributing-to-r)
 
 # Getting Started with the Python tools
 
-CDH Tools is intended to be used with **Python 3.7 and up**.
+Pega Data Scientist Tools is intended to be used with **Python 3.7 and up**.
 
 ## Installation
 
@@ -130,9 +130,9 @@ The current version of the Python files is tested on Python versions 3.7, 3.8 an
 
 ## Using the Python tools
 
-After installation, you can import the **ADMDatamart** class from the cdhtools package as such:
+After installation, you can import the **ADMDatamart** class from the pdstools package as such:
 ```python
-from cdhtools import ADMDatamart
+from pdstools import ADMDatamart
 ```
 The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/pega-datascientist-tools/wiki/How-to-export-and-use-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
 
@@ -149,7 +149,7 @@ custom_file_names = ADMDatamart("~/Downloads/CDHSample",
 The library ships with data from the CDH Sample application. You can import it using the following lines:
 
 ```python
-from cdhtools import datasets
+from pdstools import datasets
 CDHSample = datasets.CDHSample()
 ```
 
