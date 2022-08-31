@@ -1,21 +1,21 @@
-# Welcome to the Pega Data Science Tools Wiki!
+# Welcome to the Pega Data Scientist Tools Wiki!
 
 These open source tools provides Data Scientists tools to analyze the analytical performance of applications based on Pega AI, machine learning and decisioning, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
 Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
 
-* Functions in [R](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html) and [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
-* Collection of sample plots/graphs for analysis of CDH. See our [CDH Graph Gallery](CDH-Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
+* Functions in [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) and [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
+* Collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](CDH-Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
 * An [all-in-one "Health Check" notebook](ADM-Datamart-Health-Check) that can be applied to the ADM Datamart to get insights into the models and predictors.
 * Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
-* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
-* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
-* Example of a Value Finder analysis: [R](https://github.com/pegasystems/cdh-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/articles/vf_analysis.html)
+* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
+* Example of a Value Finder analysis: [R](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html)
 * Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
-* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/cdh-datascientist-tools/R/articles/snapshots-to-scorecards.html)
+* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/pega-datascientist-tools/R/articles/snapshots-to-scorecards.html)
 
 # Documentation and API reference
-Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/cdh-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/cdh-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/cdh-datascientist-tools/R/index.html) code. 
+Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code. 
 
 
 # Getting Started with the R library
@@ -40,25 +40,25 @@ install.packages("devtools")
 
 ```r
 library(devtools)
-install_github("pegasystems/cdh-datascientist-tools/r", build_vignettes=TRUE)
+install_github("pegasystems/pega-datascientist-tools/r", build_vignettes=TRUE)
 ```
 
 ## Using the R package
 
-If all is well, this will install an R package called `cdhtools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+If all is well, this will install an R package called `pdstools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
 
 ```r
-library(cdhtools)
+library(pdstools)
 
 ?cdhtools
-browseVignettes("cdhtools")
+browseVignettes("pdstools")
 vignette(topic="adm-datamart")
 ```
 
 The package ships with some data. Create your first plots with just a few lines:
 
 ```r
-library(cdhtools)
+library(pdstools)
 library(ggplot2)
 library(data.table)
 
@@ -66,7 +66,7 @@ data("adm_datamart")
 
 plotPerformanceSuccessRateBubbleChart(adm_datamart)
 ```
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
 
 You can add standard `ggplot` decoration to the returned plots, and most of the plot functions also have parameters to select the fields to aggregate or facet by, see help.
 
@@ -76,10 +76,10 @@ To get an overview of the 20 most important predictors in all the models:
 plotPredictorImportance(adm_datamart, limit = 20)
 ```
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
 
 
-To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/cdh-datascientist-tools), but for some of the example files you do.
+To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/pega-datascientist-tools), but for some of the example files you do.
 
 
 ## Package Overview
@@ -93,9 +93,9 @@ The R package currently contains
 
 You can get the list of vignettes with `browseVignettes("cdhtools")` (as a web page) or `vignette(package="cdhtools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
 
-The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/cdh-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
+The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/pega-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
 
-A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/R/reference/index.html).
+A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html).
 
 ## Contributing
 
@@ -109,7 +109,7 @@ CDH Tools is intended to be used with **Python 3.7 and up**.
 ## Installation
 
 ```python
-pip3 install git+https://github.com/pegasystems/cdh-datascientist-tools.git
+pip3 install git+https://github.com/pegasystems/pega-datascientist-tools.git
 ```
 Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
 
@@ -136,7 +136,7 @@ After installation, you can import the **ADMDatamart** class from the cdhtools p
 ```python
 from cdhtools import ADMDatamart
 ```
-The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/cdh-datascientist-tools/wiki/How-to-export-and-use-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
+The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/pega-datascientist-tools/wiki/How-to-export-and-use-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
 
 
 ```python
@@ -177,7 +177,7 @@ To create a simple Bubble Chart (similar to the one in product):
 CDHSample.plotPerformanceSuccessRateBubbleChart()
 ```
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot1.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedPythonplot1.png" width="50%">
 
 Or to create an overview of the predictor performance across all models:
 
@@ -185,11 +185,11 @@ Or to create an overview of the predictor performance across all models:
 CDHSample.plotPredictorPerformance()
 ```
 
-<img src="/pegasystems/cdh-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedPythonplot2.png" width="50%">
 
 
 ## Reference and documentation
-A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/cdh-datascientist-tools/Python/autoapi/index.html).
+A reference to the functions available in the Python package is also available here: [Function Reference](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html).
 
 ## Contributing
 
