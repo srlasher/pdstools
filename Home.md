@@ -74,7 +74,7 @@ For example, to get an overview of the 20 most important predictors in all the m
 plotPredictorImportance(adm_datamart, limit = 20) + theme_bw()
 ```
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="80%">
 
 
 To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/pega-datascientist-tools), but for some of the example files you do.
