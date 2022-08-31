@@ -22,13 +22,11 @@ Apart from containing the examples mentioned above and more, the [documentation]
 
 ## Installation
 
-The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio.
+The `cdhtools` package can be installed straight from GitHub. First you will need R and R Studio:
 
-1. Install R
-    If you do not have R installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
+1. If you do not have **R** installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
 
-2. Install R Studio
-    Install R Studio from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We don't recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
+2. Install **R Studio** from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We do not recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
 
 3. To install `cdhtools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
 
