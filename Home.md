@@ -107,11 +107,9 @@ Pega Data Scientist Tools is intended to be used with **Python 3.7 and up**.
 ## Installation
 
 ```python
-pip3 install git+https://github.com/pegasystems/pega-datascientist-tools.git
+pip install pdstools
 ```
 Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
-
-Alternatively, you could clone the repository through GitHub.
 
 ### Dependencies
 - Pandas for the data structure
@@ -120,9 +118,10 @@ Alternatively, you could clone the repository through GitHub.
 - Requests for importing data through a direct link
 - Jupyterlab for jupyter notebook support
 - Ipywidgets for interactive notebook widgets
+- Pyarrow for faster data loading
+- Polars for faster data processing
 
 ### Optional dependencies
-- Pyarrow for faster data loading
 - Sklearn for AUC calculation in cdh_utils
 
 ### Compatibility
