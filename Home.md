@@ -109,10 +109,11 @@ Pega Data Scientist Tools is intended to be used with **Python 3.7 and up**.
 ```python
 pip install pdstools
 ```
+The tested library is uploaded to [pypi](https://pypi.org/project/pdstools/) on every release version. 
 Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
 
 ### Development branch
-The tested library is uploaded to pypi on every release version. To instead install the development version, run the following command:
+To instead install the development version, run the following command:
 ```python
 pip install git+https://github.com/pegasystems/pega-datascientist-tools.git 
 ```
