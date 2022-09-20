@@ -111,6 +111,12 @@ pip install pdstools
 ```
 Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
 
+### Development branch
+The tested library is uploaded to pypi on every release version. To instead install the development version, run the following command:
+```python
+pip install git+https://github.com/pegasystems/pega-datascientist-tools.git 
+```
+
 ### Dependencies
 - Pandas for the data structure
 - Plotly >= 5.5.0 for the interactive visualisations
@@ -123,6 +129,7 @@ Note: If you run this within a Jupyter notebook cell, be sure to add an exclamat
 
 ### Optional dependencies
 - Sklearn for AUC calculation in cdh_utils
+- Dot for visualising ADM Trees
 
 ### Compatibility
 The current version of the Python files is tested on Python versions 3.7, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
