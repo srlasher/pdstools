@@ -12,8 +12,8 @@ To contribute to the R package, please make sure to understand the basics of R p
 
 * The R project for the package is in the "r" folder: `pega-datascientist-tools/r`, not the top-level folder.
 * Use `library(devtools)`. This gives shortcuts to check the package with (Ctrl/Cmd + Shift + E), build and reload in a clean R session (Ctrl/Cmd + Shift + B), run all tests (Ctrl/Cmd + Shift + T), update doc and namespace file (Ctrl/Cmd + Shift + D), load package (Ctrl/Cmd + Shift + L).
-* For unit tests, we use `testthat`, see `r/tests/testthat/tests_*.R` files
-* Package documentation is done via pkgdown. Run `pkgdown::build_site()` in R studio to build the `r/docs/` directory.
+* For unit tests, we use [testthat](https://testthat.r-lib.org), see `r/tests/testthat/tests_*.R` files
+* Package documentation is done via [pkgdown](https://pkgdown.r-lib.org/). Run `pkgdown::build_site()` in R studio to build the `r/docs/` directory.
 * Add new functions in `r/man/*.Rd`. 
 * The GitHub pages docs live in the top-level docs folder. So after generating the package documentation, **move** that folder to `docs/R`. Best is to
 
@@ -23,7 +23,7 @@ mv r/rocs docs/R
 git add docs/R
 ```
 
-* To run code coverage locally, use
+* Code coverage is supported by the [covr](https://about.codecov.io/) package. To run code coverage locally, use
 
 ```
 library(covr)
