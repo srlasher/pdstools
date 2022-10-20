@@ -4,7 +4,7 @@ To file a bug, issue, ask a question or suggest an improvement, please use the I
 
 Use pull requests to submit additions or improvements that you have made and would like to share with others. While the code in this repository currently is mostly R and Python, we also welcome reusable BI reports from popular platforms, or code in upcoming languages like Julia.
 
-We run continuous integration on this GitHub repository. This is configured through GitHub Actions. Code coverage is provided through [codecov.io](https://app.codecov.io/gh/pegasystems/pega-datascientist-tools). Documentation is integrated into GitHub pages.
+We run continuous integration on this GitHub repository. This is configured through [GitHub Actions](https://docs.github.com/en/actions). Code coverage is provided through [codecov.io](https://app.codecov.io/gh/pegasystems/pega-datascientist-tools). Documentation is integrated into GitHub pages.
 
 # Contributing to R
 
@@ -35,23 +35,27 @@ report()
 
 # Contributing to Python
 
-We prefer working in an IDE like VSCode to work with the Python utilities and notebooks, but there are plenty of options.
+We prefer working in an IDE like [VSCode](https://code.visualstudio.com/) to work with the Python utilities and notebooks, but there are plenty of options.
 
-* Code is in Python 3 (3.6+). Continuous integration tests against a few different versions of Python and O/S.
-* Tests are in **pytest**. To run the tests locally, simply run pytest in the python folder. 
-* Code coverage is provided via the pytest-cov plugin, which is executed as part of the continuous integration. To run locally, 
+In the text below where we use **pip**, depending on your local Python setup, you may need to replace this with **pip3**.
+
+* Code is in Python 3 (3.6+). Continuous integration tests (configured as [GitHub Actions](https://docs.github.com/en/actions)) against a few different versions of Python and O/S.
+* Tests are in [pytest](https://docs.pytest.org/). To run the tests locally, simply run `pytest` in the python folder. 
+* Code coverage is part of the continuous integration. To run locally make sure to install the package first (`codecov` and `pytest-codecov`): 
 ```
 pytest --cov=./python/pdstools --cov-report=xml
 ```
-* The Python documentation uses **Sphinx** to generate the docs, **nbsphinx** to convert the jupyter notebooks to markdown, and **Furo** as the Sphinx template. These dependencies can be installed with `pip install -r docs-requirements.txt`. **Pandoc** is a requirement too and needs to be installed separately.
+* The Python documentation uses [Sphinx](https://www.sphinx-doc.org/) to generate the docs, **nbsphinx** to convert the jupyter notebooks to markdown, and **Furo** as the Sphinx template. These dependencies can be installed with `pip install -r docs-requirements.txt`. [Pandoc](https://pandoc.org/) is a requirement too and needs to be installed separately.
 * A **Makefile** is provided to create the documentation. Simply run
 ```
-cd python/docs
+pushd python/docs
 make html
+popd
 ```
-
-
-
-
-
+* The Python pdstools package is published to [PyPI](https://pypi.org/) and installable via pip as described in the [Getting Started](/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-python-tools). To uninstall the published version and install the local version instead:
+```
+pip uninstall pdstools
+pip install .
+```
+* To create the distribution wheel and tar files, run `python -m build`. This creates the distribution files in the `dist` folder.
 
