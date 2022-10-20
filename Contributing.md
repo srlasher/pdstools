@@ -8,7 +8,7 @@ We run continuous integration on this GitHub repository. This is configured thro
 
 # Contributing to R
 
-To contribute to the R package, please make sure to understand the basics of R packages. There are excellent tutorials on the web on [package development](http://r-pkgs.had.co.nz/). A few quick tips:
+To contribute to the R package, please make sure to understand the basics of R packages. There are excellent tutorials on the web on [R package development](http://r-pkgs.had.co.nz/). A few quick tips:
 
 * The R project for the package is in the "r" folder: `pega-datascientist-tools/r`, not the top-level folder.
 * Use `library(devtools)`. This gives shortcuts to check the package with (Ctrl/Cmd + Shift + E), build and reload in a clean R session (Ctrl/Cmd + Shift + B), run all tests (Ctrl/Cmd + Shift + T), update doc and namespace file (Ctrl/Cmd + Shift + D), load package (Ctrl/Cmd + Shift + L).
