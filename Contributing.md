@@ -31,7 +31,7 @@ report()
 ```
 
 * Examples are mostly in R vignettes which are part of the package and automatically documented, with HTML output available on GitHub. Some example notebooks and scripts are in the top-level `/examples` folder so outside of the R package. These will be checked locally when running the unit tests, but (currently) are not as part of the continuous integration process. Their output will also not be part of the generated documentation.
-
+* The R package is installed directly from GitHub (see [Getting Started](/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-r-library) section in this Wiki), not currently via a package repository like CRAN.
 
 # Contributing to Python
 
