@@ -39,7 +39,7 @@ We prefer working in an IDE like [VSCode](https://code.visualstudio.com/) to wor
 
 In the text below where we use **pip**, depending on your local Python setup, you may need to replace this with **pip3**.
 
-* Code is in Python 3 (3.6+). Continuous integration tests (configured as [GitHub Actions](https://docs.github.com/en/actions)) against a few different versions of Python and O/S.
+* Code is in Python 3 (3.8+). Continuous integration tests (configured as [GitHub Actions](https://docs.github.com/en/actions)) against a few different versions of Python and O/S.
 * Tests are in [pytest](https://docs.pytest.org/). To run the tests locally, simply run `pytest` in the python folder. 
 * Code coverage is part of the continuous integration. To run locally make sure to install the package first (`codecov` and `pytest-codecov`): 
 ```
