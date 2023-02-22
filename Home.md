@@ -102,7 +102,7 @@ See [Contributing](Contributing#contributing-to-r)
 
 # Getting Started with the Python tools
 
-Pega Data Scientist Tools is intended to be used with **Python 3.7 and up**.
+Pega Data Scientist Tools is intended to be used with **Python 3.8 and up**.
 
 ## Installation
 
