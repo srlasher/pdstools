@@ -129,11 +129,10 @@ pip install git+https://github.com/pegasystems/pega-datascientist-tools.git
 - Polars for faster data processing
 
 ### Optional dependencies
-- Sklearn for AUC calculation in cdh_utils
 - Dot for visualising ADM Trees
 
 ### Compatibility
-The current version of the Python files is tested on Python versions 3.7, 3.8 and 3.10. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
+The current version of the Python files is tested on Python versions 3.8 and 3.9 and 3.11. We recommend using plain notebooks or notebooks within VSCode's notebook editor.
 
 ## Using the Python tools
 
