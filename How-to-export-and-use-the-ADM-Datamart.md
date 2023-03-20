@@ -67,18 +67,24 @@ See (https://docs.pega.com/decision-management-reference-materials/database-tabl
 
 ## Export only selected models from Pega
 
-The predictor binning table can grow very large. You typically need only the last snapshot (this is also the default configuration) and only the predictor binning for the models that you exported earlier. To be more selective, instead of directly exporting the predictor binning, you use a data flow to filter the records to only the ones that you are interested in.
+Both tables can grow very large. You typically need only the last snapshot (this is also the default configuration) and only the predictor binning for a selection of the models. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel.
+
+In order to accomplish this, you create your own dataflows with the desired filtering options.
 
 1. Create a dataflow on **Data-Decision-ADM-ModelSnapshot**
 2. Source the dataflow with the **pyModelSnapshots** dataset
 3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
 4. Create a Cassandra dataset as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/DataFlowExportSelectedModels.png" width="100%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
-That's it for the model data. Run this dataflow and export the destination dataset, then follow the steps from option 1 to load them in your R or Python environment.
+|Source|Selected Models|Destination|
+|---|---|---|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
 
-For the predictor data you can follow the exact same pattern. However that would require you to know the ModelID's, so it is preferable to piggy-back on the model data you exported and let the system figure out which ModelID's to use.
+Run this dataflow and export the destination dataset.
+
+Similar for the Predictor data. After you have exported the models selectively, you probably only want the predictor data for those models. The steps are similar:
 
 1. Create a dataflow on **Data-Decision-ADM-PredictorBinningSnapshot**
 2. Source the predictor flow with the **pyADMPredictorSnapshots** dataset
@@ -87,9 +93,13 @@ For the predictor data you can follow the exact same pattern. However that would
 5. Add a filter to filter out any predictor data that does not match
 6. Destination is a custom Cassandra dataset like before
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/DataFlowExportSelectedPredictors.png" width="100%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_dataflow.png">
 
-Run this dataflow and export the destination dataset, then follow the steps from option 1 to load them in your R or Python environment.
+|Source|Include Model Data|Selected Models|Destination|
+|---|---|---|---|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_compose.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_filter.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_dest.png">|
+
+Like before, now run this dataflow and export the destination dataset.
 
 # Manual table export from database
 
