@@ -23,6 +23,25 @@ This is the easiest option, available in Pega 8.8 and up.
 
 After creating the artefacts, the export process will run a-sync. The table exports will be stored under a `/datamart` folder in your repository.
 
+## Configure the Export
+
+|Dev Studio|Prediction Studio|Prediction Studio|
+|---|---|---|
+|Create a Repository|Prediction Studio Settings|Configure the Export|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ds_repo.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_storage.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_configexport.png"> <img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_configruleset.png">|
+
+## Run the Export
+
+In Prediction studio, start the export from the Actions menu at the top.
+
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_action.png">
+
+## Find the files in your Repository
+
+In your repository, the files will be stored along with meta information.
+
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_s3_sample.png">
+
 # Manual Dataset export from Dev Studio
 
 All the datamart tables are wrapped by datasets that you can export manually from Dev Studio.
