@@ -56,7 +56,7 @@ In the dialog that follows, press "Export". Depending on the size of your data, 
 
 The data will be stored in the download location of your browser in the standard Pega dataset export format: zipped, multi-line JSON. You can unzip and load this manually, but we have some utilities in `pdstools` that make this easier for you.
 
-Repeat the steps for the predictor data, which is stored in a separate table. You typically want both tables, although this is not mandatory. Many of the standard plot functions will require both to be present.
+Repeat the steps for the predictor binning data, which is stored in a separate table. You typically want both tables for analysis. Many of the standard plot functions in `pdstools` will require both to be present.
 
 |Data|Class|Dataset|Table|
 |---|---|---|---|
