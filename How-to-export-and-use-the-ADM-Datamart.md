@@ -4,7 +4,7 @@ The model datamart consists of two tables for ADM and another seven that support
 
 The tables are described here [in the Pega documentation](https://docs.pega.com/decision-management-reference-materials/database-tables-monitoring-models).
 
-There are basically three options to retrieve the data. We list them here in order of preference:
+There are three options to retrieve the data. We list them here in order of preference:
 
 1. From Pega 8.8 onwards, you can export all the datamart tables into a repository directly from Prediction Studio. 
 
