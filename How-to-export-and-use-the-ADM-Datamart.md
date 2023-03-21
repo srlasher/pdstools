@@ -16,7 +16,7 @@ There are three options to retrieve the data. We list them here in order of pref
 
 This is the easiest option, available in Pega 8.8 and up.
 
-1. Set up a repository (to e.g. an S3 bucket)
+1. Set up a repository (to e.g. an S3 bucket). See [documentation](https://docs-previous.pega.com/data-management-and-integration/86/adding-s3-repository)
 2. Configure Prediction Studio to use this repository for storage (in Settings)
 3. Configure Prediction Studio to use an open ruleset to store the artefacts that will be generated (dataflows) to do the export
 4. Run the export (in Prediction Studio, Actions)
@@ -50,7 +50,7 @@ From Pega Dev Studio, locate the dataset "pyModelSnapshots" in the Data-Decision
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/pega_export_adm_models.png" width="50%">
 
-For detailed instructions see (https://docs.pega.com/bundle/platform-88/page/platform/decision-management/data-set-export.html).
+For detailed instructions see [Exporting data from a data set](https://docs.pega.com/bundle/platform-88/page/platform/decision-management/data-set-export.html).
 
 In the dialog that follows, press "Export". Depending on the size of your data, this may take a while. Then before dismissing the dialog, export the data from the Pega system by clicking the download link that will be shown when the export process has finished.
 
@@ -76,9 +76,9 @@ In order to accomplish this, you create your own dataflows with the desired filt
 1. Create a dataflow on **Data-Decision-ADM-ModelSnapshot**
 2. Source the dataflow with the **pyModelSnapshots** dataset
 3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
-4. Create a Cassandra dataset as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
+4. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
 
-There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See (https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
+There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See [Exporting adaptive model data for external analysis in Pega Academy](https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
