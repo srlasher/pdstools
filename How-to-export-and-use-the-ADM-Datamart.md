@@ -67,7 +67,7 @@ Repeat the steps for the predictor binning data, which is stored in a separate t
 
 See (https://docs.pega.com/decision-management-reference-materials/database-tables-monitoring-models) for more information.
 
-## Export only selected models from Pega
+## Selective Export to reduce amount of data
 
 Both tables can grow very large. You typically need only the last snapshot (this is also the default configuration) and only the predictor binning for a selection of the models. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel.
 
@@ -79,6 +79,12 @@ In order to accomplish this, you create your own dataflows with the desired filt
 4. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
 
 There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See [Exporting adaptive model data for external analysis in Pega Academy](https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
+
+Typical filtering options include:
+* Model data for certain channels only (pyChannel)
+* For certain model configurations (pyModelConfiguration)
+* Last 3 months only (expression on snapshot time)
+
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
