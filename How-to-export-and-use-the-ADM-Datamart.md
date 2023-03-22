@@ -87,7 +87,7 @@ Typical filtering options include:
 * Last 3 months only (expression on snapshot time)
 
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
 |Source|Selected Models|Destination|
 |---|---|---|
@@ -103,7 +103,7 @@ Similar for the Predictor data. After you have exported the models selectively, 
 3. Instead of a filter like in the previous one, add a Merge shape. Merge with the dataset that contains just the Model ID's that you created in the previous steps. The Merge shape requires both sources to be of the same class, so introduce a Convert shape that converts **Data-Decision-ADM-ModelSnapshot** into **Data-Decision-ADM-PredictorBinningSnapshot**. Carry over only the ModelID field and exclude any non-matching records. This ensures we only get predictor binning records for the model IDs we selected previously.
 4. Destination is a new Cassandra dataset like before
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_dataflow.png" width="50%">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_dataflow.png">
 
 |Source|Selected Models|Destination|
 |---|---|---|
