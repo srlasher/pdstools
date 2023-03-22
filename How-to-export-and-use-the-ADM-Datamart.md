@@ -34,7 +34,7 @@ After creating the artefacts, the export process will run a-sync. The table expo
 
 In Prediction studio, start the export from the Actions menu at the top.
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_action.png">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_ps_action.png" width="50%">
 
 ## Find the files in your Repository
 
