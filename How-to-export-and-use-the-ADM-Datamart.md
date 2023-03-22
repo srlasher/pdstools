@@ -40,7 +40,7 @@ In Prediction studio, start the export from the Actions menu at the top.
 
 In your repository, the files will be stored along with meta information.
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_s3_sample.png">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ps_dm_export_s3_sample.png" width="50%">
 
 # Manual Dataset export from Dev Studio
 
@@ -65,7 +65,7 @@ Repeat the steps for the predictor binning data, which is stored in a separate t
 |Model Snapshots|Data-Decision-ADM-ModelSnapshot|pyModelSnapshots|PR_DATA_DM_ADMMART_MDL_FACT|
 |Predictor Snapshots|Data-Decision-ADM-PredictorBinningSnapshot|pyADMPredictorSnapshots|PR_DATA_DM_ADMMART_PRED|
 
-See (https://docs.pega.com/decision-management-reference-materials/database-tables-monitoring-models) for more information.
+See [Database tables for Monitoring Models](https://docs.pega.com/decision-management-reference-materials/database-tables-monitoring-models) for more information.
 
 ## Selective Export to reduce amount of data
 
@@ -77,37 +77,39 @@ In order to accomplish this, you create your own dataflows with the desired filt
 2. Source the dataflow with the **pyModelSnapshots** dataset
 3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
 4. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
+5. Create another Cassandra dataset destination with just the Model ID's. This is used to filter the corresponding predictor binning information. If you are not planning to export the predictor binning you can skip this.
 
 There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See [Exporting adaptive model data for external analysis in Pega Academy](https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
 
 Typical filtering options include:
-* Model data for certain channels only (pyChannel)
-* For certain model configurations (pyModelConfiguration)
+* Model data for certain channels only (filtering on `pyChannel`)
+* For certain model configurations (filtering on `pyModelConfiguration`)
 * Last 3 months only (expression on snapshot time)
 
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png" width="50%">
 
 |Source|Selected Models|Destination|
 |---|---|---|
-|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
+|||Only ModelID as key:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
 
-Run this dataflow and export the destination dataset.
+Run this dataflow and export the destination dataset (only the first one, with the model data).
 
 Similar for the Predictor data. After you have exported the models selectively, you probably only want the predictor data for those models. The steps are similar:
 
 1. Create a dataflow on **Data-Decision-ADM-PredictorBinningSnapshot**
 2. Source the predictor flow with the **pyADMPredictorSnapshots** dataset
-3. Instead of a filter like in the previous one, first add a Compose shape
-4. Go back to your model data flow and make the destination abstract. Then use this in the Compose. The condition is equal **pyModelID**, use a new property to hold the model data (single page property of class **Data-Decision-ADM-ModelSnapshot**).
-5. Add a filter to filter out any predictor data that does not match
-6. Destination is a custom Cassandra dataset like before
+3. Instead of a filter like in the previous one, add a Merge shape. Merge with the dataset that contains just the Model ID's that you created in the previous steps. The Merge shape requires both sources to be of the same class, so introduce a Convert shape that converts **Data-Decision-ADM-ModelSnapshot** into **Data-Decision-ADM-PredictorBinningSnapshot**. Carry over only the ModelID field and exclude any non-matching records. This ensures we only get predictor binning records for the model IDs we selected previously.
+4. Destination is a new Cassandra dataset like before
 
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_dataflow.png">
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_dataflow.png" width="50%">
 
-|Source|Include Model Data|Selected Models|Destination|
-|---|---|---|---|
-|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_compose.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_filter.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_dest.png">|
+|Source|Selected Models|Destination|
+|---|---|---|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_merge.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_dest.png">|
+||<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_convert.png">||
+||<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_pred_export_df_modelids.png">||
 
 Like before, now run this dataflow and export the destination dataset.
 
