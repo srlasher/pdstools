@@ -112,6 +112,13 @@ pip install pdstools
 The tested library is uploaded to [pypi](https://pypi.org/project/pdstools/) on every release version. 
 Note: If you run this within a Jupyter notebook cell, be sure to add an exclamation mark in front of the command.
 
+To install the optional app dependencies type
+
+`pip install --upgrade pdstools[app]`
+
+For zsh on Mac use quotes: `pip install --upgrade pdstools'[app]'`
+
+
 ### Development branch
 To instead install the development version, run the following command:
 ```python
