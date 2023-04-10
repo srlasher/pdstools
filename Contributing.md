@@ -15,13 +15,7 @@ To contribute to the R package, please make sure to understand the basics of R p
 * For unit tests, we use [testthat](https://testthat.r-lib.org), see `r/tests/testthat/tests_*.R` files
 * Package documentation is done via [pkgdown](https://pkgdown.r-lib.org/). Run `pkgdown::build_site()` in R studio to build the `r/docs/` directory.
 * Add new functions in `r/man/*.Rd`. 
-* The GitHub pages docs live in the top-level docs folder. So after generating the package documentation, **move** that folder to `docs/R`. Best is to
-
-```
-git rm -rf docs/R
-mv r/rocs docs/R
-git add docs/R
-```
+* The GitHub pages docs live in the `r/docs` folder. So after generating the package documentation, make sure they live in that folder. On an accepted pull request, the docs are automatically picked up and moved to the `gh-pages` branch, where they will be deployed.
 
 * Code coverage is supported by the [covr](https://about.codecov.io/) package. To run code coverage locally, use
 
@@ -35,9 +29,13 @@ report()
 
 # Contributing to Python
 
-We prefer working in an IDE like [VSCode](https://code.visualstudio.com/) to work with the Python utilities and notebooks, but there are plenty of options.
+We prefer working in an IDE like [VSCode](https://code.visualstudio.com/) to work with the Python utilities and notebooks, but there are plenty of options. 
 
-In the text below where we use **pip**, depending on your local Python setup, you may need to replace this with **pip3**.
+We prefer working with pull requests, because of CI/CD and release changelog automation reasons. While there are many ways to work with GitHub pull requests, perhaps the easiest way is to fork the repository, make changes in your fork, and then create a pull request from the github.com page of your own fork directly. It is also possible to use the GitHub Actions CI/CD with your local fork, but you need to manually enable it under the `Actions` tab in your fork.
+
+In the text below where we use **pip**, depending on your local Python setup, you may need to replace this with **pip3**, or sometimes even `python3.x -m pip`.
+
+## Tests
 
 * Code is in Python 3 (3.8+). Continuous integration tests (configured as [GitHub Actions](https://docs.github.com/en/actions)) against a few different versions of Python and O/S.
 * Tests are in [pytest](https://docs.pytest.org/). To run the tests locally, simply run `pytest` in the python folder. 
@@ -45,17 +43,27 @@ In the text below where we use **pip**, depending on your local Python setup, yo
 ```
 pytest --cov=./python/pdstools --cov-report=xml
 ```
+
+## Documentation & articles
 * The Python documentation uses [Sphinx](https://www.sphinx-doc.org/) to generate the docs, **nbsphinx** to convert the jupyter notebooks to markdown, and **Furo** as the Sphinx template. These dependencies can be installed with `pip install -r docs-requirements.txt`. [Pandoc](https://pandoc.org/) is a requirement too and needs to be installed separately.
-* A **Makefile** is provided to create the documentation. Simply run
+* A **Makefile** is provided to create the documentation. The docs are automatically generated on any push commits in the master branch, but you can build them locally by running:
 ```
 pushd python/docs
 make html
 popd
 ```
-* The Python pdstools package is published to [PyPI](https://pypi.org/) and installable via pip as described in the [Getting Started](/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-python-tools). To uninstall the published version and install the local version instead:
+* While the generated docs are automatically deployed, and will automatically pick up on changes in the docstrings for the API reference, the articles in the docs are not. To add articles to the documentation: 
+1. Create an article somewhere in the top-level `examples` folder. These articles should be jupyter notebook files, and **should be empty, not pre-run**
+2. Edit the `cp` command in `python/docs/Makefile` where the articles are copied to a temporary to include your article
+3. Update `python/docs/source/Articles.rst` and add your entry to the included notebooks. Since they will be moved to the `articles` folder, simply enter the **name of the notebook file, without extension**. 
+- For example, if we added an article called `Example.ipynb` in the `examples/helloworld` folder, we would add `../../examples/helloworld/Example.ipynb` to the cp line in the Makefile (right before `source/articles`, of course), and add `articles/Example` to the `python/docs/source/Articles.rst` file. To test that it works, we recommend building the docs locally before creating a pull request.
+
+## Releases
+
+* The Python pdstools package is published to [PyPI](https://pypi.org/) and installable via pip as described in the [Getting Started](/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-python-tools). To uninstall the published version and install the local version instead, clone the repo, navigate to the top-level `pega-datascientist-tools` folder, and run:
 ```
 pip uninstall pdstools
 pip install .
 ```
-* To create the distribution wheel and tar files, run `python -m build`. This creates the distribution files in the `dist` folder.
+* PyPi releases are automated with tagged commits, but to create the distribution wheel and tar files locally, run `python -m build`. This creates the distribution files in the `dist` folder.
 
