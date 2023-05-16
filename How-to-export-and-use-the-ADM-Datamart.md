@@ -10,7 +10,9 @@ There are three options to retrieve the data. We list them here in order of pref
 
 2. From [Pega Dev Studio](#manual-dataset-export-from-dev-studio), export each of the tables via the Dataset wrappers that are defined on top of them.
 
-3. Export the tables directly from the database. If you do this, be careful with the output format. Treatments and actions can contain spaces and the pyName field can contain quotes. If you export directly from a database to CSV, make sure you choose CSV options so these special characters are preserved and can be read back in.
+3. Export the tables directly [from the database](#manual-table-export-from-database). If you do this, be careful with the output format. Treatments and actions can contain spaces and the pyName field can contain quotes. If you export directly from a database to CSV, make sure you choose CSV options so these special characters are preserved and can be read back in.
+
+Then read in the data using the [tools and functions in PDS tools](#off-line-analysis-of-the-exported-data).
 
 # Export from Prediction Studio
 
