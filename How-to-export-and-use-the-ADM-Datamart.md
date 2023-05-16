@@ -6,7 +6,7 @@ The tables are described here [in the Pega documentation](https://docs.pega.com/
 
 There are three options to retrieve the data. We list them here in order of preference:
 
-1. From Pega 8.8 onwards, you can export all the datamart tables into a repository directly from Prediction Studio. 
+1. From Pega 8.8 onwards, you can [export all the datamart tables into a repository directly from Prediction Studio](#export-from-prediction-studio). 
 
 2. From Pega Dev Studio, export each of the tables via the Dataset wrappers that are defined on top of them. This is described in more detail below.
 
