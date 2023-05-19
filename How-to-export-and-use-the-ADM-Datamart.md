@@ -93,11 +93,14 @@ Typical filtering options include:
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
 |Source|Selected Fields Only|Selected Models|Destination|
-|---|---|---|
-|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_convert.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
-||pyActivePredictors<br>pyAppliesToClass<br>pyConfigurationName pyGroup pyIssue pyModelID pyModelTechnique pyModelVersion pyName pyNegatives pyPerformance pyPositives pyResponseCount pySnapshotTime pyTotalPredictors||Only ModelID as key:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
+|---|---|---|---|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_convert.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys for the snapshots:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
+||Fields to include:<br>pyActivePredictors<br>pyAppliesToClass<br>pyConfigurationName<br>pyGroup<br>pyIssue<br>pyModelID<br>pyModelTechnique<br>pyModelVersion pyName<br>pyNegatives<br>pyPerformance<br>pyPositives<br>pyResponseCount<br>pySnapshotTime<br>pyTotalPredictors||Only ModelID as key for the table with the ID's:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
 
 Run this dataflow and export the destination dataset (only the first one, with the model data).
+
+# 
+||
 
 Similar for the Predictor data. After you have exported the models selectively, you probably only want the predictor data for those models. The steps are similar:
 
