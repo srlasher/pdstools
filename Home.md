@@ -6,7 +6,7 @@ Tooling is both in R and Python although currently not everything is available i
 
 * Functions in [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) and [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
 * Collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
-* An [all-in-one "Health Check" notebook](ADM-Datamart-Health-Check) that can be applied to the ADM Datamart to get insights into the models and predictors.
+* An [all-in-one "Health Check" application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html) that can be applied to the ADM Datamart to get insights into the models and predictors.
 * Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
 * Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
 * Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
@@ -127,7 +127,7 @@ pip install git+https://github.com/pegasystems/pega-datascientist-tools.git
 
 ### Dependencies
 - Pandas for the data structure
-- Plotly >= 5.5.0 for the interactive visualisations
+- Plotly >= 5.14.1 for the interactive visualisations
 - Seaborn for the static visualisations
 - Requests for importing data through a direct link
 - Jupyterlab for jupyter notebook support
