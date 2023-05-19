@@ -8,7 +8,7 @@ There are three options to retrieve the data. We list them here in order of pref
 
 1. From Pega 8.8 onwards, you can export all the datamart tables into a repository directly from [Prediction Studio](#export-from-prediction-studio). 
 
-2. From [Pega Dev Studio](#manual-dataset-export-from-dev-studio), export each of the tables via Datasets. Optionally select only the models you are interested in analyzing to reduce the amount of data.
+2. From [Pega Dev Studio](#manual-dataset-export-from-dev-studio), export each of the tables via Datasets. Optionally [select only the models you are interested in](#selective-export-to-reduce-amount-of-data) to reduce the amount of data.
 
 3. Export the tables directly [from the database](#manual-table-export-from-database). If you do this, be careful with the output format. Treatments and actions can contain spaces and the pyName field can contain quotes. If you export directly from a database to CSV, make sure you choose CSV options so these special characters are preserved and can be read back in.
 
@@ -71,15 +71,16 @@ See [Database tables for Monitoring Models](https://docs.pega.com/decision-manag
 
 ## Selective Export to reduce amount of data
 
-Both tables can grow very large. You typically need only the last snapshot (this is also the default configuration) and only the predictor binning for a selection of the models. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel.
+Both tables can grow very large. You typically need only the latest snapshot (this is also the default configuration) and only the predictor binning for a selection of the models. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel. You also usually do not need all the columns from the model table - in particular, the "pyModelData" column contains internal details not usually needed for analyses, yet can get very large.
 
 In order to accomplish this, you create your own dataflows with the desired filtering options.
 
 1. Create a dataflow on **Data-Decision-ADM-ModelSnapshot**
 2. Source the dataflow with the **pyModelSnapshots** dataset
-3. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
-4. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
-5. Create another Cassandra dataset destination with just the Model ID's. This is used to filter the corresponding predictor binning information. If you are not planning to export the predictor binning you can skip this.
+3. Use a Convert shape to only copy over the fields we are interested in
+4. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
+5. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
+6. Create another Cassandra dataset destination with just the Model ID's. This is used to filter the corresponding predictor binning information. If you are not planning to export the predictor binning you can skip this.
 
 There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See [Exporting adaptive model data for external analysis in Pega Academy](https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
 
@@ -91,10 +92,24 @@ Typical filtering options include:
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_dataflow.png">
 
-|Source|Selected Models|Destination|
+|Source|Selected Fields Only|Selected Models|Destination|
 |---|---|---|
-|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
-|||Only ModelID as key:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
+|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_convert.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
+||* pyActivePredictors
+* pyAppliesToClass
+* pyConfigurationName
+* pyGroup
+* pyIssue
+* pyModelID
+* pyModelTechnique
+* pyModelVersion
+* pyName
+* pyNegatives
+* pyPerformance
+* pyPositives
+* pyResponseCount
+* pySnapshotTime
+* pyTotalPredictors||Only ModelID as key:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
 
 Run this dataflow and export the destination dataset (only the first one, with the model data).
 
