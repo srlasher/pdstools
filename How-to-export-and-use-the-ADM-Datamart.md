@@ -95,7 +95,7 @@ Typical filtering options include:
 |Source|Selected Fields Only|Selected Models|Destination|
 |---|---|---|---|
 |<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_source.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_convert.png">|<img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_filter.png">|Default keys for the snapshots:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest.png">|
-||Fields to include:<br><br>pyActivePredictors<br>pyAppliesToClass<br>pyConfigurationName<br>pyGroup<br>pyIssue<br>pyModelID<br>pyModelTechnique<br>pyModelVersion<br>pyName<br>pyNegatives<br>pyPerformance<br>pyPositives<br>pyResponseCount<br>pySnapshotTime<br>pyTotalPredictors|You could filter on the **Applies-To class** as shown or for example on **Configuration Name** or **Issue**|Only ModelID as key for the table with the ID's:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
+||Fields to include:<br><br>pyActivePredictors<br>pyAppliesToClass<br>pyConfigurationName<br>pyGroup<br>pyIssue<br>pyModelID<br>pyModelTechnique<br>pyModelVersion<br>pyName<br>pyNegatives<br>pyPerformance<br>pyPositives<br>pyResponseCount<br>pySnapshotTime<br>pyTotalPredictors|You could filter on the **Applies-To class** as shown or for example on **Configuration Name**, **Channel** or **Issue**|Only ModelID as key for the table with the ID's:<br><img src="/pegasystems/pega-datascientist-tools/blob/master/images/ds_mdl_export_df_dest2.png">|
 
 Run this dataflow and export the destination dataset (only the first one, with the model data).
 
