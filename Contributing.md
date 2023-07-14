@@ -13,7 +13,10 @@ To contribute to the R package, please make sure to understand the basics of R p
 * The R project for the package is in the "r" folder: `pega-datascientist-tools/r`, not the top-level folder.
 * Use `library(devtools)`. This gives shortcuts to check the package with (Ctrl/Cmd + Shift + E), build and reload in a clean R session (Ctrl/Cmd + Shift + B), run all tests (Ctrl/Cmd + Shift + T), update doc and namespace file (Ctrl/Cmd + Shift + D), load package (Ctrl/Cmd + Shift + L).
 * For unit tests, we use [testthat](https://testthat.r-lib.org), see `r/tests/testthat/tests_*.R` files
-* Package documentation is done via [pkgdown](https://pkgdown.r-lib.org/). Run `pkgdown::build_site()` in R studio to build the `r/docs/` directory.
+* Package documentation is done via [pkgdown](https://pkgdown.r-lib.org/). 
+    - first remove current docs (`git rm -rf r/docs`) 
+    - then run `pkgdown::build_site()` in R studio to build the `r/docs/` directory
+    - then add these to git (`git add r/docs`)
 * Add new functions in `r/man/*.Rd`. 
 * The GitHub pages docs live in the `r/docs` folder. So after generating the package documentation, make sure they live in that folder. On an accepted pull request, the docs are automatically picked up and moved to the `gh-pages` branch, where they will be deployed.
 
