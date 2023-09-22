@@ -2,9 +2,9 @@
 
 These open source tools provides Data Scientists tools to analyze the analytical performance of applications based on Pega AI, machine learning and decisioning, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
-Tooling is both in R and Python although currently not everything is available in both languages. The current functionality includes
+Tooling is both in Python and R although currently not everything is available in both languages. The current functionality includes
 
-* Functions in [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) and [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
+* Functions in [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots. 
 * Collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
 * An [all-in-one "Health Check" application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html) that can be applied to the ADM Datamart to get insights into the models and predictors.
 * Create stand-alone and off-line browsable Adaptive model reports in HTML or PDF. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports).
@@ -16,88 +16,6 @@ Tooling is both in R and Python although currently not everything is available i
 
 # Documentation and API reference
 Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code. 
-
-
-# Getting Started with the R library
-
-## Installation
-
-The `pdstools` package can be installed straight from GitHub. First you will need R and R Studio:
-
-1. If you do not have **R** installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
-
-2. Install **R Studio** from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We do not recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
-
-3. To install `pdstools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
-
-```r
-install.packages("devtools")
-```
-
-4. Then load the `devtools` library and install the `pdstools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages. Note that we have seen failures when installing over VPN, so you may have to (temporarily) go off VPN to install the package from GitHub.
-
-```r
-library(devtools)
-install_github("pegasystems/pega-datascientist-tools/r", build_vignettes=TRUE)
-```
-
-## Using the R package
-
-If all is well, this will install an R package called `pdstools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
-
-```r
-library(pdstools)
-
-?pdstools
-browseVignettes("pdstools")
-vignette(topic="adm-datamart")
-```
-
-The package ships with some data. Create your first plots with just a few lines:
-
-```r
-library(pdstools)
-library(ggplot2)
-library(data.table)
-
-data("adm_datamart")
-
-plotPerformanceSuccessRateBubbleChart(adm_datamart)
-```
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
-
-You can add standard `ggplot` decoration to the returned plots, and most of the plot functions also have parameters to select the fields to aggregate or facet by, see help.
-
-For example, to get an overview of the 20 most important predictors in all the models on a white background:
-
-```r
-plotPredictorImportance(adm_datamart, limit = 20) + theme_bw()
-```
-
-<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="80%">
-
-
-To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/pega-datascientist-tools), but for some of the example files you do.
-
-
-## Package Overview
-
-The R package currently contains 
-
-- Utilities to read data into `data.table` structures. The `ADMDatamart` function is the main work horse here, this reads downloaded Pega dataset exports as well as many other formats.
-- Standard functions to easily create plots from Pega data, primarily from the ADM datamart. These plot functions can be further customized.
-- Standard notebooks to generate off-line viewable reports that can be saved as stand-alone HTML or PDF files. There is one that strings together many of the plot functions to generate one big "datamart scan" including a lot of useful analyses. Another one creates a stand-alone model report similar to the view in Pega Prediction Studio, with all the predictor binning, the model classifier etc. These notebooks can easily be applied on any ADM datamart export.
-- An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
-
-You can get the list of vignettes with `browseVignettes("pdstools")` (as a web page) or `vignette(package="pdstools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
-
-The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/pega-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
-
-A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html).
-
-## Contributing
-
-See [Contributing](Contributing#contributing-to-r)
 
 
 # Getting Started with the Python tools
@@ -205,5 +123,87 @@ A reference to the functions available in the Python package is also available h
 ## Contributing
 
 See [Contributing](Contributing#contributing-to-python)
+
+# Getting Started with the R library
+
+## Installation
+
+The `pdstools` package can be installed straight from GitHub. First you will need R and R Studio:
+
+1. If you do not have **R** installed, go to https://www.r-project.org/ and install the latest version of the software. Find the correct installer for your platform (e.g. R-4.0.3.pkg) and follow the steps of the installer.
+
+2. Install **R Studio** from [rstudio.com](https://rstudio.com/products/rstudio/). Follow the installation steps, then launch R Studio. On first launch, it should find R automatically, otherwise you will need to configure. We do not recommend installing with Homebrew (Mac) because this seems to default all packages to install from source which can cause trouble.
+
+3. To install `pdstools` from GitHub use the `devtools` package. If you don't have that installed yet, do that first:
+
+```r
+install.packages("devtools")
+```
+
+4. Then load the `devtools` library and install the `pdstools` package. Note the `build_vignettes` flag. When prompted for updates, we recommend installing only binary CRAN packages. Note that we have seen failures when installing over VPN, so you may have to (temporarily) go off VPN to install the package from GitHub.
+
+```r
+library(devtools)
+install_github("pegasystems/pega-datascientist-tools/r", build_vignettes=TRUE)
+```
+
+## Using the R package
+
+If all is well, this will install an R package called `pdstools` that you can then use just like any other R package. The package contains help and vignettes to help you get going, both also accessible from the Github page directly. You can quickly check this by running the following R commands. This should show you an overview of the vignettes (package help), opens one of them and shows generic package help. 
+
+```r
+library(pdstools)
+
+?pdstools
+browseVignettes("pdstools")
+vignette(topic="adm-datamart")
+```
+
+The package ships with some data. Create your first plots with just a few lines:
+
+```r
+library(pdstools)
+library(ggplot2)
+library(data.table)
+
+data("adm_datamart")
+
+plotPerformanceSuccessRateBubbleChart(adm_datamart)
+```
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot1.png" width="50%">
+
+You can add standard `ggplot` decoration to the returned plots, and most of the plot functions also have parameters to select the fields to aggregate or facet by, see help.
+
+For example, to get an overview of the 20 most important predictors in all the models on a white background:
+
+```r
+plotPredictorImportance(adm_datamart, limit = 20) + theme_bw()
+```
+
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/gettingstartedRplot2.png" width="80%">
+
+
+To run the R examples you do not need to clone [the repository](https://github.com/pegasystems/pega-datascientist-tools), but for some of the example files you do.
+
+
+## Package Overview
+
+The R package currently contains 
+
+- Utilities to read data into `data.table` structures. The `ADMDatamart` function is the main work horse here, this reads downloaded Pega dataset exports as well as many other formats.
+- Standard functions to easily create plots from Pega data, primarily from the ADM datamart. These plot functions can be further customized.
+- Standard notebooks to generate off-line viewable reports that can be saved as stand-alone HTML or PDF files. There is one that strings together many of the plot functions to generate one big "datamart scan" including a lot of useful analyses. Another one creates a stand-alone model report similar to the view in Pega Prediction Studio, with all the predictor binning, the model classifier etc. These notebooks can easily be applied on any ADM datamart export.
+- An (experimental) utility to take an ADM model and transform it into PMML. This PMML is basically a "frozen" version of the ADM model with each model instance represented as as Score Card including reason codes that can be used to explain the decision.
+
+You can get the list of vignettes with `browseVignettes("pdstools")` (as a web page) or `vignette(package="pdstools")`. A vignette provides the original source as well as a readable HTML or PDF page and a file with the R code. Read a specific one with `vignette(x)` and see its code with `edit(vignette(x))`.
+
+The other option is to download the source (clone from [the GitHub repository](https://github.com/pegasystems/pega-datascientist-tools)) and use the functions and demo scripts directly. The R code, tests, vignettes etc are in the `r` subdirectory.
+
+A reference to the available functions is also published on GitHub: [Function Reference](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html).
+
+## Contributing
+
+See [Contributing](Contributing#contributing-to-r)
+
 
 
