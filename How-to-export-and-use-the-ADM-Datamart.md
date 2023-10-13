@@ -6,7 +6,7 @@ The tables are described here [in the Pega documentation](https://docs.pega.com/
 
 There are three options to retrieve the data. We list them here in order of preference:
 
-1. From Pega 8.8 onwards, you can export all the datamart tables into a repository directly from [Prediction Studio](#export-from-prediction-studio). 
+1. From Pega 8.8 onwards, you can export all the datamart tables into a repository directly from [Prediction Studio](#export-from-prediction-studio). You will need an open ruleset in order to do this.
 
 2. From [Pega Dev Studio](#manual-dataset-export-from-dev-studio), export each of the tables via Datasets. Optionally [select only the models you are interested in](#selective-export-to-reduce-amount-of-data) to reduce the amount of data.
 
@@ -71,7 +71,7 @@ See [Database tables for Monitoring Models](https://docs.pega.com/decision-manag
 
 ## Selective Export to reduce amount of data
 
-Both tables can grow very large. You typically need only the latest snapshot (this is also the default configuration) and only the predictor binning for a selection of the models. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel. You also usually do not need all the columns from the model table - in particular, the "pyModelData" column contains internal details not usually needed for analyses, yet can get very large.
+Both tables can grow very large. You can use a dataflow to filter only the models that you are interested in. For example, you may only be interested in the models for the application you are working on, not in all the adaptive models that were ever created in the system, or perhaps in just a particular Channel. You also usually do not need all the columns from the model table - in particular, the "pyModelData" column contains internal details not usually needed for analyses, yet can get very large.
 
 In order to accomplish this, you create your own dataflows with the desired filtering options.
 
@@ -79,8 +79,8 @@ In order to accomplish this, you create your own dataflows with the desired filt
 2. Source the dataflow with the **pyModelSnapshots** dataset
 3. Use a Convert shape to only copy over the fields we are interested in
 4. Insert a Filter shape after the source dataset to filter on the models of interest. If you filter by rule that would be a condition on **.pyConfigurationName**.
-5. Create a Cassandra dataset (Decision Data Store) as the destination. The keys the system shows when saving it (model ID, snapshot time, application) are fine.
-6. Create another Cassandra dataset destination with just the Model ID's. This is used to filter the corresponding predictor binning information. If you are not planning to export the predictor binning you can skip this.
+5. Create a dataset as the destination. You can use a Cassandra (Decision Data Store) dataset - the keys the system shows when saving it (model ID, snapshot time, application) are fine. You can also export to a file dataset, for example one that represents an S3 file system.
+6. To restrict the predictor binning to just those models that you have filtered in the above step, create a Cassandra dataset destination with just the Model ID's. If you are not planning to export the predictor binning, or you are fine taking all of it, you can skip this.
 
 There is an exercise in Pega Academy that covers similar steps, modifying the Prediction Studio based export - but that is really equivalent as this feature just generates the data flow that you build for yourself here. See [Exporting adaptive model data for external analysis in Pega Academy](https://academy.pega.com/challenge/exporting-adaptive-model-data-external-analysis/v2).
 
