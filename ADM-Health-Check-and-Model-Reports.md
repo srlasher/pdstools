@@ -2,6 +2,8 @@ The ADM Health Check provides a generic overview of the ADM models in your syste
 
 Technically, both are Quarto markdown documents using snippets of Python code from the PDS Tools libraries. We also have legacy R versions of both (in R markdown).
 
+Whatever option you choose, the ADM datamart needs to be exported separately. For instructions on how to export the data, see [How to export the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+
 There are a number of options to generate the Health Check reports:
 
 |Option|When to use|Instructions|
