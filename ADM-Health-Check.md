@@ -63,5 +63,10 @@ When finished (it takes a few minutes), the report should open in a browser wind
 | :---: | :---: |
 | <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-healthcheck-knit-with-params.png"> | <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-healthcheck-knit-dialog.png"> |
 
+Follow similar steps to manually create individual model reports. Select "Knit with parameters" and fill in the paths to the ADM datamart download and the ID of the model you want to report on. The ID can be found in the side panel from the Prediction Studio UI, or by loading the model data in R or Python and inspecting it there. The title and description are used in the generated file for informational purposes only.
+
+| Knit option in R Studio | Knit dialog for the stand alone Adaptive Model Report notebook |
+| :---: | :---: |
+| <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-modelreport-knit-with-params.png"> | <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-modelreport-knit-dialog.png"> |
 
 
