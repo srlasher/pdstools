@@ -11,7 +11,8 @@ Functionality includes
 * Example of a [Value Finder analysis](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html) that supplements the built-in product features.
 * Example analysis of the Historical Dataset that can be exported from ADM models in production: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
 * Explanatory articles on ADM, Thompson Sampling etc with working examples
-* For the more technical, data science oriented users there are functions in [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots and a collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
+* For the more technical, data science oriented users there are functions in [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) to work with Pega data, visualize it and more. 
+* A collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
 
 # Documentation and API reference
 
