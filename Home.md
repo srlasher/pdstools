@@ -11,8 +11,6 @@ Tooling is both in Python and R although currently not everything is available i
 * Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
 * Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
 * Example of a Value Finder analysis: [R](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html)
-* Freeze Adaptive models into PMML Scorecards including reason codes for decision explanations. [Step-by-step tutorial to create PMML Scorecards from ADM](Create-PMML-from-ADM-Models)
-* Restore Adaptive models from model snapshots (when "full auditability" is switched on). [Example notebook](https://pegasystems.github.io/pega-datascientist-tools/R/articles/snapshots-to-scorecards.html)
 
 # Documentation and API reference
 Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code. 
