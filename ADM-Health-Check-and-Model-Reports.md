@@ -43,7 +43,7 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
 
-## Running the R reports from RStudio
+# Running the R reports from RStudio
 
 1. Install R, R Studio and the pdstools package as per the ["Getting started" in the main page](https://github.com/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-r-library)
 2. Either check out ("clone") the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, or (if you are not comfortable with git), just download the [Model Overview notebook](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
