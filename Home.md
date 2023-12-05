@@ -6,15 +6,15 @@ The tooling consists of scripts, applications and libraries and is Open Source, 
 
 Functionality includes
 
-* A standardized [all-in-one "ADM Health Check" application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html) that can be applied to the ADM Datamart to get insights into the models and predictors. From this application you can generate stand-alone HTML reports with an overview of all the ADM models, as well as for individual ADM models. [Step-by-step tutorial to create offline model reports](Create-stand-alone-Adaptive-Model-Reports)
-* Example analysis of the Historical Dataset: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
-* Example of a Value Finder analysis: [R](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/valuefinder/vf_analysis.Rmd) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html)
+* A standardized ADM Health Check to get insights into the models and predictors. This Health Check be done from a data science environment with Python or R but can also, conveniently, be done from a stand-alone application. This application can generate stand-alone HTML ADM overview reports, as well as for individual ADM models. See the [Health Check and Model Report options](ADM-Health-Check-and-Model-Reports)
+* Examples of how to run your own ADM datamart analysis: [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html) [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html).
+* Example of a [Value Finder analysis](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html) that supplements the built-in product features.
+* Example analysis of the Historical Dataset that can be exported from ADM models in production: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
 * Explanatory articles on ADM, Thompson Sampling etc with working examples
 * For the more technical, data science oriented users there are functions in [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) to read in data from the ADM Datamart, from Pega datasets and to easily create plots and a collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
 
-* Example analysis of the ADM Datamart: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html) [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html). For instructions on how to export the data, see [How to export and use the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
-
 # Documentation and API reference
+
 Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code. 
 
 
