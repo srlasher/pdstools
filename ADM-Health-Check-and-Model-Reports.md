@@ -37,6 +37,8 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 ## What are the steps to use it?
 
+<img src="/pegasystems/pega-datascientist-tools/blob/master/images/codespace.png">
+
 1. Navigate to the main [PDS Tools page on GitHub](https://github.com/pegasystems/pega-datascientist-tools).
 
 1. Click on the green Code button and choose to add a codespace
@@ -44,6 +46,7 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 1. Ensure that pop ups are allowed, as the Health Check application will open in a new browser tab
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
+
 
 # Running the R reports from RStudio
 
