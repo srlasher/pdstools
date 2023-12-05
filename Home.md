@@ -6,7 +6,7 @@ The tooling consists of scripts, applications and libraries and is Open Source, 
 
 Functionality includes
 
-* A standardized ADM Health Check to get insights into the models and predictors. This Health Check be done from a data science environment with Python or R but can also, conveniently, be done from a stand-alone application. This application can generate stand-alone HTML ADM overview reports, as well as for individual ADM models. See the [Health Check and Model Report options](ADM-Health-Check-and-Model-Reports)
+* A standardized ADM Health Check to get insights into the models and predictors. This Health Check can be done from a data science environment with Python or R but can also, conveniently, be done from a stand-alone application. This application can generate stand-alone HTML ADM overview reports, as well as for individual ADM models. See the [Health Check and Model Report options](ADM-Health-Check-and-Model-Reports)
 * Examples of how to run your own ADM datamart analysis: [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html) [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html).
 * Example of a [Value Finder analysis](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html) that supplements the built-in product features.
 * Example analysis of the Historical Dataset that can be exported from ADM models in production: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
