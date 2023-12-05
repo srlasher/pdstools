@@ -1,9 +1,4 @@
-The ADM Health Check report provides a generic overview of the ADM models in your system, with recommendations. It can be used as-is or be used as a basis for further, specific analyses.
-
-There are two types of reports
-
-1. An overview of all the ADM models in your system, including charts like the "Bubble Chart" and many more
-2. A detailed report of a single ADM model instance, including the binning details of all the predictors
+The ADM Health Check provides a generic overview of the ADM models in your system, including charts like the "Bubble Chart" and many more, with recommendations. It can be used as-is or be used as a basis for further, specific analyses. The ADM Model Reports give a detailed view of an individual ADM model, including the binning details of all the predictors which can help drive insights.
 
 Technically, both are Quarto markdown documents using snippets of Python code from the PDS Tools libraries. We also have legacy R versions of both (in R markdown).
 
