@@ -1,36 +1,32 @@
-Pega Data Scientist Tools includes an R notebook to produce an off-line viewable, stand-alone model report for your ADM models. These reports are similar to the reports in the product but can be generated and browsed off-line. This can be very useful for auditing and regularity requirements.
+There are various options to create an ADM Health Check or individual Model Report as detailed here.
 
-The reports add some functionality not currently present in the product, like showing the active bins of the propensity mapping, an overview of predictor performance across models in the form of boxplots, and more. They are parameterized and can easily be applied to any export of the ADM datamart.
+When you want to create many model reports, and frequently want to update them because new data is available, it can be convenient to run a batch script instead.
 
-The notebook is in R and will require R to be installed, but is just a tool and does not require any R skills to be used.
+The reports are just Quarto Notebooks (for the Python versions), or R Markdown (for the R versions), which take arguments and can be called from a script. The script can be in any scripting language, bash, zsh, python, or R etc. The advantage of using Python/R is that you can easily add a few lines of code to subset the data to the aspects you're interested in (e.g. certain configurations, certain issues) etc.
 
-# Sanity check
+# Prerequisites
 
-Before you run it on your own data, check that all is working by running the example:
+|For the Python versions|For the R versions|
+|---|---|
+|Python|R|
+|Quarto|R Markdown|
+|PDS Tools library|PDS Tools library|
 
-1. Install R and R Studio and the pdstools package as per the ["Getting started" in the main page](https://github.com/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-r-library)
-2. Either check out ("clone") the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, or (if you are not comfortable with git), just [download the Model Report notebook](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/modelreport.Rmd).
-3. Open the notebook "examples/datamart/modelreport.Rmd" in R Studio and "Knit to HTML" (or PDF if you have the required libs installed). When finished (it takes a few minutes), a sample report should open in a browser window.
+In addition, you'll need a clone of the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, as this contains the notebooks and example scripts. You could of course also download just the files/scripts that you plan to use, but cloning the whole repository is easier and makes it easier to stay current with updates.
 
-# Creating stand-alone model reports on your own data
+# Example scripts
 
-There are three parts to this:
+We have provided a few sample scripts to get you going. The scripts are rather self-explanatory.
 
-1. From Pega, [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart).
-2. Then, using R (or Python), load this data and subset to the models/channels/groups you're interested in. You can skip this step but creating reports on ALL models in the system is usually not what you want, as there may be 1000's of them.
-3. Run the notebook. You could do this interactively, using the option to "Knit with Parameters" from R Studio. But if you plan to create more than a few reports, you probably want to un a batch job to create the reports.
+The sample scripts can be found in the examples/datamart folder of the cloned repository.
 
-Below we go through these steps in detail. Let's assume we're interested in the **OmniAdaptiveModel** reports for the **CreditCards** group in all **Outbound** channels (this example is based on CDH Sample).
+|Script|Purpose|
+|---|---|
+|one|blah|
 
-## Export the datamart data from Pega
 
-See [export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart)
 
-The model data is usually not gigantic, but the predictor snapshots table can be sizeable. So if a dataset export is not feasible you have two other options:
-
-**Option 1**: Read the data from the database tables directly, using a DB tool of your choice. See notes in above article for some caveats.
-
-**Option 2**: Use a data flow to do filtering before sending the data to a dataset. Source it with the OOTB datasets mentioned above, then apply filtering as needed and write to a dataset of your own (usually a DDS dataset) that you can then export just like the default, OOTB datasets.
+### TODO below is WIP
 
 
 ## Create files for the models of interest
