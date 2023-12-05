@@ -10,7 +10,7 @@ There are a number of options to generate the Health Check reports:
 |---|---|---|
 |Github Codespace|Run Health Check in the cloud, directly from GitHub without the need to install any tools|Instructions [below](#github-codespace-option)|
 |Standalone Python app|Run a python-based application locally, need to install Python, PDS tools and supporting libraries, but no coding skills required|See [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html)|
-|VSCode or other IDE|Run the notebooks from a developer environment. Allows for customizations but requires coding skills.|[Instructions for the R versions](#running-the-r-reports-from-rstudio)|
+|VSCode or other IDE|Run the notebooks from a developer environment. Allows for customizations but requires coding skills.|Instructions below [for the R versions](#running-the-r-reports-from-rstudio)|
 |Batch runs|Run the reports in batch - especially convenient when you need to create many individual model reports, or when doing this regularly. Supporting example batch scripts are available, requires some (light) scripting skills and an environment with Python, PDS tools and supporting libraries.|[Creating Reports in Batch](Batch‐creating-Adaptive-Model-Reports)|
 
 # Github Codespace option
