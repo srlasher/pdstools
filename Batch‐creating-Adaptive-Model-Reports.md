@@ -22,7 +22,8 @@ The sample scripts can be found in the examples/datamart folder of the cloned re
 
 |Script|Purpose|
 |---|---|
-|one|blah|
+|[create_single_model_report_python.sh](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/create_single_model_report_python.sh)|Shell script to create stand-alone Quarto/Python model reports|
+|[create_single_model_report_R.sh](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/create_single_model_report_R.sh)|Shell script to create stand-alone Markdown/R model reports|
 
 
 
