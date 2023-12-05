@@ -8,7 +8,7 @@ There are a number of options to generate the Health Check reports:
 |---|---|---|
 |Github Codespace|Run Health Check in the cloud, directly from GitHub without the need to install any tools|Instructions [below](#github-codespace-option)|
 |Standalone Python app|Run a python-based application locally, need to install Python, PDS tools and supporting libraries, but no coding skills required|See [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html)|
-|VSCode or other IDE|Run the notebooks from a developer environment. Allows for customizations but requires coding skills.|TODO|
+|VSCode or other IDE|Run the notebooks from a developer environment. Allows for customizations but requires coding skills.|[Instructions for the R versions](#running-the-r-reports-from-rstudio)|
 |Batch runs|Run the reports in batch - especially convenient when you need to create many individual model reports, or when doing this regularly. Supporting example batch scripts are available, requires some (light) scripting skills and an environment with Python, PDS tools and supporting libraries.|TODO|
 
 # Github Codespace option
@@ -42,6 +42,21 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 1. Ensure that pop ups are allowed, as the Health Check application will open in a new browser tab
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
+
+## Running the R reports from RStudio
+
+1. Install R, R Studio and the pdstools package as per the ["Getting started" in the main page](https://github.com/pegasystems/pega-datascientist-tools/wiki#getting-started-with-the-r-library)
+2. Either check out ("clone") the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, or (if you are not comfortable with git), just download the [Model Overview notebook](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/datamart/healthcheck.Rmd).
+3. From Pega, export the ADM datamart data (model data and optionally predictor data) as described in [How to export the ADM datamart data](How-to-export-and-use-the-ADM-Datamart).
+4. Open the notebook "examples/datamart/healthcheck.Rmd" in R Studio and select "Knit with Parameters" from the Knit drop-down. 
+5. Enter the full path to your ADM datamart downloads in the fields for *modelfile* and *predictordatafile*. If you do not have predictor data, make that field blank. 
+6. Press the "Knit" button
+
+When finished (it takes a few minutes), the report should open in a browser window. It will also be saved automatically in your working folder. This stand-alone HTML (or PDF) file can then easily be distributed.
+
+| Knit option in R Studio | Knit dialog for the Health Check notebook |
+| :---: | :---: |
+| <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-healthcheck-knit-with-params.png"> | <img src="/pegasystems/pega-datascientist-tools/blob/master/images/R-studio-healthcheck-knit-dialog.png"> |
 
 
 
