@@ -6,17 +6,19 @@ The tooling consists of scripts, applications and libraries and is Open Source, 
 
 Functionality includes
 
-* A standardized ADM Health Check to get insights into the models and predictors. This Health Check can be done from a data science environment with Python or R but can also, conveniently, be done from a stand-alone application. This application can generate stand-alone HTML ADM overview reports, as well as for individual ADM models. See the [Health Check and Model Report options](ADM-Health-Check)
-* Examples of how to run your own ADM datamart analysis: [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html) [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html).
+* A standardized [ADM Health Check](ADM-Health-Check) to get insights into the models and predictors. This Health Check can be done from a data science environment with Python or R but can also, conveniently, be done from a stand-alone application. This application can generate stand-alone HTML ADM overview reports, as well as detailed reports for individual ADM models.
+* Examples/starter scripts run your own, custom, ADM datamart analysis: [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/Example_ADM_Analysis.html) [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/adm-datamart.html).
 * Example of a [Value Finder analysis](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/vf_analysis.html) that supplements the built-in product features.
 * Example analysis of the Historical Dataset that can be exported from ADM models in production: [R](https://pegasystems.github.io/pega-datascientist-tools/R/articles/historical-dataset.html) [Python](https://github.com/pegasystems/pega-datascientist-tools/blob/master/examples/ih/Example_IH_Analysis.ipynb).
 * Explanatory articles on ADM, Thompson Sampling etc with working examples
 * For the more technical, data science oriented users there are functions in [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/reference/index.html) to work with Pega data, visualize it and more. 
-* A collection of sample plots/graphs for analysis of CDH. See our [Graph Gallery](Graph-Gallery). Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
+* A collection of sample plots/graphs for analysis of CDH, more as inspiration. See our [Graph Gallery](Graph-Gallery).
+
+Whilst the examples are CDH oriented, the code will generalize to analyzing other Pega AI applications, such as applications based on Process AI.
 
 # Documentation and API reference
 
-Apart from containing the examples mentioned above and more, the [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code. 
+The [documentation](https://pegasystems.github.io/pega-datascientist-tools/) contains the API reference for both the [Python](https://pegasystems.github.io/pega-datascientist-tools/Python/index.html) and [R](https://pegasystems.github.io/pega-datascientist-tools/R/index.html) code as well as the examples and tutorials. 
 
 
 # Getting Started with the Python tools
