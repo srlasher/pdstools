@@ -1,8 +1,8 @@
 The ADM Health Check provides a generic overview of the ADM models in your system, including charts like the "Bubble Chart" and many more, with recommendations. It can be used as-is or be used as a basis for further, specific analyses. The ADM Model Reports give a detailed view of an individual ADM model, including the binning details of all the predictors which can help drive insights.
 
-Technically, both are Quarto markdown documents using snippets of Python code from the PDS Tools libraries. We also have legacy R versions of both (in R markdown).
+Technically, both are Quarto markdown documents using snippets of Python code from the PDS Tools libraries. We also have legacy R versions of both (using R markdown instead of Quarto).
 
-Whatever option you choose, the ADM datamart needs to be exported separately. For instructions on how to export the data, see [How to export the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+Whatever option you choose, the ADM datamart needs to made available first. It consists of two tables: one for the models, one with the predictor details - that latter one is optional for the ADM overview. For instructions on how to export the data from Pega, see [How to export the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
 
 There are a number of options to generate the Health Check reports:
 
@@ -41,7 +41,7 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Navigate to the main [PDS Tools page on GitHub](https://github.com/pegasystems/pega-datascientist-tools).
 
-1. Click on the green Code button and choose to add a codespace
+1. Click on the green Code button and choose to add a codespace (you'll need to sign in to GitHub, you can create a free account). It will now automatically set up the code space, run a browser-based version of VSCode, load PDS Tools and start the Health Check application. This will take a few minutes.
 
 1. Ensure that pop ups are allowed, as the Health Check application will open in a new browser tab
 
