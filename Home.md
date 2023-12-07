@@ -2,7 +2,7 @@
 
 The Pega Data Science tools help to analyze the value and analytical performance of applications based on Pega AI, machine learning and decisioning, such as implementations of Pega Customer Decision Hub or Pega Process AI.
 
-The tooling consists of scripts, applications and libraries and is Open Source, not an official Pega product. It targets data scientists as well as people with a less specialized role looking more for generic insights. Technically, most tooling is in Python but there is a legacy framework in R that we keep but are not actively developing anymore.
+The tooling consists of scripts, applications and libraries and is Open Source, not an official Pega product. We release this under the Apache 2.0 license. Pega does not make any representation or warranty with respect to this free software. It targets data scientists as well as people with a less specialized role looking more for generic insights. Technically, most tooling is in Python but there is a legacy framework in R that we keep but are not actively developing anymore.
 
 Functionality includes
 
