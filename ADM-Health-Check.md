@@ -47,6 +47,28 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
 
+# Using the stand-alone Health Check application
+
+The stand-alone health check application makes it easy to create the ADM Health Check and the individual model reports. You will need to have python and install pdstools, but you do not need to run a (data science) environment, and there is no need to create a script, it is all configured from a UI.
+
+1. Install Python and PDS tools as described [here](https://github.com/pegasystems/pega-datascientist-tools/wiki#installation). If you already had an older version of PDS tools make sure to upgrade to the latest.
+
+`pip install --upgrade pdstools`
+
+1. Launch the Health Check application by running 
+
+`pdstools run`
+
+1. The app should open up in your system browser. On first run, you may get a promotional message from streamlit asking for your e-mail address - you can leave this empty if you want. If the app does not open up automatically, simply copy the Local URL from your terminal and paste it into your browser.
+ 
+1. In the app, navigate to the Health Check tab (in the left pane). This shows instructions.
+ 
+1. Then click the "Data Import" tab in the main screen to load your data. If you haven't downloaded the ADM Datamart yet, this is the moment to do so. You can also skip uploading your own data, and select "CDH Sample" in the Data Import drop down.
+
+1. The "Report Configuration" has a few advanced options but can generally be left empty
+
+1. Then Generate and Download the ADM Health Check report. The download button will appear when the generation is finished. The downloaded report will show in your default browser download locations.
+
 
 # Running the R reports from RStudio
 
