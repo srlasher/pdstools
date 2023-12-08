@@ -50,7 +50,11 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 # Using the stand-alone Health Check application
 
+## What is it?
+
 The stand-alone health check application makes it easy to create the ADM Health Check and the individual model reports. You will need to have python and install pdstools, but you do not need to run a (data science) environment, and there is no need to create a script, it is all configured from a UI.
+
+## How to install
 
 1. [Install Python and PDS tools](https://github.com/pegasystems/pega-datascientist-tools/wiki#installation). If you already had an older version of PDS tools make sure to upgrade to the latest.
 
@@ -61,6 +65,8 @@ The stand-alone health check application makes it easy to create the ADM Health 
 `pdstools run`
 
 3. The app should open up in your system browser. On first run, you may get a promotional message from streamlit asking for your e-mail address - you can leave this empty if you want. If the app does not open up automatically, simply copy the Local URL from your terminal and paste it into your browser.
+
+## How to use
  
 1. In the app, navigate to the Health Check tab (in the left pane). This shows instructions.
  
