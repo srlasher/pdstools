@@ -208,6 +208,6 @@ A reference to the available functions is also published on GitHub: [Function Re
 
 Details of how to contribute to PDS tools, how to write tests, documentation etc.
 
-For the Python version see [Contributing](Contributing#contributing-to-python)
+For the Python version see [Python](Contributing#contributing-to-python)
 
-For the R version see [Contributing](Contributing#contributing-to-r)
+For the R version see [R](Contributing#contributing-to-r)
