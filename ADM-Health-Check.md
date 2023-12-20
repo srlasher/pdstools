@@ -47,14 +47,6 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
 
-# Prerequisites
-
-|For the Python versions|For the R versions|
-|---|---|
-|Python|R|
-|[Quarto](https://quarto.org) and [Pandoc](https://pandoc.org)|R Markdown and Pandoc but these come installed with [R Studio](https://posit.co/products/open-source/rstudio/). For our purposes the free version of R Studio is sufficient.|
-|[PDSTools python library](https://github.com/pegasystems/pega-datascientist-tools#getting-started)|PDS Tools library|
-
 # Using the stand-alone Health Check application
 
 ## What is it?
