@@ -4,6 +4,14 @@ When you want to create many model reports, and frequently want to update them b
 
 The reports are just Quarto Notebooks (for the Python versions), or R Markdown (for the R versions), which take arguments and can be called from a script. The script can be in any scripting language, bash, zsh, python, or R etc. The advantage of using Python/R is that you can easily add a few lines of code to subset the data to the aspects you're interested in (e.g. certain configurations, certain issues) etc.
 
+# Prerequisites
+
+|For the Python versions|For the R versions|
+|---|---|
+|Python|R|
+|[Quarto](https://quarto.org) and [Pandoc](https://pandoc.org)|R Markdown and Pandoc but these come installed with [R Studio](https://posit.co/products/open-source/rstudio/). For our purposes the free version of R Studio is sufficient.|
+|[PDSTools python library](https://github.com/pegasystems/pega-datascientist-tools#getting-started)|PDS Tools library|
+
 In addition, you'll need a clone of the [Pega Data Scientist Tools repository](https://github.com/pegasystems/pega-datascientist-tools) from git, as this contains the notebooks and example scripts. You could of course also download just the files/scripts that you plan to use, but cloning the whole repository is easier and makes it easier to stay current with updates.
 
 # Example scripts
