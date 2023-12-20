@@ -13,14 +13,6 @@ There are a number of options to generate the Health Check reports:
 |VSCode or other IDE|Run the notebooks from a developer environment. Allows for customizations but requires coding skills.|Instructions below [for the R versions](#running-the-r-reports-from-rstudio)|
 |Batch runs|Run the reports in batch - especially convenient when you need to create many individual model reports, or when doing this regularly. Supporting example batch scripts are available, requires some (light) scripting skills and an environment with Python, PDS tools and supporting libraries.|[Creating Reports in Batch](Batch‐creating-Adaptive-Model-Reports)|
 
-# Prerequisites
-
-|For the Python versions|For the R versions|
-|---|---|
-|Python|R|
-|[Quarto](https://quarto.org) and [Pandoc](https://pandoc.org)|R Markdown and Pandoc but these come installed with [R Studio](https://posit.co/products/open-source/rstudio/). For our purposes the free version of R Studio is sufficient.|
-|[PDSTools python library](https://github.com/pegasystems/pega-datascientist-tools#getting-started)|PDS Tools library|
-
 # Github Codespace option
 
 ## What is it?
@@ -55,6 +47,13 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
 
+# Prerequisites
+
+|For the Python versions|For the R versions|
+|---|---|
+|Python|R|
+|[Quarto](https://quarto.org) and [Pandoc](https://pandoc.org)|R Markdown and Pandoc but these come installed with [R Studio](https://posit.co/products/open-source/rstudio/). For our purposes the free version of R Studio is sufficient.|
+|[PDSTools python library](https://github.com/pegasystems/pega-datascientist-tools#getting-started)|PDS Tools library|
 
 # Using the stand-alone Health Check application
 
