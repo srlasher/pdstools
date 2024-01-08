@@ -169,7 +169,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
 
 The Pega dataset export format is a zipped multi-line JSON. Although compressed, these files are typically much larger than binary formats like Parquet. JSON is a text-based format, and even when compressed, it retains a structure that is less space-efficient compared to binary formats. JSON files also require parsing of text to reconstruct data. This process is computationally more intensive, especially for large datasets, leading to longer processing times.
 
-Supporting parquet natively is on the longer term roadmap for Pega, but it may be useful to already start using it to read ADM datamart data. In your scripts, you would read the standard Pega dataset exports once, then "cache" them in parquet format, so subsequent retrieval is much faster. The PDS Tools ADMDatamart class (Python) or function (R) already support parquet.
+Supporting parquet natively is on the longer term roadmap for Pega, but it may be useful to already start using it to read ADM datamart data. In your scripts, you would read the standard Pega dataset exports once, then "cache" them in parquet format, so subsequent retrieval is much faster. The PDS Tools [ADMDatamart class](https://pegasystems.github.io/pega-datascientist-tools/Python/autoapi/pdstools/adm/ADMDatamart/index.html) (Python) or [function](https://pegasystems.github.io/pega-datascientist-tools/R/reference/ADMDatamart.html) (R) already support parquet.
 
 In Python, this is how you would create a parquet file from the datamart data:
 
