@@ -165,6 +165,39 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
                      return(mdls) } )
 ```
 
+## Caching datamart exports in more efficient parquet format
+
+The Pega dataset export format is a zipped multi-line JSON. Although compressed, these files are typically much larger than other binary formats like Parquet. JSON is a text-based format, and even when compressed, it retains a structure that is less space-efficient compared to binary formats. JSON files also require parsing of text to reconstruct data. This process is computationally more intensive, especially for large datasets, leading to longer processing times.
+
+Supporting parquet natively is on the longer term roadmap for Pega, but it may be useful to already start using it. In your scripts, you can read the standard Pega dataset exports once, then "cache" them in parquet format, so subsequent retrieval is much faster. The PDS Tools ADMDatamart class (Python) or function (R) already support parquet.
+
+In Python, this is how you would create a parquet file from the datamart data:
+
+
+```python
+from pdstools import ADMDatamart
+from os.path import expanduser
+
+# Read the ADM datamart data from the Pega zipped-JSON dataset export
+# and write it to parquet files for faster reading next time. Note 
+# that by default we only include the columns necessary for the standard
+# PDS Tools functions and reports. If you need extra data consider the
+# "subset=False" argument or adding specific columns - see documentation
+# of the ADMDatamart class.
+
+dm = ADMDatamart(path=expanduser("~/Downloads/datamart"))
+
+model_data_file = expanduser("~/Downloads/cached_model_data.parquet")
+predictor_data_file = expanduser("~/Downloads/cached_predictor_data.parquet")
+
+dm.modelData.collect().write_parquet(model_data_file)
+dm.predictorData.collect().write_parquet(predictor_data_file)
+
+# So next time we can read it efficiently
+
+dm = ADMDatamart(model_filename=model_data_file,
+                 predictor_filename=predictor_data_file)
+```
 
 # Off-line analysis of the exported data
 
@@ -224,4 +257,6 @@ dm.plotPerformanceSuccesRateBubbleChart()
 ```r
 plotPerformanceSuccessRateBubbleChart(dm)
 ```
+
+
 
