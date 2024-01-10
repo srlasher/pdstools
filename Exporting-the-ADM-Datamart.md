@@ -118,15 +118,15 @@ Like before, now run this dataflow and export the destination dataset.
 
 # Manual table export from database
 
-The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`. You can export this using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the (large) raw model data field (pymodeldata). 
+The table with the model snapshots is `PR_DATA_DM_DATAMART_MDL_FACT`, the predictor binning is in `PR_DATA_DM_ADMMART_PRED`. You can export these using your favourite database tool. Optionally leave out Pega internal fields (starting with pz/px) and the (large) raw model data field (pymodeldata). 
 
 <img src="/pegasystems/pega-datascientist-tools/blob/master/images/pega_db_models.png" width="50%">
 
 When exporting as a CSV be careful:
-* Include a header with the names
-* Make sure the column separator does not interfere with characters in the fields - a comma is not safe, the pipe character | is often a better choice
+* Include a header with the names, otherwise reading it back in becomes really difficult
+* Make sure the column separator does not interfere with characters in the fields - **a comma is not safe**, the pipe character | is often a better choice
 * If possible use double quotes around symbolic values
-* If possible use an unambigous standard format for the date/time fields (pySnapshotTime)
+* If possible use an unambiguous standard format for the date/time fields (pySnapshotTime)
 
 Then read the resulting file into R or Python and go from there. 
 
