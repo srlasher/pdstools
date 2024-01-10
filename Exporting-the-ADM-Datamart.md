@@ -165,7 +165,7 @@ dm <- ADMDatamart("models.csv", "preds.csv", folder="adm",
                      return(mdls) } )
 ```
 
-## Caching datamart exports in more efficient parquet format
+# Caching datamart exports in more efficient parquet format
 
 The Pega dataset export format is a zipped multi-line JSON. Although compressed, these files are typically much larger than binary formats like Parquet. JSON is a text-based format, and even when compressed, it retains a structure that is less space-efficient compared to binary formats. JSON files also require parsing of text to reconstruct data. This process is computationally more intensive, especially for large datasets, leading to longer processing times.
 
