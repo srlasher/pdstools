@@ -59,7 +59,7 @@ The stand-alone health check application makes it easy to create the ADM Health 
 
 2. [Install Python and PDS tools](https://github.com/pegasystems/pega-datascientist-tools/wiki#installation) with app dependencies. If you already had an older version of PDS tools make sure to upgrade to the latest.
 
-`pip install --upgrade pdstools`
+`pip install --upgrade pdstools[app]`
 
 3. Launch the Health Check application by running 
 
