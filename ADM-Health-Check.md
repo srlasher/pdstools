@@ -45,6 +45,8 @@ You can review the structure of the two datasets [here](https://docs-previous.pe
 
 1. Ensure that pop ups are allowed, as the Health Check application will open in a new browser tab
 
+1. Before accessing the app, first upload your ADM Datamart files to your GitHub workspace. You can accomplish this by right-clicking within the Explorer section (located on the left-hand side of the interface) and selecting 'Upload'. After the files are uploaded, navigate to the 'Import File' section of the app. Ensure you select the 'Direct file path' option and input the path '/workspaces/pega-datascientist-tools'.
+
 1. Follow the [instructions on the Health Check application](https://pegasystems.github.io/pega-datascientist-tools/Python/articles/HealthCheckSetUp.html#Using-the-App:-A-Step-by-Step-Guide)
 
 # Using the stand-alone Health Check application
