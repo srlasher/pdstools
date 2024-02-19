@@ -68,7 +68,7 @@ After installation, you can import the **ADMDatamart** class from the pdstools p
 ```python
 from pdstools import ADMDatamart
 ```
-The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/pega-datascientist-tools/wiki/How-to-export-and-use-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
+The ADMDatamart class is the main class which orchestrates reading, preprocessing and visualizing of the data. For an overview of its methods, please refer to the API reference. Normally, if the dataset is exported as per [the instructions page](https://github.com/pegasystems/pega-datascientist-tools/wiki/Exporting-the-ADM-Datamart), the only path you would need to give the ADMDatamart class is the directory of that data, and it should find the filenames itself. If, for some reason, those are changed, you can of course supply those names with the 'model_filename' and 'predictor_filename' arguments. This syntax also works for subdirectories: if models.csv is in a subfolder within the datamart folder named 'modeldatafile', the argument for model_filename would be 'modeldatafile/models.csv'.
 
 
 ```python
