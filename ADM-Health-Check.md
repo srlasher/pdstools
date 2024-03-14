@@ -2,7 +2,7 @@ The ADM Health Check provides a generic overview of the ADM models in your syste
 
 Technically, both are Quarto markdown documents using snippets of Python code from the PDS Tools libraries. We also have legacy R versions of both (using R markdown instead of Quarto).
 
-Whatever option you choose, the ADM datamart needs to made available first. It consists of two tables: one for the models, one with the predictor details - that latter one is optional for the ADM overview. For instructions on how to export the data from Pega, see [How to export the ADM Datamart](How-to-export-and-use-the-ADM-Datamart).
+Whatever option you choose, the ADM datamart needs to made available first. It consists of two tables: one for the models, one with the predictor details - that latter one is optional for the ADM overview. For instructions on how to export the data from Pega, see [How to export the ADM Datamart](https://github.com/pegasystems/pega-datascientist-tools/wiki/Exporting-the-ADM-Datamart).
 
 There are a number of options to generate the Health Check reports:
 
