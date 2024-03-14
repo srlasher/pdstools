@@ -57,7 +57,7 @@ The stand-alone health check application makes it easy to create the ADM Health 
 
 ## How to install
 
-1. Install [Quarto](https://quarto.org) and [Pandoc](https://pandoc.org).
+1. Install [Quarto](https://github.com/quarto-dev/quarto-cli/releases/tag/v1.3.450) and [Pandoc](https://pandoc.org).
 
 2. [Install Python and PDS tools](https://github.com/pegasystems/pega-datascientist-tools/wiki#installation) with app dependencies. If you already had an older version of PDS tools make sure to upgrade to the latest.
 
